@@ -10,5 +10,9 @@ $clr-snowy-mint: #D7FFDC;
 $clr-athens-gray: #e8e9ec;
 $clr-jade: #00aa71;
 
+:export {
+    colorLavanderBlush: $clr-lavander-blush
+}
+
 // @use 'colors';
 // colors.$clr-primary;
