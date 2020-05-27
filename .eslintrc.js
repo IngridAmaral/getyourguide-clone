@@ -27,4 +27,13 @@ module.exports = {
     "react/sort-comp": 'off',
     "import/prefer-default-export": 'off'
   },
+  overrides: [
+    {
+      files: './server/server.js',
+      rules: {
+        'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
+        'no-console': 'off',
+      }
+    }
+  ]
 };
