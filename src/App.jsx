@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchTopDestinationsAC } from './redux/actions/getTopDestinations';
-import { fetchTopDestinations } from './service/fetchTopDestinations';
-import { colorLavanderBlush } from './styles/_colors.scss';
 import { getTopDestinations } from './redux/reducers/getTopDestinations';
+import { fetchToursBarcelonaAC } from './redux/actions/getToursBarcelona';
+import { getToursBarcelona } from './redux/reducers/getToursBarcelona';
+
+import { colorLavanderBlush } from './styles/_colors.scss';
 
 class App extends React.Component {
   componentDidMount() {
-    const { fetchTopDestinationsDisp } = this.props;
-    fetchTopDestinationsDisp(fetchTopDestinations());
   }
 
   render() {
@@ -26,15 +26,16 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  topDestinations: getTopDestinations(state),
-});
+// const mapStateToProps = (state) => ({
+//   topDestinations: getTopDestinations(state),
+//   toursBarcelona: getToursBarcelona(state),
+// });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(
-  {
-    fetchTopDestinationsDisp: fetchTopDestinationsAC,
-  },
-  dispatch,
-);
+// const mapDispatchToProps = (dispatch) => bindActionCreators(
+//   {
+//     fetchTopDestinationsDisp: fetchTopDestinationsAC,
+//   },
+//   dispatch,
+// );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
