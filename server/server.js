@@ -5,7 +5,6 @@ const { topCountries } = require('./mockData/topCountries');
 const { popular } = require('./mockData/popular');
 const { topAttractions } = require('./mockData/topAttractions');
 
-
 const DELAY = 500;
 
 const app = express();

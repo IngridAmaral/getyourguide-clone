@@ -34,6 +34,15 @@ module.exports = {
         'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
         'no-console': 'off',
       }
+    },
+    {
+      files: [
+        "**/*.test.js",
+        "**/__mocks__/**/*",
+      ],
+      env: {
+        jest: true,
+      }
     }
   ]
 };
