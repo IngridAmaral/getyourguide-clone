@@ -23,10 +23,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/top-destinations', (req, res) => {
-  res.send(topDestinations);
-});
-
 app.use('/destinations/tours-barcelona', (req, res) => {
   res.send(toursBarcelona);
 });
@@ -39,17 +35,22 @@ app.use('/destinations/tours-paris', (req, res) => {
   res.send(toursParis);
 });
 
-app.use('/top-countries', (req, res) => {
+app.use('/top/destinations', (req, res) => {
+  res.send(topDestinations);
+});
+
+app.use('/top/countries', (req, res) => {
   res.send(topCountries);
+});
+
+app.use('/top/attractions', (req, res) => {
+  res.send(topAttractions);
 });
 
 app.use('/popular', (req, res) => {
   res.send(popular);
 });
 
-app.use('/top-attractions', (req, res) => {
-  res.send(topAttractions);
-});
 
 app.listen(4000, () => {
   console.log('server is running on port 4000');
