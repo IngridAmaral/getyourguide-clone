@@ -10,13 +10,10 @@ import { colorLavanderBlush } from './styles/_colors.scss';
 
 class App extends React.Component {
   componentDidMount() {
-    const { fetchTopDestinations, fetchToursBarcelona } = this.props;
-    fetchTopDestinations();
-    fetchToursBarcelona();
   }
 
   render() {
-    console.log('props', this.props);
+    console.log('props', this.props.topDestinations);
     return (
       <div className="App">
         <header className="App-header">
@@ -29,18 +26,16 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  topDestinations: getTopDestinations(state),
-  toursBarcelona: getToursBarcelona(state),
+// const mapStateToProps = (state) => ({
+//   topDestinations: getTopDestinations(state),
+//   toursBarcelona: getToursBarcelona(state),
+// });
 
-});
-
-const mapDispatchToProps = (dispatch) => bindActionCreators(
-  {
-    fetchTopDestinations: fetchTopDestinationsAC,
-    fetchToursBarcelona: fetchToursBarcelonaAC,
-  },
-  dispatch,
-);
+// const mapDispatchToProps = (dispatch) => bindActionCreators(
+//   {
+//     fetchTopDestinationsDisp: fetchTopDestinationsAC,
+//   },
+//   dispatch,
+// );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
