@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export function topDestinationsReducer(state = initialState, action) {
+  console.log(action.type);
   switch (action.type) {
     case `${GET_TOP_DESTINATIONS}_PENDING`:
       return { ...state, isPending: true };
