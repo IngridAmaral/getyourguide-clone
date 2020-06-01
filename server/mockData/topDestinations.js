@@ -7,9 +7,8 @@ const topDestinations = [
     descripton: 'Make eyes at the Mona Lisa and write the story of "that time you went to the City of Love."',
     bgColor: '#FFD938',
     btnTxt: 'Explore things to do',
-    activities: [toursParis.slice(0, 4)],
+    activities: toursParis.slice(0, 4),
     url: '/dicovery/paris',
-
   },
   {
     destination: 'Barcelona',
@@ -17,7 +16,7 @@ const topDestinations = [
     descripton: 'Admire Gaudi’s quirky architecture and find the paella recipe you’ll serve to dinner party guests back home.',
     bgColor: '#CCECFF',
     btnTxt: 'Explore things to do',
-    activities: [toursBarcelona.slice(0, 4)],
+    activities: toursBarcelona.slice(0, 4),
     url: '/dicovery/barcelona',
 
   },
@@ -27,7 +26,7 @@ const topDestinations = [
     descripton: 'Take in the iconic skyline and visit the neighborhood hangouts that you’ve only ever seen on TV.',
     bgColor: '#FFE5EE',
     btnTxt: 'Explore things to do',
-    activities: [toursNewYork.slice(0, 4)],
+    activities: toursNewYork.slice(0, 4),
     url: '/dicovery/new-york-city',
   },
 ];
