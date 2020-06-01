@@ -7,8 +7,8 @@ import { getTopContent } from './redux/reducers/topContent';
 import { fetchDestinationsToursAC } from './redux/actions/getDestinationsTours';
 import { fetchPopularAC } from './redux/actions/getPopular';
 import { fetchTopContentAC } from './redux/actions/getTopContent';
-
-import { colorLavanderBlush } from './styles/_colors.scss';
+import TourCard from './components/tour-card/TourCard';
+import './App.scss';
 
 class App extends React.Component {
   componentDidMount() {
@@ -20,14 +20,12 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('props', this.props);
+    const { topContent } = this.props;
+    // console.log('props', this.props);
     return (
       <div className="App">
-        <header className="App-header">
-          <p style={{ color: colorLavanderBlush, fontWeight: 'bold' }}>
-            APP
-          </p>
-        </header>
+        { topContent.length > 0
+        && (<TourCard topContent={topContent} />)}
       </div>
     );
   }
