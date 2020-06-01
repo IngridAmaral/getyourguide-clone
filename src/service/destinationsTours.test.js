@@ -28,9 +28,13 @@ describe('fetch data from API', () => {
     expect(axios.get).toHaveBeenCalledWith(`destinations/${path}`);
   });
 
-  test('fetches erroneously data from an API', () => {
+  test('fetches erroneously data from an API', async () => {
     axios.get.mockImplementationOnce(() => Promise.reject(error));
 
-    expect(destinationsTours(path)).resolves.toEqual(error);
+    try {
+      await destinationsTours(path);
+    } catch (e) {
+      expect(e).toEqual(error);
+    }
   });
 });

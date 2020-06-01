@@ -29,9 +29,13 @@ describe('fetch data from API', () => {
     expect(axios.get).toHaveBeenCalledWith(`top/${path}`);
   });
 
-  test('fetches erroneously data from an API', () => {
+  test('fetches erroneously data from an API', async () => {
     axios.get.mockImplementationOnce(() => Promise.reject(error));
 
-    expect(topContent(path)).resolves.toEqual(error);
+    try {
+      await topContent(path);
+    } catch (e) {
+      expect(e).toEqual(error);
+    }
   });
 });

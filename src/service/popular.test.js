@@ -27,9 +27,13 @@ describe('fetch data from API', () => {
     expect(axios.get).toHaveBeenCalledWith('popular');
   });
 
-  test('fetches erroneously data from an API', () => {
+  test('fetches erroneously data from an API', async () => {
     axios.get.mockImplementationOnce(() => Promise.reject(error));
 
-    expect(popular()).resolves.toEqual(error);
+    try {
+      await popular();
+    } catch (e) {
+      expect(e).toEqual(error);
+    }
   });
 });
