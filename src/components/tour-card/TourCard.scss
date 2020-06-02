@@ -4,7 +4,6 @@
 @import "./../../styles/flex-styles";
 
 .tourcard-container {
-  min-width: 100%;
   flex-direction: row;
   padding: 0.5rem;
   box-shadow: $shadow-activity-card;
@@ -12,13 +11,14 @@
   box-sizing: border-box;
   @include flex-start;
   overflow: hidden;
+  margin: 0 1vw 1rem 1vw;
+  transition: $transition-activity-card;
 
   .tourcard-image {
     overflow: hidden;
     @include flex-center-xy;
     box-sizing: border-box;
-    height: 4.3rem;
-    width: 4.3rem;
+    width: 6.5rem;
     img {
       height: auto;
       width: 150%;
@@ -26,27 +26,77 @@
   }
 }
 
-// IPAD 
+.card-tour {
+  min-width: 95%;
+}
+
+// IPAD
 @media (min-width: 768px) {
   .tourcard-container {
-    min-width: fit-content;
+    // min-width: 40%;
+    // padding: 0;
+    // width: 45%;
+    // margin-bottom: 2rem;
+    // @include flex-center-xy;
+
+    &:hover{
+      box-shadow: $shadow-activity-card-hover;
+      cursor: pointer;
+  
+      .tour-details-title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-tour {
     flex-direction: column;
     padding: 0;
+    width: 45%;
+    margin-bottom: 2rem;
+    @include flex-center-xy;
+    min-width: 40%;
+
     .tourcard-image {
-        @include flex-start;
-        height: 20.9rem;
-        width: 20.9rem;
+      min-height: fit-content;
+      min-width: fit-content;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .card-result {
+    width: 57%;
+    padding: 0rem;
+    min-width: 50%;
+
+    .tourcard-image {
+      padding: 1rem 0 1rem 1rem;
+      width: 50%;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .tour-details-container { //PASSAR PARA TOUCARDDETAILS.SCSS
+      height: 100%;
     }
   }
 }
 
-// NOTEBOOK  
-@media (min-width: 1280px) {
-  .tourcard-container {
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .card-tour {
+    min-width: 22%;
+    width: 22%;
+    flex-wrap: nowrap;
     .tourcard-image {
-        @include flex-center-xy;
-        height: 11.8rem;
-        width: 18rem;
+      img {
+        height: 10rem;
+      }
     }
   }
 }

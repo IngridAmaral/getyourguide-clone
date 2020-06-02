@@ -1,0 +1,216 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.tour-details-container {
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  @include flex-start;
+  overflow: hidden;
+  padding-left: 1rem;
+  position: relative;
+
+  .tour-details-title {
+    font-size: $font-size-base;
+    font-weight: $font-semi-bold;
+    color: $clr-secondary;
+  }
+
+  .rating-stars {
+    @include flex-center-xy;
+    span {
+      color: $clr-raven;
+      font-size: $font-size-mili;
+    }
+  }
+
+  .tour-details-time {
+    @include flex-center-xy;
+    color: $clr-raven;
+    font-size: $font-size-mili;
+    font-weight: $font-semi-bold;
+
+      .details-time-title {
+        letter-spacing: .5px;
+        margin-right: .5rem;
+        font-style: normal;
+      }
+  }
+
+  .tour-details-stamp {
+    background-color: $clr-primary;
+    color: $clr-solid-white;
+    font-size: $font-size-micro;
+    border-radius: .2rem;
+    padding: 0 .2rem 0 .2rem;
+    margin: .5rem .5rem .5rem 0;
+    letter-spacing: .5px;
+  }
+
+  .title-rating-stars {
+    visibility: hidden;
+    color: $clr-raven;
+    font-size: $font-size-mili;
+    @include flex-start;
+    flex-direction: column;
+  }
+
+  .tour-price {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+    align-items: flex-end;
+   
+    .from-price, .card-details-message {
+      color: $clr-raven;
+      font-size: $font-size-mili;
+    }
+  }
+
+  .duration-result {
+    display: none;
+  }
+}
+
+svg {
+  width: .8rem;
+  height: .8rem;
+  fill: $clr-raven;
+  margin-right: .5rem;
+}
+
+.title-stars > svg {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+
+.rating-stars > svg, .title-stars > svg, .show-stars > svg {
+  margin: 0;
+}
+
+.show-stars {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.free-cancellation-flag {
+  font-size: $font-size-mili;
+  color: $clr-jade;
+  margin-bottom: 2.5rem;
+}
+
+.total-rating {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: $clr-raven;
+  font-size: $font-size-mili;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.result-description, .result-stamp {
+  display: none;
+}
+
+.card-result {
+  line-height: 1rem;
+  .tour-price {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// IPAD 
+@media (min-width: 768px) {
+  .tour-details-container {
+    padding: 1rem;
+
+    .rating-stars {
+      display: none;
+    }
+
+    .title-rating-stars {
+      visibility: visible;
+      margin-top: 1rem;
+    }
+
+    .tour-price {
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .duration-result {
+      display: block;
+      @include flex-center-xy;
+      color: $clr-raven;
+      font-size: $font-size-mili;
+      font-weight: $font-semi-bold;
+
+      .details-time-title {
+        letter-spacing: .5px;
+        margin-right: .5rem;
+        font-style: normal;
+      }
+    }
+  }
+ 
+  .result-description {
+    display: block;
+    color: $clr-raven;
+    font-size: $font-size-mili;
+    margin-bottom: .5rem;
+  }
+
+  .card-details-message {
+    display: none;
+  }
+
+  .hide-stamp {
+    display: none;
+  }
+
+  .result-stamp {
+    display: block;
+  }
+
+  .card-result {
+    .tourcard-image {
+      margin: 1rem 0 1rem 1rem;
+      padding: 0;
+      width: fit-content;
+
+      .card-result .tourcard-image img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+
+    .tour-price {
+      .price {
+        font-size: $font-size-h4;
+      }
+    }
+
+    .tour-details-time {
+      display: none;
+    }
+
+    .show-stars > svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+}
+
+// NOTEBOOK  
+@media (min-width: 1280px) {
+  
+}

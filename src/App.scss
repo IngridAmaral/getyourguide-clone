@@ -1,8 +1,21 @@
 .App {
-    width: 100vw;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+//   padding-right: 2rem;
+//   padding-left: 2rem;
+  box-sizing: border-box;
+  min-width: 360px;
+  flex-wrap: wrap;
+//   margin-left: auto;
+//   margin-right: auto;
+}
+
+// IPAD
+@media (min-width: 768px) {
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
 }

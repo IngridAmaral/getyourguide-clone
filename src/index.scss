@@ -1,7 +1,13 @@
 @import './styles/fonts-props';
 
+:root {
+  font-size: $font-size-base;
+}
+
 body {
   margin: 0;
   font-family: $font;
+  line-height: 1.25rem;
+  font-weight: $font-semi-bold;
 }
 

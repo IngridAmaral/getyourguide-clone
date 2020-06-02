@@ -21,11 +21,17 @@ class App extends React.Component {
 
   render() {
     const { topContent } = this.props;
-    // console.log('props', this.props);
+    console.log('props', topContent);
+    if (topContent.length === 0) {
+      return null;
+    }
+
     return (
       <div className="App">
-        { topContent.length > 0
-        && (<TourCard topContent={topContent} />)}
+        <TourCard topContent={topContent} />
+        <TourCard topContent={topContent} />
+        <TourCard topContent={topContent} />
+        <TourCard topContent={topContent} />
       </div>
     );
   }
