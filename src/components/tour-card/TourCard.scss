@@ -33,12 +33,6 @@
 // IPAD
 @media (min-width: 768px) {
   .tourcard-container {
-    // min-width: 40%;
-    // padding: 0;
-    // width: 45%;
-    // margin-bottom: 2rem;
-    // @include flex-center-xy;
-
     &:hover{
       box-shadow: $shadow-activity-card-hover;
       cursor: pointer;
@@ -80,22 +74,18 @@
         width: 100%;
       }
     }
-
-    .tour-details-container { //PASSAR PARA TOUCARDDETAILS.SCSS
-      height: 100%;
-    }
   }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
   .card-tour {
-    min-width: 22%;
-    width: 22%;
+    min-width: 20%;
+    width: 20%;
     flex-wrap: nowrap;
     .tourcard-image {
       img {
-        height: 10rem;
+        height: 11rem;
       }
     }
   }

@@ -1,29 +1,18 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import { topContentPropType } from '../../propTypes/topContentType';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
-const isResult = false;
+const isResult = true;
 
 class TourCard extends React.Component {
   render() {
     const { topContent } = this.props;
-    // console.log(topContent[0].activitiess[0]);
     const {
       imageUrl,
       imageAlt,
-      averageRating,
-      title,
-      totalRatingTitle,
-      duration,
-      isGygOriginal,
-      price,
-      cardBannerMessage,
-      totalRating,
-      smallDescription,
-      freeCancellationFlag,
     } = topContent[0].activities[0];
-
     return (
       <div className={`tourcard-container ${isResult ? 'card-result' : 'card-tour'} `}>
         <div className="tourcard-image">
@@ -31,16 +20,7 @@ class TourCard extends React.Component {
         </div>
         <TourCardDetails
           isResult={isResult}
-          averageRating={averageRating}
-          totalRating={totalRating}
-          title={title}
-          totalRatingTitle={totalRatingTitle}
-          duration={duration}
-          isGygOriginal={isGygOriginal}
-          price={price}
-          cardBannerMessage={cardBannerMessage}
-          smallDescription={smallDescription}
-          freeCancellationFlag={freeCancellationFlag}
+          activity={topContent[0].activities[0]}
         />
       </div>
     );
@@ -48,3 +28,7 @@ class TourCard extends React.Component {
 }
 
 export default TourCard;
+
+TourCard.propTypes = {
+  topContent: topContentPropType.isRequired,
+};

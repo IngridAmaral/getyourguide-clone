@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import PropTypes from 'prop-types';
+import { activityPropTypes } from '../../propTypes/activityType';
+import { isResultPropType } from '../../propTypes/isRestultPropType';
 import './TourCardDetails.scss';
 import ActivityDuration from './ActivityDuration';
 import { ReactComponent as Star } from '../../assets/svgs/star.svg';
@@ -11,7 +12,8 @@ const rating = [1, 2, 3, 4, 5];
 
 class TourCardDetails extends React.Component {
   renderRatingStars = () => {
-    const { averageRating } = this.props;
+    const { activity } = this.props;
+    const { averageRating } = activity;
 
     return rating.map((num) => {
       if (averageRating >= num) {
@@ -25,6 +27,7 @@ class TourCardDetails extends React.Component {
   };
 
   render() {
+    const { activity, isResult } = this.props;
     const {
       totalRating,
       title,
@@ -35,8 +38,7 @@ class TourCardDetails extends React.Component {
       cardBannerMessage,
       smallDescription,
       freeCancellationFlag,
-      isResult,
-    } = this.props;
+    } = activity;
 
     return (
       <div className="tour-details-container">
@@ -87,15 +89,6 @@ class TourCardDetails extends React.Component {
 export default TourCardDetails;
 
 TourCardDetails.propTypes = {
-  isResult: PropTypes.bool.isRequired,
-  duration: PropTypes.string.isRequired,
-  averageRating: PropTypes.string.isRequired,
-  totalRating: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  totalRatingTitle: PropTypes.string.isRequired,
-  isGygOriginal: PropTypes.bool.isRequired,
-  price: PropTypes.objectOf(PropTypes.string).isRequired,
-  cardBannerMessage: PropTypes.string.isRequired,
-  smallDescription: PropTypes.string.isRequired,
-  freeCancellationFlag: PropTypes.bool.isRequired,
+  activity: activityPropTypes.isRequired,
+  isResult: isResultPropType.isRequired,
 };

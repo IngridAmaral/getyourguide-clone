@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { topContentPropType } from './propTypes/topContentType';
 import { getDestinationsTours } from './redux/reducers/destinationsTours';
 import { getPopular } from './redux/reducers/popular';
 import { getTopContent } from './redux/reducers/topContent';
@@ -22,7 +23,6 @@ class App extends React.Component {
 
   render() {
     const { topContent } = this.props;
-    console.log('props', topContent);
     if (topContent.length === 0) {
       return null;
     }
@@ -56,6 +56,7 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 App.propTypes = {
+  topContent: topContentPropType.isRequired,
   fetchDestinationsTours: PropTypes.func.isRequired,
   fetchPopular: PropTypes.func.isRequired,
   fetchTopContent: PropTypes.func.isRequired,
