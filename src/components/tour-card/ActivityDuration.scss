@@ -1,0 +1,41 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.activity-duration {
+  @include flex-center-xy;
+  color: $clr-raven;
+  font-size: $font-size-mili;
+  font-weight: $font-semi-bold;
+  .activity-duration-title {
+    letter-spacing: 0.5px;
+    margin-right: 0.5rem;
+  }
+}
+
+.result-duration-bottom, 
+.result-duration-top > svg, 
+.duration-top > svg,
+.duration-bottom {
+  display: none;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .result-duration-bottom, 
+  .duration-top > svg {
+    display: flex;
+  }
+
+  .result-duration-top {
+    display: none;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .duration-top {
+    margin-top: 1rem;
+  }
+}

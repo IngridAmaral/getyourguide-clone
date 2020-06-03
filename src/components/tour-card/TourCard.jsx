@@ -3,7 +3,7 @@ import React from 'react';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
-const isResult = true;
+const isResult = false;
 
 class TourCard extends React.Component {
   render() {

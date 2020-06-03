@@ -26,19 +26,6 @@
     }
   }
 
-  .tour-details-time {
-    @include flex-center-xy;
-    color: $clr-raven;
-    font-size: $font-size-mili;
-    font-weight: $font-semi-bold;
-
-      .details-time-title {
-        letter-spacing: .5px;
-        margin-right: .5rem;
-        font-style: normal;
-      }
-  }
-
   .tour-details-stamp {
     background-color: $clr-primary;
     color: $clr-solid-white;
@@ -70,10 +57,6 @@
       font-size: $font-size-mili;
     }
   }
-
-  .duration-result {
-    display: none;
-  }
 }
 
 svg {
@@ -89,7 +72,9 @@ svg {
   margin: 0;
 }
 
-.rating-stars > svg, .title-stars > svg, .show-stars > svg {
+.rating-stars > svg, 
+.title-stars > svg, 
+.show-stars > svg {
   margin: 0;
 }
 
@@ -144,20 +129,6 @@ svg {
       bottom: 1rem;
       right: 1rem;
     }
-
-    .duration-result {
-      display: block;
-      @include flex-center-xy;
-      color: $clr-raven;
-      font-size: $font-size-mili;
-      font-weight: $font-semi-bold;
-
-      .details-time-title {
-        letter-spacing: .5px;
-        margin-right: .5rem;
-        font-style: normal;
-      }
-    }
   }
  
   .result-description {
@@ -197,17 +168,11 @@ svg {
         font-size: $font-size-h4;
       }
     }
-
-    .tour-details-time {
-      display: none;
-    }
-
     .show-stars > svg {
       width: 1rem;
       height: 1rem;
     }
   }
-
 }
 
 // NOTEBOOK  

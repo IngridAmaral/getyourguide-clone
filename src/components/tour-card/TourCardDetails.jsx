@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import './TourCardDetails.scss';
+import ActivityDuration from './ActivityDuration';
 import { ReactComponent as Time } from '../../assets/svgs/time.svg';
 import { ReactComponent as Star } from '../../assets/svgs/star.svg';
 import { ReactComponent as StarHalf } from '../../assets/svgs/star-half.svg';
@@ -49,22 +50,22 @@ class TourCardDetails extends React.Component {
           {isResult && (<span className="tour-details-stamp result-stamp">GetYourGuide Original</span>
           )}
         </div>
-        <div className="tour-details-time">
-          <Time />
-          <div className="details-time-title">Duration:</div>
-          {duration}
-        </div>
+        <ActivityDuration
+          isResult={isResult}
+          duration={duration}
+          position="top"
+        />
         {isResult && (
           <div className="result-description">
             {smallDescription}
           </div>
         )}
         <span className={`tour-details-stamp ${!isResult ? 'show-stamp' : 'hide-stamp'}`}>GetYourGuide Original</span>
-        <div className="duration-result">
-          <Duration />
-          <div className="details-time-title">Duration:</div>
-          {duration}
-        </div>
+        <ActivityDuration
+          isResult={isResult}
+          duration={duration}
+          position="bottom"
+        />
         {isResult && freeCancellationFlag && (<span className="free-cancellation-flag">Free cancellation up to 24 hours in advance</span>)}
         <div className="tour-details-overall">
           {!isResult && (
