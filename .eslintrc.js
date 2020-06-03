@@ -39,6 +39,7 @@ module.exports = {
     {
       files: [
         "**/*.test.js",
+        "**/*.test.jsx",
         "**/__mocks__/**/*",
       ],
       env: {
