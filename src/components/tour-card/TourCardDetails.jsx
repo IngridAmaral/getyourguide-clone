@@ -1,13 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './TourCardDetails.scss';
 import ActivityDuration from './ActivityDuration';
-import { ReactComponent as Time } from '../../assets/svgs/time.svg';
 import { ReactComponent as Star } from '../../assets/svgs/star.svg';
 import { ReactComponent as StarHalf } from '../../assets/svgs/star-half.svg';
 import { ReactComponent as StarEmpty } from '../../assets/svgs/star-empty.svg';
-import { ReactComponent as Duration } from '../../assets/svgs/aboutTour/duration.svg';
-
 
 const rating = [1, 2, 3, 4, 5];
 
@@ -28,7 +26,6 @@ class TourCardDetails extends React.Component {
 
   render() {
     const {
-      averageRating,
       totalRating,
       title,
       totalRatingTitle,
@@ -40,7 +37,7 @@ class TourCardDetails extends React.Component {
       freeCancellationFlag,
       isResult,
     } = this.props;
-    // console.log(averageRating);
+
     return (
       <div className="tour-details-container">
         <span className="tour-details-title">{title}</span>
@@ -60,7 +57,7 @@ class TourCardDetails extends React.Component {
             {smallDescription}
           </div>
         )}
-        <span className={`tour-details-stamp ${!isResult ? 'show-stamp' : 'hide-stamp'}`}>GetYourGuide Original</span>
+        <span className={`tour-details-stamp ${!isResult && isGygOriginal ? 'show-stamp' : 'hide-stamp'}`}>GetYourGuide Original</span>
         <ActivityDuration
           isResult={isResult}
           duration={duration}
@@ -88,3 +85,17 @@ class TourCardDetails extends React.Component {
 }
 
 export default TourCardDetails;
+
+TourCardDetails.propTypes = {
+  isResult: PropTypes.bool.isRequired,
+  duration: PropTypes.string.isRequired,
+  averageRating: PropTypes.string.isRequired,
+  totalRating: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  totalRatingTitle: PropTypes.string.isRequired,
+  isGygOriginal: PropTypes.bool.isRequired,
+  price: PropTypes.objectOf(PropTypes.string).isRequired,
+  cardBannerMessage: PropTypes.string.isRequired,
+  smallDescription: PropTypes.string.isRequired,
+  freeCancellationFlag: PropTypes.bool.isRequired,
+};

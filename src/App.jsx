@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { getDestinationsTours } from './redux/reducers/destinationsTours';
 import { getPopular } from './redux/reducers/popular';
 import { getTopContent } from './redux/reducers/topContent';
@@ -53,3 +54,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  fetchDestinationsTours: PropTypes.func.isRequired,
+  fetchPopular: PropTypes.func.isRequired,
+  fetchTopContent: PropTypes.func.isRequired,
+};
