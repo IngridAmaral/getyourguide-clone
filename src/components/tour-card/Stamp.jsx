@@ -8,15 +8,15 @@ const STAMPS = {
   gygOriginal: 'GetYourGuide Original',
 };
 
-const getStampKey = (key) => {
-  if (STAMPS[key] === undefined) {
+const getStampKey = (sentKey) => {
+  if (STAMPS[sentKey] === undefined) {
     return 'default';
   }
-  return key;
+  return sentKey;
 };
 
-const Stamp = ({ position, key, page }) => {
-  const stampKey = getStampKey(key);
+const Stamp = ({ position, sentKey, page }) => {
+  const stampKey = getStampKey(sentKey);
   return (
     <div className="stamp-container">
       <span className={`${stampKey} ${position} ${page}`}>{STAMPS[stampKey]}</span>
@@ -28,6 +28,10 @@ export default Stamp;
 
 Stamp.propTypes = {
   position: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
+  sentKey: PropTypes.string,
   page: PropTypes.string.isRequired,
+};
+
+Stamp.defaultProps = {
+  sentKey: 'default',
 };

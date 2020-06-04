@@ -43,7 +43,7 @@ class TourCardDetails extends React.Component {
 
     return (
       <div className="tour-details-container">
-        <span className="tour-details-titlse">{title}</span>
+        <span className="tour-details-title">{title}</span>
         <div className={isResult ? 'show-stars' : 'rating-stars'}>
           {this.renderRatingStars()}
           <span className="total-rating">{totalRating}</span>
@@ -52,7 +52,7 @@ class TourCardDetails extends React.Component {
           && (
           <Stamp
             position="top"
-            key="gygOriginal"
+            sentKey="gygOriginal"
             page={isResult ? 'result' : 'home'}
           />
           )}
@@ -71,7 +71,7 @@ class TourCardDetails extends React.Component {
         && (
         <Stamp
           position="bottom"
-          key="gygOriginal"
+          sentKey="gygOriginal"
           page={isResult ? 'result' : 'home'}
         />
         )}

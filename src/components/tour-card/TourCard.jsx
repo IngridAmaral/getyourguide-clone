@@ -4,7 +4,7 @@ import { topContentPropType } from '../../propTypes/topContentType';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
-const isResult = true;
+const isResult = false;
 
 class TourCard extends React.Component {
   render() {
@@ -13,6 +13,7 @@ class TourCard extends React.Component {
       imageUrl,
       imageAlt,
     } = topContent[0].activities[0];
+    console.log(topContent);
     return (
       <div className={`tourcard-container ${isResult ? 'card-result' : 'card-tour'} `}>
         <div className="tourcard-image">
