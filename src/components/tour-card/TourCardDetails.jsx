@@ -3,6 +3,7 @@ import React from 'react';
 import { activityPropTypes } from '../../propTypes/activityType';
 import { isResultPropType } from '../../propTypes/isRestultPropType';
 import './TourCardDetails.scss';
+import Stamp from './Stamp';
 import ActivityDuration from './ActivityDuration';
 import { ReactComponent as Star } from '../../assets/svgs/star.svg';
 import { ReactComponent as StarHalf } from '../../assets/svgs/star-half.svg';
@@ -13,16 +14,16 @@ const rating = [1, 2, 3, 4, 5];
 class TourCardDetails extends React.Component {
   renderRatingStars = () => {
     const { activity } = this.props;
-    const { averageRating } = activity;
+    const { averageRating, title } = activity;
 
     return rating.map((num) => {
       if (averageRating >= num) {
-        return <Star />;
+        return <Star key={title + num} />;
       }
       if (num - averageRating < 0.5) {
-        return <StarHalf />;
+        return <StarHalf key={title + num} />;
       }
-      return <StarEmpty />;
+      return <StarEmpty key={title + num} />;
     });
   };
 
@@ -42,11 +43,18 @@ class TourCardDetails extends React.Component {
 
     return (
       <div className="tour-details-container">
-        <span className="tour-details-title">{title}</span>
+        <span className="tour-details-titlse">{title}</span>
         <div className={isResult ? 'show-stars' : 'rating-stars'}>
           {this.renderRatingStars()}
           <span className="total-rating">{totalRating}</span>
-          {isResult && (<span className="tour-details-stamp result-stamp">GetYourGuide Original</span>
+          {isResult
+          && isGygOriginal
+          && (
+          <Stamp
+            position="top"
+            key="gygOriginal"
+            page={isResult ? 'result' : 'home'}
+          />
           )}
         </div>
         <ActivityDuration
@@ -59,7 +67,14 @@ class TourCardDetails extends React.Component {
             {smallDescription}
           </div>
         )}
-        <span className={`tour-details-stamp ${!isResult && isGygOriginal ? 'show-stamp' : 'hide-stamp'}`}>GetYourGuide Original</span>
+        {isGygOriginal
+        && (
+        <Stamp
+          position="bottom"
+          key="gygOriginal"
+          page={isResult ? 'result' : 'home'}
+        />
+        )}
         <ActivityDuration
           isResult={isResult}
           duration={duration}

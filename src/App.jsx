@@ -29,10 +29,10 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <TourCard topContent={topContent} />
-        <TourCard topContent={topContent} />
-        <TourCard topContent={topContent} />
-        <TourCard topContent={topContent} />
+        <TourCard key={1} topContent={topContent} />
+        <TourCard key={12} topContent={topContent} />
+        <TourCard key={13} topContent={topContent} />
+        <TourCard key={14} topContent={topContent} />
       </div>
     );
   }

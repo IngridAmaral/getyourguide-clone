@@ -1,0 +1,49 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.stamp-container {
+  @include flex-center-xy;
+
+  span {
+    color: $clr-solid-white;
+    font-size: $font-size-micro;
+    border-radius: 0.2rem;
+    padding: 0 0.2rem 0 0.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.gygOriginal, .default {
+  background-color: $clr-primary;
+}
+
+.gygOriginal.top {
+  display: none;
+}
+
+.gygOriginal.result {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.gygOriginal.home {
+  margin-top: 0.2rem;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .gygOriginal.top,
+  .gygOriginal.bottom.home {
+    display: block;
+  }
+
+  .gygOriginal.bottom.result {
+    display: none;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
