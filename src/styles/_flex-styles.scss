@@ -10,8 +10,8 @@
 
 @mixin flex-center-y-line {
     @include display-flex;
-    align-items: unset;
-    justify-content: center;
+    align-items: center;
+    justify-content: unset;
 }
 
 @mixin flex-center-y-column {
@@ -21,7 +21,7 @@
     justify-content: unset;
 }
 
-@mixin flex-center-x {
+@mixin flex-center-x-line {
     @include display-flex;
     align-items: unset;
     justify-content: center;

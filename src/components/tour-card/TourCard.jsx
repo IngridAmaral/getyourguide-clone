@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { topContentPropType } from '../../propTypes/topContentType';
+import { activityPropTypes } from '../../propTypes/activityType';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
@@ -8,20 +8,20 @@ const isResult = false;
 
 class TourCard extends React.Component {
   render() {
-    const { topContent } = this.props;
+    const { activity } = this.props;
     const {
       imageUrl,
       imageAlt,
-    } = topContent[0].activities[0];
-    console.log(topContent);
+    } = activity;
+    const page = isResult ? 'result' : 'home';
     return (
-      <div className={`tourcard-container ${isResult ? 'card-result' : 'card-tour'} `}>
-        <div className="tourcard-image">
+      <div className={`tourcard-container ${page}`}>
+        <div className={`tourcard-image ${page}`}>
           <img src={imageUrl} alt={imageAlt} />
         </div>
         <TourCardDetails
           isResult={isResult}
-          activity={topContent[0].activities[0]}
+          activity={activity}
         />
       </div>
     );
@@ -31,5 +31,5 @@ class TourCard extends React.Component {
 export default TourCard;
 
 TourCard.propTypes = {
-  topContent: topContentPropType.isRequired,
+  activity: activityPropTypes.isRequired,
 };

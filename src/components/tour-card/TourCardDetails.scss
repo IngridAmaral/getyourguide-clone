@@ -5,6 +5,7 @@
 
 .tour-details-container {
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   flex-direction: column;
   @include flex-start;
@@ -12,174 +13,156 @@
   padding-left: 1rem;
   position: relative;
 
-  .tour-details-title {
-    font-size: $font-size-base;
-    font-weight: $font-semi-bold;
-    color: $clr-secondary;
-  }
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-  .rating-stars {
-    @include flex-center-xy;
-    span {
-      color: $clr-raven;
-      font-size: $font-size-mili;
+    .tour-details-title {
+      width: 80%;
+      font-size: $font-size-base;
+      font-weight: $font-semi-bold;
+      color: $clr-secondary;
+    }
+
+    .like {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-left: 0.5rem;
+      box-sizing: border-box;
+
+      svg {
+        margin: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 
-  .tour-details-container { 
-    height: 100%;
+  .rating-horizontal {
+    &.home,
+    &.result {
+      @include flex-center-x-line;
+      flex-wrap: wrap;
+      margin: 0.3rem 0;
+    }
   }
 
-  .tour-details-stamp {
-    background-color: $clr-primary;
-    color: $clr-solid-white;
-    font-size: $font-size-micro;
-    border-radius: .2rem;
-    padding: 0 .2rem 0 .2rem;
-    margin: .5rem .5rem .5rem 0;
-    letter-spacing: .5px;
-  }
-
-  .title-rating-stars {
-    visibility: hidden;
-    color: $clr-raven;
+  .free-cancellation-flag {
     font-size: $font-size-mili;
-    @include flex-start;
-    flex-direction: column;
+    color: $clr-jade;
+    margin-top: 0.5rem;
+    width: 85%;
+  }
+
+  .tour-description {
+    display: none;
   }
 
   .tour-price {
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: .5rem;
-    right: .5rem;
+    bottom: 0.1rem;
+    right: 0.1rem;
     align-items: flex-end;
-   
-    .from-price, .card-details-message {
+
+    .from-price,
+    .card-details-message {
       color: $clr-raven;
       font-size: $font-size-mili;
     }
   }
-}
 
-svg {
-  width: .8rem;
-  height: .8rem;
-  fill: $clr-raven;
-  margin-right: .5rem;
-}
+  &.home {
+    padding-bottom: 2rem;
 
-.title-stars > svg {
-  width: 1rem;
-  height: 1rem;
-  margin: 0;
-}
+    .like {
+      width: 20%;
+      @include flex-center-xy;
+    }
 
-.rating-stars > svg, 
-.title-stars > svg, 
-.show-stars > svg {
-  margin: 0;
-}
+    .like > svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
 
-.show-stars {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
+    .header {
+      margin-bottom: 0.5rem;
+    }
+  }
 
-.free-cancellation-flag {
-  font-size: $font-size-mili;
-  color: $clr-jade;
-  margin-bottom: 2.5rem;
-}
-
-.total-rating {
-  margin-left: .5rem;
-  margin-right: .5rem;
-  color: $clr-raven;
-  font-size: $font-size-mili;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-}
-
-.result-description, .result-stamp {
-  display: none;
-}
-
-.card-result {
-  line-height: 1rem;
-  .tour-price {
-    bottom: 0;
-    right: 0;
+  &.result {
+    padding-bottom: 1.8rem;
   }
 }
 
-// IPAD 
+// IPAD
 @media (min-width: 768px) {
   .tour-details-container {
-    padding: 1rem;
-
-    .rating-stars {
-      display: none;
+    &.result {
+      padding-bottom: 0;
     }
 
-    .title-rating-stars {
-      visibility: visible;
-      margin-top: 1rem;
-    }
+    &.home {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
 
-    .tour-price {
-      bottom: 1rem;
-      right: 1rem;
-    }
-  }
- 
-  .result-description {
-    display: block;
-    color: $clr-raven;
-    font-size: $font-size-mili;
-    margin-bottom: .5rem;
-  }
+      .header {
+        margin-bottom: 0rem;
 
-  .card-details-message {
-    display: none;
-  }
-
-  .hide-stamp {
-    display: none;
-  }
-
-  .result-stamp {
-    display: block;
-  }
-
-  .card-result {
-    .tourcard-image {
-      margin: 1rem 0 1rem 1rem;
-      padding: 0;
-      width: fit-content;
-
-      .card-result .tourcard-image img {
-        height: auto;
-        width: auto;
-        max-width: 100%;
+        .tour-details-title {
+          width: 100%;
+        }
       }
-    }
 
-    .tour-price {
-      .price {
-        font-size: $font-size-h4;
+      .tour-price {
+        bottom: 1rem;
+        right: 1rem;
+
+        .card-details-message {
+          display: none;
+        }
       }
-    }
-    .show-stars > svg {
-      width: 1rem;
-      height: 1rem;
+
+      .rating-horizontal {
+        display: none;
+      }
+
+      .like {
+        display: none;
+      }
     }
   }
 }
 
-// NOTEBOOK  
+// NOTEBOOK
 @media (min-width: 1280px) {
-  
+  .tour-details-container {
+    &.home {
+      padding-bottom: 0.5rem;
+      .header {
+        margin-bottom: 1rem;
+      }
+
+      .rating-horizontal {
+        display: none;
+      }
+    }
+
+    &.result {
+      .header {
+        margin-bottom: 0.5rem;
+      }
+      .tour-description {
+        display: block;
+        color: $clr-raven;
+        font-size: $font-size-mili;
+        margin: 0.5rem 0;
+        width: 95%;
+      }
+    }
+  }
 }

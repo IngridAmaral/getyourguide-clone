@@ -23,27 +23,24 @@
   display: none;
 }
 
-.gygOriginal.result {
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.gygOriginal.home {
-  margin-top: 0.2rem;
-}
-
 // IPAD
 @media (min-width: 768px) {
-  .gygOriginal.top,
   .gygOriginal.bottom.home {
     display: block;
-  }
+  }  
 
-  .gygOriginal.bottom.result {
+  .gygOriginal.top {
     display: none;
   }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
+  .gygOriginal.top.result {
+    display: block;
+  }
+
+  .gygOriginal.bottom.result {
+    display: none;
+  }
 }

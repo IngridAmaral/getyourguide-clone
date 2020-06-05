@@ -4,74 +4,66 @@
 @import "./../../styles/flex-styles";
 
 .tourcard-container {
-  flex-direction: row;
-  padding: 0.5rem;
+  width: 100%;
   box-shadow: $shadow-activity-card;
   border: $border-activity-card;
   box-sizing: border-box;
   @include flex-start;
   overflow: hidden;
-  margin: 0 1vw 1rem 1vw;
+  margin: 0 0 1rem 0;
   transition: $transition-activity-card;
 
-  .tourcard-image {
-    overflow: hidden;
-    @include flex-center-xy;
-    box-sizing: border-box;
-    width: 6.5rem;
-    img {
-      height: auto;
-      width: 150%;
+  &.home {
+    padding: 0.5rem;
+  }
+
+  &.result {
+    padding: 0.6rem;
+  }
+
+  &:active {
+    box-shadow: $shadow-activity-card-hover;
+    .tour-details-title {
+      text-decoration: underline;
     }
   }
-}
 
-.card-tour {
-  min-width: 95%;
+  .tourcard-image.result {
+    & img {
+      height: auto;
+      width: 5.6rem;
+    }
+  }
+
+  .tourcard-image.home {
+    overflow: hidden;
+    @include flex-center-xy;
+    & img {
+      height: 4.2rem;
+      width: auto;
+    }
+  }
 }
 
 // IPAD
 @media (min-width: 768px) {
   .tourcard-container {
-    &:hover{
-      box-shadow: $shadow-activity-card-hover;
-      cursor: pointer;
-  
-      .tour-details-title {
-        text-decoration: underline;
-      }
+    &.result {
+      width: 100%;
     }
-  }
 
-  .card-tour {
-    flex-direction: column;
-    padding: 0;
-    width: 45%;
-    margin-bottom: 2rem;
-    @include flex-center-xy;
-    min-width: 40%;
+    &.home {
+      width: 48%;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
 
-    .tourcard-image {
-      min-height: fit-content;
-      min-width: fit-content;
-      img {
-        height: auto;
-        width: 100%;
-      }
-    }
-  }
-
-  .card-result {
-    width: 57%;
-    padding: 0rem;
-    min-width: 50%;
-
-    .tourcard-image {
-      padding: 1rem 0 1rem 1rem;
-      width: 50%;
-      img {
-        height: auto;
-        width: 100%;
+      .tourcard-image.home {
+        overflow: visible;
+        & img {
+          min-height: 335px;
+          width: auto;
+        }
       }
     }
   }
@@ -79,13 +71,39 @@
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .card-tour {
-    min-width: 20%;
-    width: 20%;
-    flex-wrap: nowrap;
-    .tourcard-image {
-      img {
-        height: 11rem;
+  .tourcard-container {
+    width: 100%;
+    &:hover {
+      box-shadow: $shadow-activity-card-hover;
+      cursor: pointer;
+
+      .tour-details-title {
+        text-decoration: underline;
+      }
+    }
+
+    &.result {
+      &.tourcard-image {
+        & img {
+          width: 13rem;
+          height: 9rem;
+        }
+      }
+    }
+
+    &.home {
+      flex-direction: column;
+      padding: 0;
+      width: 22%;
+      margin-bottom: 2rem;
+      @include flex-center-xy;
+
+      .tourcard-image.home {
+        overflow: visible;
+        & img {
+          min-height: 185px;
+          width: auto;
+        }
       }
     }
   }

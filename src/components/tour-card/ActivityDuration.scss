@@ -4,38 +4,59 @@
 @import "./../../styles/flex-styles";
 
 .activity-duration {
-  @include flex-center-xy;
+  @include flex-center-y-line;
   color: $clr-raven;
   font-size: $font-size-mili;
   font-weight: $font-semi-bold;
+
+  & svg {
+    width: $font-size-mili;
+    height: $font-size-mili;
+    margin-right: .2rem;
+  }
+
   .activity-duration-title {
     letter-spacing: 0.5px;
     margin-right: 0.5rem;
   }
-}
 
-.result-duration-bottom, 
-.result-duration-top > svg, 
-.duration-top > svg,
-.duration-bottom {
-  display: none;
+  &.result.top > svg,
+  &.home.top > svg,
+  &.home.bottom,
+  &.result.bottom {
+    display: none;
+  }
+
+  &.home {
+    margin-bottom: .3rem;
+  }
 }
 
 // IPAD
 @media (min-width: 768px) {
-  .result-duration-bottom, 
-  .duration-top > svg {
-    display: flex;
-  }
+  .activity-duration {
+    &.home.top > svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: $clr-raven;
+      display: flex;
+    }
 
-  .result-duration-top {
-    display: none;
+    &.result.bottom {
+      display: flex;
+    }
+
+    &.result.top {
+      display: none;
+    }
   }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .duration-top {
-    margin-top: 1rem;
+  .activity-duration {
+    &.result.bottom {
+      margin-top: .5rem;
+    }
   }
 }

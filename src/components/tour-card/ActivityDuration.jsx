@@ -6,9 +6,9 @@ import { ReactComponent as Time } from '../../assets/svgs/time.svg';
 import { ReactComponent as Duration } from '../../assets/svgs/aboutTour/duration.svg';
 
 const ActivityDuration = ({
-  isResult, duration, position,
+  page, duration, position,
 }) => (
-  <div className={`activity-duration ${isResult ? `result-duration-${position}` : `duration-${position}`}`}>
+  <div className={`activity-duration ${page} ${position}`}>
     {position === 'top' ? <Time /> : <Duration />}
     <div className="activity-duration-title">Duration:</div>
     <span>{duration}</span>
@@ -18,7 +18,7 @@ const ActivityDuration = ({
 export default ActivityDuration;
 
 ActivityDuration.propTypes = {
-  isResult: isResultPropType.isRequired,
+  page: isResultPropType.isRequired,
   duration: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
 };

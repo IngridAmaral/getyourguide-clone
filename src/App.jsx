@@ -12,6 +12,8 @@ import { fetchTopContentAC } from './redux/actions/getTopContent';
 import TourCard from './components/tour-card/TourCard';
 import './App.scss';
 
+const isResult = false;
+
 class App extends React.Component {
   componentDidMount() {
     const { fetchDestinationsTours, fetchPopular, fetchTopContent } = this.props;
@@ -23,16 +25,14 @@ class App extends React.Component {
 
   render() {
     const { topContent } = this.props;
+    const page = isResult ? 'result' : 'home';
     if (topContent.length === 0) {
       return null;
     }
 
     return (
-      <div className="App">
-        <TourCard key={1} topContent={topContent} />
-        <TourCard key={12} topContent={topContent} />
-        <TourCard key={13} topContent={topContent} />
-        <TourCard key={14} topContent={topContent} />
+      <div className={`App ${page}`}>
+        {topContent[0].activities.map((activity) => <TourCard activity={activity} />)}
       </div>
     );
   }
