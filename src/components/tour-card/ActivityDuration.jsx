@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isResultPropType } from '../../propTypes/isRestultPropType';
 import './ActivityDuration.scss';
 import { ReactComponent as Time } from '../../assets/svgs/time.svg';
 import { ReactComponent as Duration } from '../../assets/svgs/aboutTour/duration.svg';
@@ -18,7 +17,7 @@ const ActivityDuration = ({
 export default ActivityDuration;
 
 ActivityDuration.propTypes = {
-  page: isResultPropType.isRequired,
+  page: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
 };

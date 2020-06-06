@@ -40,12 +40,54 @@
     }
   }
 
-  .rating-horizontal {
+  .rating,
+  .rating-title {
+    color: $clr-raven;
+    font-size: $font-size-mili;
+    margin: 0 0.5rem 0 0;
+  }
+
+  .rating-column {
     &.home,
     &.result {
-      @include flex-center-x-line;
-      flex-wrap: wrap;
-      margin: 0.3rem 0;
+      display: none;
+
+      &.rating-stars-container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .rating-horizontal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0.3rem 0;
+
+    .rating-stars-container {
+      display: flex;
+      align-items: center;
+
+      &.home.bottom,
+      &.result.bottom {
+        display: none;
+      }
+
+      &.home.top,
+      &.result.top {
+        .rating-title {
+          display: none;
+        }
+      }
+
+      &.result {
+        svg {
+          width: $font-size-mili;
+          height: $font-size-mili;
+        }
+      }
     }
   }
 
@@ -105,6 +147,16 @@
       padding-bottom: 0;
     }
 
+    .rating-column {
+      &.home {
+        display: flex;
+        margin-top: 1rem;
+        .rating {
+          display: none;
+        }
+      }
+    }
+
     &.home {
       padding: 1rem;
       display: flex;
@@ -156,6 +208,22 @@
       .header {
         margin-bottom: 0.5rem;
       }
+
+      .rating-horizontal {
+        .rating-stars-container {
+          &.result.top {
+            margin-bottom: .5rem;
+            .rating {
+              display: none;
+            }
+
+            .rating-title {
+              display: flex;
+            }
+          }
+        }
+      }
+
       .tour-description {
         display: block;
         color: $clr-raven;

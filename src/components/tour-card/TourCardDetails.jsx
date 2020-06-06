@@ -20,6 +20,8 @@ class TourCardDetails extends React.Component {
       cardBannerMessage,
       smallDescription,
       freeCancellationFlag,
+      totalRating,
+      totalRatingTitle,
     } = activity;
     const page = isResult ? 'result' : 'home';
     return (
@@ -32,7 +34,11 @@ class TourCardDetails extends React.Component {
         </div>
 
         <div className={`rating-horizontal ${page}`}>
-          <RatingStars page={page} position="top" activity={activity} />
+          <div className={`rating-stars-container ${page} top`}>
+            <RatingStars activity={activity} />
+            <span className="rating">{ totalRating}</span>
+            <span className="rating-title">{ totalRatingTitle }</span>
+          </div>
           {isGygOriginal && (
             <Stamp position="top" sentKey="gygOriginal" page={page} />
           )}
@@ -57,7 +63,14 @@ class TourCardDetails extends React.Component {
           </span>
         )}
         <div className="tour-details-overall">
-          <RatingStars page={page} position="bottom" activity={activity} />
+          <div className={`rating-column ${page}`}>
+            <div className={`rating-stars-container ${page} bottom`}>
+              <RatingStars activity={activity} />
+              <span className="rating">{ totalRating}</span>
+              <span className="rating-title">{ totalRatingTitle }</span>
+            </div>
+          </div>
+
           <div className="tour-price">
             <span className="from-price">From</span>
             <span className="price">{price.original}</span>

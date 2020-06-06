@@ -24,9 +24,7 @@ const defaultProps = {
 const { activity } = defaultProps;
 
 const {
-  totalRating,
   title,
-  totalRatingTitle,
   price,
   cardBannerMessage,
   smallDescription,
@@ -47,19 +45,19 @@ describe('<TourCardDetails />', () => {
 
     it('toggles class', () => {
       const wrapper = shallow(<TourCardDetails {...resultProps} />);
-      expect(wrapper.find('.show-stars').exists()).toBe(true);
+      expect(wrapper.find('.result').exists()).toBe(true);
     });
 
     it('displays correct text', () => {
       const wrapper = shallow(<TourCardDetails {...resultProps} />);
-      expect(wrapper.find('.result-description').text()).toBe(smallDescription);
+      expect(wrapper.find('.tour-description').text()).toBe(smallDescription);
     });
   });
 
   describe('when is home page', () => {
     it('does not render the description', () => {
       const wrapper = shallow(<TourCardDetails {...defaultProps} />);
-      expect(wrapper.containsMatchingElement('.result-description')).toEqual(false);
+      expect(wrapper.containsMatchingElement('.tour-description')).toEqual(false);
     });
 
     it('renders card details message', () => {
@@ -67,14 +65,9 @@ describe('<TourCardDetails />', () => {
       expect(wrapper.find('.card-details-message').text()).toBe(cardBannerMessage);
     });
 
-    it('renders rating stars', () => {
-      const wrapper = shallow(<TourCardDetails {...defaultProps} />);
-      expect(wrapper.find('.title-rating-stars').text()).toBe(totalRatingTitle);
-    });
-
     it('toggle class', () => {
       const wrapperHide = shallow(<TourCardDetails {...defaultProps} isResult={false} />);
-      expect(wrapperHide.find('.rating-stars').exists()).toEqual(true);
+      expect(wrapperHide.find('.home').exists()).toEqual(true);
     });
   });
 
@@ -82,12 +75,6 @@ describe('<TourCardDetails />', () => {
     it('has the correct title displayed', () => {
       const wrapper = shallow(<TourCardDetails {...defaultProps} />);
       expect(wrapper.find('.tour-details-title').text()).toBe(title);
-    });
-
-    it('has the correct total rating displayed', () => {
-      const wrapper = shallow(<TourCardDetails {...defaultProps} />);
-      const rating = totalRating.toString();
-      expect(wrapper.find('.total-rating').text()).toBe(rating);
     });
 
     it('has the correct price displayed', () => {

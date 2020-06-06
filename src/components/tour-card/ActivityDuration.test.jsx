@@ -5,7 +5,7 @@ import { ReactComponent as Time } from '../../assets/svgs/time.svg';
 import { ReactComponent as Duration } from '../../assets/svgs/aboutTour/duration.svg';
 
 const defaultProps = {
-  isResult: true,
+  page: 'home',
   position: 'top',
   duration: '2 hours',
 };
@@ -17,10 +17,10 @@ describe('<ActivityDuration />', () => {
 
   it('has correct class if page is result or not', () => {
     const wrapper = shallow(<ActivityDuration {...defaultProps} />);
-    expect(wrapper.find('div.activity-duration').hasClass(`result-duration-${defaultProps.position}`)).toEqual(true);
+    expect(wrapper.find('div.activity-duration').hasClass('home')).toEqual(true);
 
-    const wrapperResult = shallow(<ActivityDuration {...defaultProps} isResult={false} />);
-    expect(wrapperResult.find('div.activity-duration').hasClass(`duration-${defaultProps.position}`)).toEqual(true);
+    const wrapperResult = shallow(<ActivityDuration {...defaultProps} page="result" />);
+    expect(wrapperResult.find('div.activity-duration').hasClass('result')).toEqual(true);
   });
 
   it('has correct component based on position', () => {

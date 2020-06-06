@@ -4,7 +4,7 @@ import { activityPropTypes } from '../../propTypes/activityType';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
-const isResult = false;
+const isResult = true;
 
 class TourCard extends React.Component {
   render() {

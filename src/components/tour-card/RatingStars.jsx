@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { activityPropTypes } from '../../propTypes/activityType';
 import './RatingStars.scss';
 import { ReactComponent as Star } from '../../assets/svgs/star.svg';
@@ -8,7 +7,7 @@ import { ReactComponent as StarEmpty } from '../../assets/svgs/star-empty.svg';
 
 const rating = [1, 2, 3, 4, 5];
 
-const renderRatingStars = (averageRating, title) => (rating.map((num) => {
+export const renderRatingStars = (averageRating, title) => (rating.map((num) => {
   if (averageRating >= num) {
     return <Star key={title + num} />;
   }
@@ -19,19 +18,15 @@ const renderRatingStars = (averageRating, title) => (rating.map((num) => {
 }));
 
 const RatingStars = ({
-  page, position, activity,
+  activity,
 }) => {
   const {
-    totalRating, totalRatingTitle, averageRating, title,
+    averageRating, title,
   } = activity;
-  const chooseText = (position === 'bottom' && page === 'home') || (position === 'top' && page === 'result');
-  const text = chooseText ? totalRatingTitle : totalRating;
+
   return (
-    <div className={`rating-stars-container ${page} ${position}`}>
-      <div className="stars">
-        {renderRatingStars(averageRating, title)}
-      </div>
-      <span className="rating">{text}</span>
+    <div className="stars">
+      {renderRatingStars(averageRating, title)}
     </div>
   );
 };
@@ -40,6 +35,4 @@ export default RatingStars;
 
 RatingStars.propTypes = {
   activity: activityPropTypes.isRequired,
-  position: PropTypes.string.isRequired,
-  page: PropTypes.string.isRequired,
 };
