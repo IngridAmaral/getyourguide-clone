@@ -1,14 +1,14 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { activityPropTypes } from '../../propTypes/activityType';
 import './TourCard.scss';
 import TourCardDetails from './TourCardDetails';
 
-const isResult = true;
 
 class TourCard extends React.Component {
   render() {
-    const { activity } = this.props;
+    const { activity, isResult } = this.props;
     const {
       imageUrl,
       imageAlt,
@@ -32,4 +32,5 @@ export default TourCard;
 
 TourCard.propTypes = {
   activity: activityPropTypes.isRequired,
+  isResult: PropTypes.bool.isRequired,
 };

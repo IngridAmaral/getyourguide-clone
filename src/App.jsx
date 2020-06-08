@@ -32,7 +32,12 @@ class App extends React.Component {
 
     return (
       <div className={`App ${page}`}>
-        {topContent[0].activities.map((activity) => <TourCard activity={activity} />)}
+        {topContent[0].activities.map((activity) => (
+          <TourCard
+            isResult={isResult}
+            activity={activity}
+          />
+        ))}
       </div>
     );
   }

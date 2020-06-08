@@ -22,6 +22,7 @@ class TourCardDetails extends React.Component {
       freeCancellationFlag,
       totalRating,
       totalRatingTitle,
+      averageRating,
     } = activity;
     const page = isResult ? 'result' : 'home';
     return (
@@ -32,10 +33,9 @@ class TourCardDetails extends React.Component {
             {isResult ? <Like /> : <LikeHome />}
           </div>
         </div>
-
         <div className={`rating-horizontal ${page}`}>
           <div className={`rating-stars-container ${page} top`}>
-            <RatingStars activity={activity} />
+            <RatingStars averageRating={averageRating} />
             <span className="rating">{ totalRating}</span>
             <span className="rating-title">{ totalRatingTitle }</span>
           </div>
@@ -65,7 +65,7 @@ class TourCardDetails extends React.Component {
         <div className="tour-details-overall">
           <div className={`rating-column ${page}`}>
             <div className={`rating-stars-container ${page} bottom`}>
-              <RatingStars activity={activity} />
+              <RatingStars averageRating={averageRating} />
               <span className="rating">{ totalRating}</span>
               <span className="rating-title">{ totalRatingTitle }</span>
             </div>
