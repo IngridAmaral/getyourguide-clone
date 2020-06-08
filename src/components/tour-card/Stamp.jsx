@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import './Stamp.scss';
 
 const STAMPS = {
-  default: 'GetYourGuide Original',
+  default: 'Find Your Next Adventure',
   gygOriginal: 'GetYourGuide Original',
 };
 
 const getStampKey = (sentKey) => {
-  if (STAMPS[sentKey] === undefined) {
+  if (!STAMPS[sentKey]) {
     return 'default';
   }
   return sentKey;
