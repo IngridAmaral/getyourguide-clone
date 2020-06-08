@@ -1,10 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TourCardDetails from './TourCardDetails';
+import Stamp from './Stamp';
+import RatingStars from './RatingStars';
 
 const defaultProps = {
   activity: {
     totalRating: 4.7,
+    averageRating: '4',
     title: 'Tour to some place',
     totalRatingTitle: '900 Reviews',
     duration: '1 hour',
@@ -33,6 +36,16 @@ const {
 describe('<TourCardDetails />', () => {
   it('renders component', () => {
     shallow(<TourCardDetails {...defaultProps} />);
+  });
+
+  it('renders rating stars component', () => {
+    const wrapper = shallow(<TourCardDetails {...defaultProps} />);
+    expect(wrapper.find(RatingStars).exists()).toBe(true);
+  });
+
+  it('renders stamp component', () => {
+    const wrapper = shallow(<TourCardDetails {...defaultProps} />);
+    expect(wrapper.find(Stamp).exists()).toBe(true);
   });
 
   describe('when used in result page', () => {
