@@ -1,0 +1,110 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.tourcard-container {
+  width: 100%;
+  box-shadow: $shadow-activity-card;
+  border: $border-activity-card;
+  box-sizing: border-box;
+  @include flex-start;
+  overflow: hidden;
+  margin: 0 0 1rem 0;
+  transition: $transition-activity-card;
+
+  &.home {
+    padding: 0.5rem;
+  }
+
+  &.result {
+    padding: 0.6rem;
+  }
+
+  &:active {
+    box-shadow: $shadow-activity-card-hover;
+    .tour-details-title {
+      text-decoration: underline;
+    }
+  }
+
+  .tourcard-image.result {
+    & img {
+      height: auto;
+      width: 5.6rem;
+    }
+  }
+
+  .tourcard-image.home {
+    overflow: hidden;
+    @include flex-center-xy;
+    & img {
+      height: 4.2rem;
+      width: auto;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .tourcard-container {
+    &.result {
+      width: 100%;
+    }
+
+    &.home {
+      width: 48%;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+
+      .tourcard-image.home {
+        overflow: visible;
+        & img {
+          min-height: 335px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .tourcard-container {
+    width: 100%;
+    &:hover {
+      box-shadow: $shadow-activity-card-hover;
+      cursor: pointer;
+
+      .tour-details-title {
+        text-decoration: underline;
+      }
+    }
+
+    &.result {
+      &.tourcard-image {
+        & img {
+          width: 13rem;
+          height: 9rem;
+        }
+      }
+    }
+
+    &.home {
+      flex-direction: column;
+      padding: 0;
+      width: 22%;
+      margin-bottom: 2rem;
+      @include flex-center-xy;
+
+      .tourcard-image.home {
+        overflow: visible;
+        & img {
+          min-height: 185px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

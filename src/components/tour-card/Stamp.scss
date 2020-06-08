@@ -1,0 +1,50 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.stamp-container {
+  @include flex-center-xy;
+
+  span {
+    color: $clr-solid-white;
+    font-size: $font-size-micro;
+    border-radius: 0.2rem;
+    padding: 0 0.2rem 0 0.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.gygOriginal, .default {
+  background-color: $clr-primary;
+}
+
+.default {
+  background-color: $clr-blue-stone;
+}
+
+.gygOriginal.top {
+  display: none;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .gygOriginal.bottom.home {
+    display: block;
+  }  
+
+  .gygOriginal.top {
+    display: none;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .gygOriginal.top.result {
+    display: block;
+  }
+
+  .gygOriginal.bottom.result {
+    display: none;
+  }
+}

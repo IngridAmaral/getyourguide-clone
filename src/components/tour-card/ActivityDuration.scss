@@ -1,0 +1,62 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.activity-duration {
+  @include flex-center-y-line;
+  color: $clr-raven;
+  font-size: $font-size-mili;
+  font-weight: $font-semi-bold;
+
+  & svg {
+    width: $font-size-mili;
+    height: $font-size-mili;
+    margin-right: .2rem;
+  }
+
+  .activity-duration-title {
+    letter-spacing: 0.5px;
+    margin-right: 0.5rem;
+  }
+
+  &.result.top > svg,
+  &.home.top > svg,
+  &.home.bottom,
+  &.result.bottom {
+    display: none;
+  }
+
+  &.home {
+    margin-bottom: .3rem;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .activity-duration {
+    &.home.top > svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: $clr-raven;
+      display: flex;
+    }
+
+    &.result.bottom {
+      display: flex;
+    }
+
+    &.result.top {
+      display: none;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .activity-duration {
+    &.result.bottom {
+      margin-top: .5rem;
+    }
+  }
+}

@@ -11,6 +11,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -38,6 +39,7 @@ module.exports = {
     {
       files: [
         "**/*.test.js",
+        "**/*.test.jsx",
         "**/__mocks__/**/*",
       ],
       env: {

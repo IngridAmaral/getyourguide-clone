@@ -1,4 +1,12 @@
-<svg viewBox="0 0 14.1 13.6" id="ic-star" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.3.5L4.6 4l-3.8.6A.8.8 0 00.3 6l2.8 2.7-.7 3.9a.9.9 0 001.3.9l3.4-1.8 3.4 1.8a.9.9 0 001.3-.9l-.7-3.9L13.9 6a.8.8 0 00-.5-1.4L9.6 4 7.9.5a.9.9 0 00-1.6 0z" fill-rule="evenodd">
+<svg class="icon" viewBox="0 0 32 32">
+       <use xlink:href="#icon-star">
+       <g id="icon-star">
+    <path fill="#FFD938" d="M20.388,10.918L32,12.118l-8.735,7.749L25.914,31.4l-9.893-6.088L6.127,31.4l2.695-11.533L0,12.118
+  l11.547-1.2L16.026,0.6L20.388,10.918z"></path>
+    </g>
+     </use></svg>
+
+<!-- <svg viewBox="0 0 14.1 13.6" id="ic-star" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#FFD938" d="M6.3.5L4.6 4l-3.8.6A.8.8 0 00.3 6l2.8 2.7-.7 3.9a.9.9 0 001.3.9l3.4-1.8 3.4 1.8a.9.9 0 001.3-.9l-.7-3.9L13.9 6a.8.8 0 00-.5-1.4L9.6 4 7.9.5a.9.9 0 00-1.6 0z" fill-rule="evenodd">
     </path>
-</svg>
+</svg> -->

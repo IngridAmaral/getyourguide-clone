@@ -1,0 +1,23 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.stars {
+  display: flex;
+  margin-right: 0.3rem;
+
+  & svg {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
