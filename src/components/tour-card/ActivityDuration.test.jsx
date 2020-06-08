@@ -31,7 +31,7 @@ describe('<ActivityDuration />', () => {
     expect(wrapperBottom.find(Duration).exists()).toEqual(true);
   });
 
-  it('has correct text displayed using duration prop', () => {
+  it('has correct text displayed based on duration', () => {
     const wrapper = shallow(<ActivityDuration {...defaultProps} />);
     expect(wrapper.find('span').text()).toBe(defaultProps.duration);
   });
