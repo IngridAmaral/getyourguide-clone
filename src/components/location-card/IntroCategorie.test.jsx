@@ -3,14 +3,11 @@ import { shallow } from 'enzyme';
 import IntroCategorie from './IntroCategorie';
 
 const defaultProps = {
-  categorie: {
-    name: 'Attractions tickets',
-    img: 'https://cdn.getyourguide.com/img/location/5b1a9b213810d.jpeg/92.jpg',
-  },
+  name: 'Attractions tickets',
+  img: 'https://cdn.getyourguide.com/img/location/5b1a9b213810d.jpeg/92.jpg',
 };
 
-const { categorie } = defaultProps;
-const { name, img } = categorie;
+const { name, img } = defaultProps;
 
 describe('<IntroCategorie />', () => {
   it('renders component', () => {
