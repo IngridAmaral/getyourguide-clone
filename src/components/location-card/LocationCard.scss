@@ -1,0 +1,97 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.location-card-container {
+  width: 100%;
+  color: $clr-secondary;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+
+  & .img-container {
+    width: 100%;
+    height: 29%;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  & .intro-container {
+    width: 100%;
+    @include flex-column-center-x;
+
+    & .title {
+      font-size: $font-size-h3;
+      font-weight: 600;
+      line-height: 2rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    & p {
+      font-size: $font-size-base;
+      text-align: center;
+      margin: 0;
+    }
+
+    .categories {
+      @include display-flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .location-card-container {
+    & .img-container {
+      height: 39%;
+    }
+
+    & .intro-container {
+      .categories {
+        @include flex-center-xy;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .location-card-container {
+    @include display-flex;
+    align-items: center;
+    justify-content: space-between;
+    & .img-container {
+      width: 50%;
+      height: 95%;
+      border-right: 1rem solid transparent;
+    }
+
+    & .intro-container {
+      width: 50%;
+      align-items: flex-start;
+      border-left: 1rem solid transparent;
+      justify-content: space-evenly;
+
+      & .title {
+        font-size: $font-size-kilo;
+        margin: 0.5rem 0rem 0rem 0rem;
+        line-height: $font-size-kilo;
+      }
+
+      & p {
+        text-align: start;
+      }
+
+      .categories {
+        justify-content: flex-start;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

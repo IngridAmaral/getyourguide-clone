@@ -9,7 +9,8 @@ import { getTopContent } from './redux/reducers/topContent';
 import { fetchDestinationsToursAC } from './redux/actions/getDestinationsTours';
 import { fetchPopularAC } from './redux/actions/getPopular';
 import { fetchTopContentAC } from './redux/actions/getTopContent';
-import TourCard from './components/tour-card/TourCard';
+// import TourCard from './components/tour-card/TourCard';
+import LocationCard from './components/location-card/LocationCard';
 import './App.scss';
 
 const isResult = false;
@@ -32,12 +33,13 @@ class App extends React.Component {
 
     return (
       <div className={`App ${page}`}>
-        {topContent[0].activities.map((activity) => (
+        <LocationCard location={topContent[0]} />
+        {/* {topContent[0].activities.map((activity) => (
           <TourCard
             isResult={isResult}
             activity={activity}
           />
-        ))}
+        ))} */}
       </div>
     );
   }

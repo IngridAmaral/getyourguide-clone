@@ -1,0 +1,56 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.categorie-container {
+  color: $clr-secondary;
+  line-height: 1.5rem;
+  padding: 1rem 0.5rem;
+  @include flex-center-y-line;
+  justify-content: space-evenly;
+  background-color: $clr-solid-white;
+  border: 1px solid #fff5f1;
+  margin: 0.2rem;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &:active {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+  }
+
+  & img {
+    width: $font-size-h4;
+    height: $font-size-h4;
+    margin-right: 0.2rem;
+  }
+
+  & .intro-categorie {
+    width: 100%;
+
+    & .categorie {
+      font-weight: 600;
+      font-size: $font-size-mili;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .categorie-container {
+    margin: 0 .5rem .5rem 0;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .categorie-container {
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      transition: box-shadow 0.3s ease-in-out;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+    }
+  }
+}

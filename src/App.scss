@@ -1,34 +1,63 @@
+@import './styles/colors';
+
 .App {
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
   min-width: 360px;
-  padding: 0 1rem;
+  // padding: 0 1rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  // background-color: black;
+  background-color: $clr-sauvignon;
 }
 
-// IPAD
+// IPAD LOCATION CARD
 @media (min-width: 768px) {
-  .App.result {
-    width: 65%;
-  }
-
-  .App.home {
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  .App {
+    padding: 1rem 2rem;
   }
 }
+
+// // NOTEBOOK
+// @media (min-width: 1024px) {
+//   .App {
+//     padding: 1rem 4.5rem;
+//   }
+// }
 
 // NOTEBOOK
-@media (min-width: 1024px) {
-  .App.result {
-    padding: 0 6rem;
-    width: 75%;
+@media (min-width: 1300px) {
+  .App {
+    padding: 1rem 4.5rem;
   }
-  .App.home {
-    padding: 0 6rem;
-    flex-wrap: nowrap;
-  } //padding 6rem wrapper container, 1rem tour card container
 }
+
+
+
+// // IPAD
+// @media (min-width: 768px) {
+//   .App.result {
+//     width: 65%;
+//   }
+
+//   .App.home {
+//     width: 100%;
+//     padding: 0 2rem;
+//     display: flex;
+//     justify-content: space-between;
+//     flex-wrap: wrap;
+//   }
+// }
+
+// // NOTEBOOK
+// @media (min-width: 1024px) {
+//   .App.result {
+//     padding: 0 6rem;
+//     width: 75%;
+//   }
+//   .App.home {
+//     padding: 0 6rem;
+//     flex-wrap: nowrap;
+//   } //padding 6rem wrapper container, 1rem tour card container
+// }
