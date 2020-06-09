@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { topLocationPropType } from '../../propTypes/topContentType';
+import PropTypes from 'prop-types';
 import './LocationCard.scss';
 import {
   boat,
@@ -16,7 +16,6 @@ import {
 } from '../../assets/imgs/cityIntro/cityIntro';
 import IntroCategorie from './IntroCategorie';
 
-const LOCATION_CARD = 'location-card';
 const INTRO_CATEGORIES = [
   { name: 'Attraction tickets', img: tickets },
   { name: 'Sightseeing tours', img: sightseeing },
@@ -30,36 +29,31 @@ const INTRO_CATEGORIES = [
   { name: 'City Cards', img: city },
 ];
 
-class LocationCard extends React.Component {
-  render() {
-    const { location } = this.props;
-    const {
-      description, destination, img,
-    } = location;
-    return (
-      <div className={`${LOCATION_CARD}-container`}>
-        <div className="img-container">
-          <img src={img} alt={destination} />
-        </div>
-        <div className="intro-container">
-          <span className="title">{destination}</span>
-          <p>{description}</p>
-          <div className="categories">
-            { INTRO_CATEGORIES.map((categorie) => (
-              <IntroCategorie
-                key={categorie.name.split(' ').join('').toLocaleLowerCase()}
-                categorie={categorie}
-              />
-            ))}
-          </div>
-        </div>
+const LocationCard = ({ description, destination, img }) => (
+  <div className="location-card-container">
+    <div className="img-container">
+      <img src={img} alt={destination} />
+    </div>
+    <div className="intro-container">
+      <span className="title">{destination}</span>
+      <p>{description}</p>
+      <div className="categories">
+        { INTRO_CATEGORIES.map((categorie) => (
+          <IntroCategorie
+            key={categorie.name.split(' ').join('').toLocaleLowerCase()}
+            name={categorie.name}
+            img={categorie.img}
+          />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
 
 export default LocationCard;
 
 LocationCard.propTypes = {
-  location: topLocationPropType.isRequired,
+  description: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
