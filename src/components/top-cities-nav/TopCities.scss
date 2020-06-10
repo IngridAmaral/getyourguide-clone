@@ -1,0 +1,41 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.top-cities-container {
+  font-size: $font-size-base;
+  color: $clr-secondary;
+  font-weight: 600;
+  line-height: normal;
+  @include flex-column-center-x;
+
+  & .title {
+    padding-bottom: 1rem;
+  }
+
+  .top-cities {
+    @include flex-center-xy;
+    flex-wrap: wrap;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .top-cities-container {  
+    & .title {
+      font-size: $font-size-h3;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .top-cities-container {  
+    & .title {
+      font-size: $font-size-h1;
+      padding-bottom: 2rem;
+    }
+  }
+}
