@@ -1,5 +1,9 @@
 const express = require('express');
-const { topDestinations } = require('./mockData/topDestinations');
+const {
+  topDestinationParis,
+  topDestinationBarcelona,
+  topDestinationNewYork,
+} = require('./mockData/topDestinations');
 const { toursBarcelona, toursNewYork, toursParis } = require('./mockData/tours');
 const { topCountries } = require('./mockData/topCountries');
 const { popular } = require('./mockData/popular');
@@ -35,8 +39,16 @@ app.use('/destinations/tours-paris', (req, res) => {
   res.send(toursParis);
 });
 
-app.use('/top/destinations', (req, res) => {
-  res.send(topDestinations);
+app.use('/top/destinations/paris', (req, res) => {
+  res.send(topDestinationParis);
+});
+
+app.use('/top/destinations/barcelona', (req, res) => {
+  res.send(topDestinationBarcelona);
+});
+
+app.use('/top/destinations/newyork', (req, res) => {
+  res.send(topDestinationNewYork);
 });
 
 app.use('/top/countries', (req, res) => {
