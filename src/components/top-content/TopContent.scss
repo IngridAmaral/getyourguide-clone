@@ -1,0 +1,72 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.top-content-wrapper {
+  @include flex-column-center-x;
+  color: $clr-secondary;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: $clr-sauvignon;
+
+  & .activities-container {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    @include flex-column-center-x;
+
+    .card-header {
+      font-size: $font-size-h5;
+    }
+
+    .activities-cards {
+      @include flex-column-center-x;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .top-content-wrapper {
+    & .activities-container {
+      @include flex-start;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+
+      .activities-cards {
+        width: 100%;
+        @include flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .top-content-wrapper {
+    & .activities-container {
+      .card-header {
+        font-size: $font-size-h4;
+      }
+      padding: 0 4,5rem;
+    }
+  }
+}
+
+// NOTEBOOK BIG
+@media (min-width: 1440px) {
+  .top-content-wrapper {
+    & .activities-container {
+      padding: 0 6rem;
+    }
+  }
+}

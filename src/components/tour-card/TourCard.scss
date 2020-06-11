@@ -9,6 +9,7 @@
   border: $border-activity-card;
   box-sizing: border-box;
   @include flex-start;
+  background-color: $clr-solid-white;
   overflow: hidden;
   margin: 0 0 1rem 0;
   transition: $transition-activity-card;
@@ -102,7 +103,7 @@
         overflow: visible;
         & img {
           min-height: 185px;
-          width: auto;
+          width: 100%;
         }
       }
     }

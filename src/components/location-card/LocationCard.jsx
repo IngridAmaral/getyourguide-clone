@@ -13,6 +13,7 @@ import {
   tickets,
   transport,
 } from '../../assets/imgs/cityIntro/cityIntro';
+import { capitalCase } from '../../utils/capital-case';
 import IntroCategorie from './IntroCategorie';
 
 const INTRO_CATEGORIES = [
@@ -36,7 +37,7 @@ const LocationCard = ({ location }) => {
         <img src={img} alt={destination} />
       </div>
       <div className="intro-container">
-        <span className="title">{destination}</span>
+        <span className="title">{capitalCase(destination)}</span>
         <p>{description}</p>
         <div className="categories">
           { INTRO_CATEGORIES.map((categorie) => (

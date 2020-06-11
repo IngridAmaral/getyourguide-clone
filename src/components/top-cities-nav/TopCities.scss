@@ -9,6 +9,7 @@
   font-weight: 600;
   line-height: normal;
   @include flex-column-center-x;
+  margin: 2rem 0;
 
   & .title {
     padding-bottom: 1rem;
@@ -32,10 +33,12 @@
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .top-cities-container {  
+  .top-cities-container { 
+    margin-bottom: 2rem; 
     & .title {
       font-size: $font-size-h1;
       padding-bottom: 2rem;
     }
   }
 }
+

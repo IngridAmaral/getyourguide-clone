@@ -15,8 +15,14 @@
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;
+  transition: all .2s ease;
 
-  &:active, &.active {
+  &:hover {
+    background-color: $clr-secondary;
+    color: $clr-solid-white;
+  }
+
+  &.active {
     background-color: $clr-jade;
     border: 1px solid $clr-jade;
     color: $clr-solid-white;
