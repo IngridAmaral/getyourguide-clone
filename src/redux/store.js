@@ -4,11 +4,14 @@ import promise from 'redux-promise-middleware';
 import { popularReducer } from './reducers/popular';
 import { topContentReducer } from './reducers/topContent';
 import { destinationsToursReducer } from './reducers/destinationsTours';
+import { topCityReducer } from './reducers/topCity';
+
 
 const rootReducers = combineReducers({
   popular: popularReducer,
   topContent: topContentReducer,
   destinationsTours: destinationsToursReducer,
+  topCity: topCityReducer,
 });
 
 const middlewares = [thunk, promise];

@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { getTopContent } from '../../redux/reducers/topContent';
-import { fetchTopContentAC } from '../../redux/actions/getTopContent';
-import { topContentPropType } from '../../propTypes/topContentType';
+import { getTopCity } from '../../redux/reducers/topCity';
+import { fetchTopCityAC } from '../../redux/actions/getTopCity';
+import { topCityPropType } from '../../propTypes/topCityType';
 import { kebabCase } from '../../utils/kebab-case';
 import './TopContent.scss';
 import TopCities from '../top-cities-nav/TopCities';
@@ -14,34 +14,34 @@ import TourCard from '../tour-card/TourCard';
 const IS_RESULT = false;
 export const MAX_CARDS = 4;
 
-class TopContent extends React.Component {
+export class TopContent extends React.Component {
   state = {
     activeCity: 'paris',
     cities: {},
   };
 
   componentDidMount() {
-    const { fetchTopContent } = this.props;
-    fetchTopContent('destinations/paris');
+    const { fetchTopCity } = this.props;
+    fetchTopCity('destinations/paris');
   }
 
   componentDidUpdate(prevProps) {
-    const { topContent } = this.props;
-    if (topContent.destination !== prevProps.topContent.destination) {
+    const { topCity } = this.props;
+    if (topCity.destination !== prevProps.topCity.destination) {
       this.setState((state) => ({
-        cities: { ...state.cities, [topContent.destination]: topContent },
-        activeCity: topContent.destination,
+        cities: { ...state.cities, [topCity.destination]: topCity },
+        activeCity: topCity.destination,
       }));
     }
   }
 
   fetchNewCity = (city) => {
-    const { fetchTopContent } = this.props;
+    const { fetchTopCity } = this.props;
     const { cities } = this.state;
     const kebabCaseCity = kebabCase(city);
 
     if (!cities[kebabCaseCity]) {
-      fetchTopContent(`destinations/${kebabCaseCity}`);
+      fetchTopCity(`destinations/${kebabCaseCity}`);
     } else {
       this.setState({ activeCity: kebabCaseCity });
     }
@@ -94,12 +94,12 @@ class TopContent extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  topContent: getTopContent(state),
+  topCity: getTopCity(state),
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(
   {
-    fetchTopContent: fetchTopContentAC,
+    fetchTopCity: fetchTopCityAC,
   },
   dispatch,
 );
@@ -107,6 +107,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
 export default connect(mapStateToProps, mapDispatchToProps)(TopContent);
 
 TopContent.propTypes = {
-  topContent: topContentPropType.isRequired,
-  fetchTopContent: PropTypes.func.isRequired,
+  topCity: topCityPropType.isRequired,
+  fetchTopCity: PropTypes.func.isRequired,
 };
