@@ -1,3 +1,4 @@
 export const GET_TOP_CONTENT = 'GET_TOP_CONTENT';
 export const GET_DESTINATIONS_TOURS = 'GET_DESTINATIONS_TOURS';
 export const GET_POPULAR = 'GET_POPULAR';
+export const GET_TOP_CITY = 'GET_TOP_CITY';
