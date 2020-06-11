@@ -25,8 +25,9 @@ module.exports = {
   rules: {
     "linebreak-style": 'off',
     "react/jsx-props-no-spreading": 'off',
+    "react/state-in-constructor": 'off',
     "react/sort-comp": 'off',
-    "import/prefer-default-export": 'off'
+    "import/prefer-default-export": 'off',
   },
   overrides: [
     {

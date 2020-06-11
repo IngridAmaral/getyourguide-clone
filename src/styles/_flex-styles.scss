@@ -33,13 +33,6 @@
     justify-content: center;
 }
 
-@mixin flex-center-x-column {
-    @include display-flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: unset;
-}
-
 @mixin flex-start {
     @include display-flex;
     justify-content: flex-start;

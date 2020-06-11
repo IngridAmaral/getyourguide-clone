@@ -143,6 +143,7 @@
 // IPAD
 @media (min-width: 768px) {
   .tour-details-container {
+    min-height: 180px;;
     &.result {
       padding-bottom: 0;
     }
@@ -199,6 +200,10 @@
         margin-bottom: 1rem;
       }
 
+      .tour-price {
+        bottom: .5rem;
+      }
+      
       .rating-horizontal {
         display: none;
       }

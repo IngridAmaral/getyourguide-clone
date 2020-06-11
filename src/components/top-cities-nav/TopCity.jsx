@@ -1,10 +1,18 @@
 import React from 'react';
 import './TopCity.scss';
 import PropTypes from 'prop-types';
+import { capitalCase } from '../../utils/capital-case';
 
-const TopCity = ({ city, active }) => (
-  <button type="button" className={`top-city-container ${active ? 'active' : ''}`}>
-    <span>{city}</span>
+const AVAILABLE_CITIES = ['barcelona', 'new-york-city', 'paris'];
+
+const TopCity = ({ city, activeCity, fetchCity }) => (
+  <button
+    type="button"
+    disabled={!AVAILABLE_CITIES.includes(city)}
+    onClick={() => fetchCity(city)}
+    className={`top-city-container ${activeCity === city ? 'active' : ''}`}
+  >
+    <span>{capitalCase(city)}</span>
   </button>
 );
 
@@ -12,5 +20,6 @@ export default TopCity;
 
 TopCity.propTypes = {
   city: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
+  activeCity: PropTypes.string.isRequired,
+  fetchCity: PropTypes.func.isRequired,
 };

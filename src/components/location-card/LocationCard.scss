@@ -8,6 +8,7 @@
   color: $clr-secondary;
   line-height: 1.5rem;
   box-sizing: border-box;
+  padding: 0 1rem;
 
   & .img-container {
     width: 100%;
@@ -48,6 +49,8 @@
 // IPAD
 @media (min-width: 768px) {
   .location-card-container {
+    padding: 0 2rem;
+
     & .img-container {
       height: 39%;
     }
@@ -66,6 +69,8 @@
     @include display-flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 4,5rem;
+
     & .img-container {
       width: 50%;
       height: 95%;
@@ -95,3 +100,10 @@
     }
   }
 }
+
+// NOTEBOOK BIG
+@media (min-width: 1440px) {
+  .location-card-container {
+    padding: 0 6rem;
+  }
+}  

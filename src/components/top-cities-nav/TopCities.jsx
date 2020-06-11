@@ -1,28 +1,29 @@
 import React from 'react';
-import TopCity from './TopCity';
+import PropTypes from 'prop-types';
 import './TopCities.scss';
-// import PropTypes from 'prop-types';
+import TopCity from './TopCity';
 
 export const CITIES = [
-  { city: 'Amsterdam', active: false },
-  { city: 'Barcelona', active: false },
-  { city: 'Berlin', active: false },
-  { city: 'Dubai', active: false },
-  { city: 'London', active: false },
-  { city: 'New York City', active: false },
-  { city: 'Paris', active: true },
-  { city: 'Rome', active: false },
+  'amsterdam',
+  'barcelona',
+  'berlin',
+  'dubai',
+  'london',
+  'new-york-city',
+  'paris',
+  'rome',
 ];
 
-const TopCities = ({ cities }) => (
+const TopCities = ({ fetchCity, activeCity }) => (
   <div className="top-cities-container">
     <span className="title">Explore our top destinations</span>
     <div className="top-cities">
-      {CITIES.map((local) => (
+      {CITIES.map((city) => (
         <TopCity
-          key={local.city}
-          city={local.city}
-          active={local.active}
+          key={city}
+          city={city}
+          activeCity={activeCity}
+          fetchCity={fetchCity}
         />
       ))}
     </div>
@@ -31,6 +32,7 @@ const TopCities = ({ cities }) => (
 
 export default TopCities;
 
-// TopCities.propTypes = {
-//   cities: PropTypes.string.isRequired,
-// };
+TopCities.propTypes = {
+  activeCity: PropTypes.string.isRequired,
+  fetchCity: PropTypes.func.isRequired,
+};
