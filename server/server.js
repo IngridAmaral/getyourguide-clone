@@ -47,7 +47,7 @@ app.use('/top/destinations/barcelona', (req, res) => {
   res.send(topDestinationBarcelona);
 });
 
-app.use('/top/destinations/newyork', (req, res) => {
+app.use('/top/destinations/new-york-city', (req, res) => {
   res.send(topDestinationNewYork);
 });
 
