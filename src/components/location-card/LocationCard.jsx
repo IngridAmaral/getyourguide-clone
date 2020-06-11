@@ -1,6 +1,6 @@
 import React from 'react';
 import './LocationCard.scss';
-import { topLocationPropType } from '../../propTypes/topContentType';
+import { topCityPropType } from '../../propTypes/topCityType';
 import {
   boat,
   city,
@@ -56,5 +56,5 @@ const LocationCard = ({ location }) => {
 export default LocationCard;
 
 LocationCard.propTypes = {
-  location: topLocationPropType.isRequired,
+  location: topCityPropType.isRequired,
 };

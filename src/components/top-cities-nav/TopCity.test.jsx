@@ -18,4 +18,10 @@ describe('<TopCity />', () => {
     const wrapper = shallow(<TopCity {...defaultProps} />);
     expect(wrapper.find('span').text()).toEqual(capitalCase(defaultProps.city));
   });
+
+  it('fetches city on click', () => {
+    const wrapper = shallow(<TopCity {...defaultProps} />);
+    wrapper.find('button').simulate('click');
+    expect(defaultProps.fetchCity).toHaveBeenCalledWith(defaultProps.city);
+  });
 });

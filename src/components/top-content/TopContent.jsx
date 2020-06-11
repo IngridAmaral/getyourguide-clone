@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { getTopCity } from '../../redux/reducers/topCity';
 import { fetchTopCityAC } from '../../redux/actions/getTopCity';
-import { topContentPropType } from '../../propTypes/topContentType';
+import { topCityPropType } from '../../propTypes/topCityType';
 import { kebabCase } from '../../utils/kebab-case';
 import './TopContent.scss';
 import TopCities from '../top-cities-nav/TopCities';
@@ -107,6 +107,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
 export default connect(mapStateToProps, mapDispatchToProps)(TopContent);
 
 TopContent.propTypes = {
-  topCity: topContentPropType.isRequired,
+  topCity: topCityPropType.isRequired,
   fetchTopCity: PropTypes.func.isRequired,
 };
