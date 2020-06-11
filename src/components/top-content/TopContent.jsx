@@ -6,7 +6,9 @@ import { getTopCity } from '../../redux/reducers/topCity';
 import { fetchTopCityAC } from '../../redux/actions/getTopCity';
 import { topCityPropType } from '../../propTypes/topCityType';
 import { kebabCase } from '../../utils/kebab-case';
+import { capitalCase } from '../../utils/capital-case';
 import './TopContent.scss';
+import Button from '../button/Button';
 import TopCities from '../top-cities-nav/TopCities';
 import LocationCard from '../location-card/LocationCard';
 import TourCard from '../tour-card/TourCard';
@@ -88,6 +90,10 @@ export class TopContent extends React.Component {
             ))}
           </div>
         </div>
+        <Button
+          text={`Find more activities in ${capitalCase(activeCity)}`}
+          btnClass="bg-none"
+        />
       </div>
     );
   }
