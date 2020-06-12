@@ -70,7 +70,7 @@ export class TopContent extends React.Component {
             location={activeCityData}
           />
           <div className="activities-container">
-            <span className="card-header">Unmissable sights and activities</span>
+            <span className="card-title">Unmissable sights and activities</span>
             <div className="activities-cards">
               {activeCityData.activities.slice(0, MAX_CARDS).map((activity) => (
                 <TourCard
@@ -82,7 +82,7 @@ export class TopContent extends React.Component {
             </div>
           </div>
           <div className="activities-container">
-            <span className="card-header">Extraordinary things to do</span>
+            <span className="card-title">Extraordinary things to do</span>
             <div className="activities-cards">
               {activeCityData.todo.slice(0, MAX_CARDS).map((activity) => (
                 <TourCard
@@ -99,7 +99,7 @@ export class TopContent extends React.Component {
           />
 
           <div className="most-iconic">
-            <span className="iconic-title">{`${capitalCase(activeCity)} most iconic sights`}</span>
+            <span className="card-title">{`${capitalCase(activeCity)} most iconic sights`}</span>
             <div className="top-location-card-wrapper">
               {activeCityData.iconic.map((location) => (
                 <TopLocationCard
@@ -110,6 +110,11 @@ export class TopContent extends React.Component {
                 />
               ))}
             </div>
+          </div>
+
+          <div className="on-instagram">
+            <span className="card-title">{`${capitalCase(activeCity)} on instagram`}</span>
+            <div className="top-location-card-wrapper" />
           </div>
         </div>
       </div>

@@ -19,17 +19,15 @@
   box-sizing: border-box;
   overflow: hidden;
   max-width: 1400px;
-
+  .card-title {
+    font-size: $font-size-h5;
+    margin-top: 2rem;
+  }
   & .activities-container {
     width: 100%;
-    margin-top: 2rem;
     padding: 0 1rem;
     box-sizing: border-box;
     @include flex-column-center-x;
-
-    .card-header {
-      font-size: $font-size-h5;
-    }
 
     .activities-cards {
       @include flex-column-center-x;
@@ -38,16 +36,11 @@
     }
   }
 
-  .most-iconic {
+  .most-iconic, .on-instagram {
     @include flex-column-center-x;
     width: 100%;
-    margin-top: 2rem;
     padding: 0 1rem;
     box-sizing: border-box;
-
-    & .iconic-title {
-      font-size: $font-size-h5;
-    }
 
     .top-location-card-wrapper {
       @include flex-column-center-x;
@@ -73,10 +66,13 @@
       }
     }
 
-    .most-iconic {
-      @include  flex-start;
-      padding: 0 2rem;
+    .card-title {
       margin-top: 3rem;
+    }
+
+    .most-iconic, .on-instagram {
+      @include flex-start;
+      padding: 0 2rem;
 
       .top-location-card-wrapper {
         width: 100%;
@@ -90,10 +86,10 @@
 // NOTEBOOK
 @media (min-width: 1024px) {
   .top-content-wrapper {
+    .card-header {
+      font-size: $font-size-h4;
+    }
     & .activities-container {
-      .card-header {
-        font-size: $font-size-h4;
-      }
       padding: 0 4.5rem;
     }
 
@@ -106,7 +102,8 @@
 // NOTEBOOK BIG
 @media (min-width: 1300px) {
   .top-content-wrapper {
-    & .activities-container, .most-iconic {
+    & .activities-container,
+    .most-iconic {
       padding: 0 6rem;
     }
   }
