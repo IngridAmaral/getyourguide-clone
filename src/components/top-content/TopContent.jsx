@@ -54,7 +54,7 @@ export class TopContent extends React.Component {
   render() {
     const { activeCity, cities } = this.state;
     const activeCityData = cities[activeCity];
-    console.log(this.props.topCity);
+    // console.log(this.props.topCity);
     if (!activeCityData) {
       return null;
     }

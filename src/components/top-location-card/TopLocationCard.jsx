@@ -5,10 +5,10 @@ import './TopLocationCard.scss';
 const TopLocationCard = ({
   location, count, img, isSlider,
 }) => (
-  <div className="top-location-card-container">
+  <div className={`top-location-card-container ${isSlider ? 'slider' : 'top-city'}`}>
     <img src={img} alt={location} />
     <div className="top-location-details">
-      <span>{location}</span>
+      <span className="title">{location}</span>
       <span className="count">{`${count} tours & activities`}</span>
     </div>
   </div>
