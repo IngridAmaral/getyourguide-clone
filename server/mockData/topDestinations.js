@@ -7,6 +7,23 @@ const topDestinationParis = {
   activities: toursParis.slice(0, 4),
   todo: toursParis.slice(4, 8),
   url: '/dicovery/paris',
+  iconic: [
+    {
+      location: 'Seine River',
+      count: 99,
+      img: 'https://cdn.getyourguide.com/img/location/54ec976ccbc7b.jpeg/86.jpg',
+    },
+    {
+      location: 'Palace of Versailles',
+      count: 74,
+      img: 'https://cdn.getyourguide.com/img/location/5b213df2e05fb.jpeg/86.jpg',
+    },
+    {
+      location: 'Moulin Rouge',
+      count: 11,
+      img: 'https://cdn.getyourguide.com/img/location/52b300cf8375d.jpeg/86.jpg',
+    },
+  ],
 };
 
 const topDestinationBarcelona = {
@@ -16,6 +33,23 @@ const topDestinationBarcelona = {
   activities: toursBarcelona.slice(0, 4),
   todo: toursBarcelona.slice(4, 8),
   url: '/dicovery/barcelona',
+  iconic: [
+    {
+      location: 'Sagrada Familia',
+      count: 81,
+      img: 'https://cdn.getyourguide.com/img/location/5b211b507bfbc.jpeg/86.jpg',
+    },
+    {
+      location: 'Barcelona El Prat Airport',
+      count: 18,
+      img: 'https://cdn.getyourguide.com/img/location/596315e040177.jpeg/86.jpg',
+    },
+    {
+      location: 'Montserrat Monastery',
+      count: 53,
+      img: 'https://cdn.getyourguide.com/img/location/5729a9bdd4a2c.jpeg/86.jpg',
+    },
+  ],
 };
 
 const topDestinationNewYork = {
@@ -25,6 +59,23 @@ const topDestinationNewYork = {
   activities: toursNewYork.slice(0, 4),
   todo: toursNewYork.slice(4, 8),
   url: '/dicovery/new-york-city',
+  iconic: [
+    {
+      location: 'Manhattan',
+      count: 454,
+      img: 'https://cdn.getyourguide.com/img/location/544642123e7af.jpeg/86.jpg',
+    },
+    {
+      location: 'New York Harbor',
+      count: 61,
+      img: 'https://cdn.getyourguide.com/img/location/53bffbc962a8c-m1402926869.jpg/86.jpg',
+    },
+    {
+      location: 'Brooklyn',
+      count: 93,
+      img: 'https://cdn.getyourguide.com/img/location/540dc81234655-m1409275842.jpg/86.jpg',
+    },
+  ],
 };
 
 module.exports = {
