@@ -25,12 +25,19 @@ const activity = {
   freeCancellationFlag: true,
 };
 
+const iconic = {
+  location: 'paris',
+  count: 70,
+  img: 'img.jpg',
+};
+
 const defaultProps = {
   topCity: {
     activities: [activity, activity, activity, activity],
     todo: [activity, activity, activity, activity],
     description: 'The City of Love, the City of Lights, whatever you call it, falling in love with Paris is easy. Whether you explore the catacombs or lose yourself in the Louvre, make your visit to the French capital unforgettable.',
     destination: 'Paris',
+    iconic: [iconic, iconic, iconic],
     img: 'https://cdn.getyourguide.com/img/location/5b1a9b213810d.jpeg/92.jpg',
     url: 'destinations/paris',
   },
