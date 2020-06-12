@@ -3,6 +3,14 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
+.container-center {
+  display: flex;
+  justify-content: center;
+  background-color: $clr-sauvignon;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .top-content-wrapper {
   @include flex-column-center-x;
   color: $clr-secondary;
@@ -10,7 +18,7 @@
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  background-color: $clr-sauvignon;
+  max-width: 1400px;
 
   & .activities-container {
     width: 100%;
@@ -27,6 +35,23 @@
       @include flex-column-center-x;
       justify-content: space-between;
       margin-top: 1rem;
+    }
+  }
+
+  .most-iconic {
+    @include flex-column-center-x;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    & .iconic-title {
+      font-size: $font-size-h5;
+    }
+
+    .top-location-card-wrapper {
+      @include flex-column-center-x;
+      width: 100%;
     }
   }
 }
@@ -47,6 +72,18 @@
         flex-wrap: wrap;
       }
     }
+
+    .most-iconic {
+      @include  flex-start;
+      padding: 0 2rem;
+      margin-top: 3rem;
+
+      .top-location-card-wrapper {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
   }
 }
 
@@ -57,7 +94,11 @@
       .card-header {
         font-size: $font-size-h4;
       }
-      padding: 0 4,5rem;
+      padding: 0 4.5rem;
+    }
+
+    .most-iconic {
+      padding: 0 4.5rem;
     }
   }
 }
@@ -65,7 +106,7 @@
 // NOTEBOOK BIG
 @media (min-width: 1300px) {
   .top-content-wrapper {
-    & .activities-container {
+    & .activities-container, .most-iconic {
       padding: 0 6rem;
     }
   }

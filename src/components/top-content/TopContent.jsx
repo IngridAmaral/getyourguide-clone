@@ -12,6 +12,8 @@ import Button from '../button/Button';
 import TopCities from '../top-cities-nav/TopCities';
 import LocationCard from '../location-card/LocationCard';
 import TourCard from '../tour-card/TourCard';
+import TopLocationCard from '../top-location-card/TopLocationCard';
+
 
 const IS_RESULT = false;
 export const MAX_CARDS = 4;
@@ -52,48 +54,64 @@ export class TopContent extends React.Component {
   render() {
     const { activeCity, cities } = this.state;
     const activeCityData = cities[activeCity];
-
+    console.log(this.props.topCity);
     if (!activeCityData) {
       return null;
     }
 
     return (
-      <div className="top-content-wrapper">
-        <TopCities
-          fetchCity={this.fetchNewCity}
-          activeCity={activeCity}
-        />
-        <LocationCard
-          location={activeCityData}
-        />
-        <div className="activities-container">
-          <span className="card-header">Unmissable sights and activities</span>
-          <div className="activities-cards">
-            {activeCityData.activities.slice(0, MAX_CARDS).map((activity) => (
-              <TourCard
-                key={activity.tourId}
-                isResult={IS_RESULT}
-                activity={activity}
-              />
-            ))}
+      <div className="container-center">
+        <div className="top-content-wrapper">
+          <TopCities
+            fetchCity={this.fetchNewCity}
+            activeCity={activeCity}
+          />
+          <LocationCard
+            location={activeCityData}
+          />
+          <div className="activities-container">
+            <span className="card-header">Unmissable sights and activities</span>
+            <div className="activities-cards">
+              {activeCityData.activities.slice(0, MAX_CARDS).map((activity) => (
+                <TourCard
+                  key={activity.tourId}
+                  isResult={IS_RESULT}
+                  activity={activity}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="activities-container">
+            <span className="card-header">Extraordinary things to do</span>
+            <div className="activities-cards">
+              {activeCityData.todo.slice(0, MAX_CARDS).map((activity) => (
+                <TourCard
+                  key={activity.tourId}
+                  isResult={IS_RESULT}
+                  activity={activity}
+                />
+              ))}
+            </div>
+          </div>
+          <Button
+            text={`Find more activities in ${capitalCase(activeCity)}`}
+            btnClass="bg-none"
+          />
+
+          <div className="most-iconic">
+            <span className="iconic-title">{`${capitalCase(activeCity)} most iconic sights`}</span>
+            <div className="top-location-card-wrapper">
+              {activeCityData.iconic.map((location) => (
+                <TopLocationCard
+                  key={location.location + location.count}
+                  location={location.location}
+                  count={location.count}
+                  img={location.img}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <div className="activities-container">
-          <span className="card-header">Extraordinary things to do</span>
-          <div className="activities-cards">
-            {activeCityData.todo.slice(0, MAX_CARDS).map((activity) => (
-              <TourCard
-                key={activity.tourId}
-                isResult={IS_RESULT}
-                activity={activity}
-              />
-            ))}
-          </div>
-        </div>
-        <Button
-          text={`Find more activities in ${capitalCase(activeCity)}`}
-          btnClass="bg-none"
-        />
       </div>
     );
   }
