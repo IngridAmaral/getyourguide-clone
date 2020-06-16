@@ -14,7 +14,6 @@ import LocationCard from '../location-card/LocationCard';
 import TourCard from '../tour-card/TourCard';
 import TopLocationCard from '../top-location-card/TopLocationCard';
 
-
 const IS_RESULT = false;
 export const MAX_CARDS = 4;
 
@@ -107,6 +106,7 @@ export class TopContent extends React.Component {
                   location={location.location}
                   count={location.count}
                   img={location.img}
+                  className="top-city"
                 />
               ))}
             </div>

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import './TopLocationCard.scss';
 
 const TopLocationCard = ({
-  location, count, img, isSlider,
+  location, count, img, type,
 }) => (
-  <div className={`top-location-card-container ${isSlider ? 'slider' : 'top-city'}`}>
+  <div className={`top-location-card-container ${type}`}>
     <img src={img} alt={location} />
     <div className="top-location-details">
       <span className="title">{location}</span>
@@ -20,9 +20,9 @@ TopLocationCard.propTypes = {
   location: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
-  isSlider: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 TopLocationCard.defaultProps = {
-  isSlider: false,
+  type: 'top-city',
 };

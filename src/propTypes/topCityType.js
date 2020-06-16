@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import { activitiesPropTypes } from './activityType';
 
 export const topCityPropType = PropTypes.shape({
-  activities: activitiesPropTypes.isRequired,
+  activities: activitiesPropTypes,
   todo: activitiesPropTypes,
-  description: PropTypes.string.isRequired,
-  destination: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  destination: PropTypes.string,
+  img: PropTypes.string,
+  url: PropTypes.string,
 });
