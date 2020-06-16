@@ -28,6 +28,7 @@ module.exports = {
     "react/state-in-constructor": 'off',
     "react/sort-comp": 'off',
     "import/prefer-default-export": 'off',
+    "react/no-did-update-set-state": 'off',
   },
   overrides: [
     {
