@@ -34,13 +34,13 @@ const SLIDER_OPTIONS = {
 export class Slider extends React.Component {
   componentDidMount() {
     const { fetchTopAttractions } = this.props;
-    fetchTopAttractions('attractions');
+    fetchTopAttractions();
   }
 
   render() {
     const { topAttractions, type } = this.props;
-    console.log(topAttractions);
-    if (!topAttractions.length) {
+    // console.log(topAttractions);
+    if (!topAttractions) {
       return null;
     }
 
@@ -49,7 +49,7 @@ export class Slider extends React.Component {
         <Splide
           options={SLIDER_OPTIONS}
         >
-          { topAttractions.map((attraction) => (
+          {topAttractions.map((attraction) => (
             <TopLocationCard
               key={attraction.destination + attraction.count}
               location={attraction.destination}
@@ -80,5 +80,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Slider);
 Slider.propTypes = {
   topAttractions: topAttractionsPropType.isRequired,
   fetchTopAttractions: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
+};
+
+Slider.defaultProps = {
+  type: 'top-city',
 };
