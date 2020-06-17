@@ -1,13 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Splide } from '@splidejs/react-splide';
-import { topAttractionsPropType } from '../../propTypes/topAttractionsType';
-import { getTopAttractions } from '../../redux/reducers/topAttractions';
-import { fetchTopAttractionsAC } from '../../redux/actions/getTopAttractions';
 import './Slider.scss';
 import TopLocationCard from '../top-location-card/TopLocationCard';
+import { topAttractionsPropType } from '../../propTypes/topAttractionsType';
+import { topCountriesPropType } from '../../propTypes/topCountriesType';
 
 const SLIDER_OPTIONS = {
   perMove: 1,
@@ -31,56 +28,35 @@ const SLIDER_OPTIONS = {
 };
 
 
-export class Slider extends React.Component {
-  componentDidMount() {
-    const { fetchTopAttractions } = this.props;
-    fetchTopAttractions();
+const Slider = ({ data, type }) => {
+  if (!data) {
+    return null;
   }
 
-  render() {
-    const { topAttractions, type } = this.props;
-    // console.log(topAttractions);
-    if (!topAttractions) {
-      return null;
-    }
+  return (
+    <div className="slider-container">
+      <Splide
+        options={SLIDER_OPTIONS}
+      >
+        {data.map((attraction) => (
+          <TopLocationCard
+            key={attraction.destination + attraction.count}
+            location={attraction.destination}
+            count={attraction.activitiesCount}
+            img={attraction.img}
+            type={type}
+          />
+        ))}
+      </Splide>
+    </div>
+  );
+};
 
-    return (
-      <div className="top-attractions-container">
-        <Splide
-          options={SLIDER_OPTIONS}
-        >
-          {topAttractions.map((attraction) => (
-            <TopLocationCard
-              key={attraction.destination + attraction.count}
-              location={attraction.destination}
-              count={attraction.activitiesCount}
-              img={attraction.img}
-              type={type}
-            />
-          ))}
-        </Splide>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state) => ({
-  topAttractions: getTopAttractions(state),
-});
-
-const mapDispatchToProps = (dispatch) => bindActionCreators(
-  {
-    fetchTopAttractions: fetchTopAttractionsAC,
-  },
-  dispatch,
-);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Slider);
+export default Slider;
 
 Slider.propTypes = {
-  topAttractions: topAttractionsPropType.isRequired,
-  fetchTopAttractions: PropTypes.func.isRequired,
   type: PropTypes.string,
+  data: PropTypes.oneOfType([topAttractionsPropType, topCountriesPropType]).isRequired,
 };
 
 Slider.defaultProps = {

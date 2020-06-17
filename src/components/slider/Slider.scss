@@ -3,10 +3,9 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
-.top-attractions-container {
+.slider-container {
   width: 100%;
   background-color: $clr-solid-white;
-  padding: 0 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -65,8 +64,7 @@
 
 // IPAD
 @media (min-width: 768px) {
-  .top-attractions-container {
-    padding: 0 2rem;
+  .slider-container {
     .splide {
       .splide__arrows {
         width: 102%;
@@ -78,15 +76,4 @@
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .top-attractions-container {
-    padding: 0 4.5rem;
-    .splide {
-      .splide__track {
-        .splide__list {
-          width: 6810px !important;
-          transform: translateX(-3972.5px) !important;
-        }
-      }
-    }
-  }
 }

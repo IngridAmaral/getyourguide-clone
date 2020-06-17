@@ -1,0 +1,49 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.top-wrapper-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+
+  & .separator {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  & .top-slider {
+    margin-top: 2rem;
+    font-size: $font-size-h5;
+    color: $clr-secondary;
+    font-weight: 600;
+    @include flex-center-xy;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .top-wrapper-container {
+    padding: 0 2rem;
+    & .top-slider {
+      @include flex-start;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .top-wrapper-container {
+    padding: 0 4.5rem;
+
+    & .top-slider {
+      @include flex-center-xy;
+      font-size: $font-size-h4;
+    }
+  }
+}
