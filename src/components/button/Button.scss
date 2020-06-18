@@ -4,9 +4,7 @@
 @import "./../../styles/flex-styles";
 
 .btn {
-  margin-top: 1rem;
   font-size: $font-size-base;
-  padding: .6rem 1.25rem;
   line-height: 1.5rem;
   cursor: pointer;
   text-decoration: none;
@@ -17,6 +15,7 @@
   &.bg-blue {
     background-color: $clr-terciary;
     color: $clr-solid-white;
+    padding: .6rem 2rem;
 
     &:hover {
       background-color: $clr-science-blue;
@@ -25,6 +24,8 @@
 
   &.bg-none {
     border-color: $clr-terciary;
+    padding: .6rem 1.25rem;
+
     color: $clr-terciary;
     background-color: transparent;
   }

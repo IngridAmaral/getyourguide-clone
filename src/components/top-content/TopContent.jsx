@@ -14,7 +14,6 @@ import LocationCard from '../location-card/LocationCard';
 import TourCard from '../tour-card/TourCard';
 import TopLocationCard from '../top-location-card/TopLocationCard';
 
-const IS_RESULT = false;
 export const MAX_CARDS = 4;
 
 export class TopContent extends React.Component {
@@ -52,8 +51,9 @@ export class TopContent extends React.Component {
 
   render() {
     const { activeCity, cities } = this.state;
+    const { isResult } = this.props;
     const activeCityData = cities[activeCity];
-    // console.log(this.props.topCity);
+
     if (!activeCityData) {
       return null;
     }
@@ -74,7 +74,7 @@ export class TopContent extends React.Component {
               {activeCityData.activities.slice(0, MAX_CARDS).map((activity) => (
                 <TourCard
                   key={activity.tourId}
-                  isResult={IS_RESULT}
+                  isResult={isResult}
                   activity={activity}
                 />
               ))}
@@ -86,7 +86,7 @@ export class TopContent extends React.Component {
               {activeCityData.todo.slice(0, MAX_CARDS).map((activity) => (
                 <TourCard
                   key={activity.tourId}
-                  isResult={IS_RESULT}
+                  isResult={isResult}
                   activity={activity}
                 />
               ))}
@@ -138,4 +138,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(TopContent);
 TopContent.propTypes = {
   topCity: topCityPropType.isRequired,
   fetchTopCity: PropTypes.func.isRequired,
+  isResult: PropTypes.bool,
+};
+
+TopContent.defaultProps = {
+  isResult: false,
 };
