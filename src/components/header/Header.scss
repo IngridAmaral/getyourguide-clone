@@ -1,0 +1,34 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .header-container {
+    padding: 0 2rem;
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .header-container {
+    padding: .5rem 4.5rem;
+  }
+}
+
+// NOTEBOOK BIG
+@media (min-width: 1300px) {
+  .header-container {
+    padding: .5rem 6rem;
+  }
+}
+

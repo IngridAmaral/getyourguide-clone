@@ -18,11 +18,12 @@ export default TopLocationCard;
 
 TopLocationCard.propTypes = {
   location: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  count: PropTypes.number,
   img: PropTypes.string.isRequired,
   type: PropTypes.string,
 };
 
 TopLocationCard.defaultProps = {
   type: 'top-city',
+  count: null,
 };
