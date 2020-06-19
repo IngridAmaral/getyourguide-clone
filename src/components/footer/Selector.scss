@@ -1,0 +1,47 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.selector-container {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+
+  .select-wrapper {
+    margin-top: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    .select-css {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.5rem;
+      color: $clr-secondary;
+      font-weight: 600;
+      font-size: $font-size-base;
+      line-height: 1.5rem;
+    }
+
+    .select-css > * {
+      color: $clr-secondary;
+      font-weight: 600;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .selector-container {
+    width: 100%;
+    .select-wrapper {
+      .select-css {
+        padding: 0.5rem 0.2rem;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}

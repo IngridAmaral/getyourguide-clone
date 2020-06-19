@@ -1,0 +1,57 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.mobile {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  & span {
+    visibility: hidden;
+  }
+
+  .download {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & img {
+      width: 48%;
+      height: auto;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .mobile {
+    width: 30%;
+    @include flex-column-center-x;
+    align-items: flex-start;
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    & span {
+      visibility: visible;
+      margin-bottom: 0.5rem;
+    }
+
+    .download {
+      width: 100%;
+      @include flex-column-center-x;
+      & img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .mobile {
+    width: 15%;
+    padding: 0;
+  }
+}

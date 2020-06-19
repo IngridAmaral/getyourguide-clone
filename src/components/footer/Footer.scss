@@ -1,0 +1,79 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.footer-container {
+  background-color: $clr-secondary;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 2.5rem 2rem;
+  color: $clr-solid-white;
+  font-size: $font-size-base;
+  box-sizing: border-box;
+  height: fit-content;
+
+  .copyrights-social {
+    @include flex-column-center-x;
+    font-size: $font-size-mili;
+    margin-top: 2rem;
+
+    .social {
+      margin-top: 1rem;
+      svg {
+        margin-right: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .selectors {
+      width: 30%;
+      height: fit-content;
+    }
+
+    .copyrights-social {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .social {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 4.5rem;
+
+    .selectors {
+      width: 30%;
+      height: fit-content;
+    }
+
+    .copyrights-social {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .social {
+        margin-top: 0;
+      }
+    }
+  }
+}

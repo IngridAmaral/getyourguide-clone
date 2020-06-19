@@ -5,18 +5,11 @@
   overflow: hidden;
   box-sizing: border-box;
   min-width: 360px;
-  // padding: 0 1rem;
-  padding: 1rem;
-  padding-bottom: 0;
-  // background-color: black;
-  background-color: $clr-sauvignon;
 }
 
 // IPAD LOCATION CARD
 @media (min-width: 768px) {
-  .App {
-    padding: 1rem 2rem;
-  }
+
 }
 
 // // NOTEBOOK
@@ -28,9 +21,7 @@
 
 // NOTEBOOK
 @media (min-width: 1300px) {
-  .App {
-    padding: 1rem 4.5rem;
-  }
+
 }
 
 
