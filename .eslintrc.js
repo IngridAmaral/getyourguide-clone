@@ -29,6 +29,7 @@ module.exports = {
     "react/sort-comp": 'off',
     "import/prefer-default-export": 'off',
     "react/no-did-update-set-state": 'off',
+    "jsx-a11y/no-static-element-interactions": "off",
   },
   overrides: [
     {
