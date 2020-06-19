@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Navigation.scss';
+import './FooterNavigation.scss';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 
-class Navigation extends React.Component {
+class FooterNavigation extends React.Component {
   state = {
     open: false,
   }
@@ -16,7 +16,7 @@ class Navigation extends React.Component {
     const { title, items } = this.props;
     const { open } = this.state;
     return (
-      <div className="navigation-container">
+      <div className="footer-navigation-container">
         <div className="title" onClick={this.handleToggle} onKeyDown={this.handleToggle}>
           <span>{title}</span>
           <Caret />
@@ -31,9 +31,9 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation;
+export default FooterNavigation;
 
-Navigation.propTypes = {
+FooterNavigation.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

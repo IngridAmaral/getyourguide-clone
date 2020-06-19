@@ -2,15 +2,15 @@ import React from 'react';
 import './Footer.scss';
 import Selector from './Selector';
 import Mobile from './Mobile';
-import Navigation from './Navigation';
-import PaymentMethods from './PayMethods';
+import FooterNavigation from './FooterNavigation';
+import PayMethods from './PayMethods';
 import { ReactComponent as Facebook } from '../../assets/svgs/socialMedia/facebook.svg';
 import { ReactComponent as Instagram } from '../../assets/svgs/socialMedia/instagram.svg';
 import { ReactComponent as Linkedin } from '../../assets/svgs/socialMedia/linkedin.svg';
 import { ReactComponent as Pinterest } from '../../assets/svgs/socialMedia/pinterest.svg';
 import { ReactComponent as Twitter } from '../../assets/svgs/socialMedia/twitter.svg';
 
-const language = [
+export const language = [
   'English (United States)',
   'Densk',
   'Deutsch (Deutschland)',
@@ -26,7 +26,7 @@ const language = [
   'Polski',
 ];
 
-const currency = [
+export const currency = [
   'Euro',
   'British Pound',
   'Hong Kong Dollar',
@@ -39,9 +39,9 @@ const currency = [
   'Moroccan Dirham',
 ];
 
-const support = ['Contact', 'Legal', 'Privacy Policy', 'Terms of Use'];
+export const support = ['Contact', 'Legal', 'Privacy Policy', 'Terms of Use'];
 
-const company = [
+export const company = [
   'About Us',
   'Careers',
   'Blog',
@@ -50,7 +50,7 @@ const company = [
   'Magazine',
 ];
 
-const workWithUs = [
+export const workWithUs = [
   'Supplier Administration',
   'Affiliate Partnet Administration',
 ];
@@ -62,10 +62,10 @@ const Footer = () => (
       <Selector title="currency" options={currency} />
     </div>
     <Mobile />
-    <Navigation title="Support" items={support} />
-    <Navigation title="Company" items={company} />
-    <Navigation title="Work With Us" items={workWithUs} />
-    <PaymentMethods />
+    <FooterNavigation title="Support" items={support} />
+    <FooterNavigation title="Company" items={company} />
+    <FooterNavigation title="Work With Us" items={workWithUs} />
+    <PayMethods />
 
     <div className="copyrights-social">
       <span>© 2020 GetYourGuideClone. Cloned in Berlin by Ingrid Amaral.</span>

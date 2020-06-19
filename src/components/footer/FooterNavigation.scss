@@ -3,7 +3,7 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
-.navigation-container {
+.footer-navigation-container {
   margin-top: 1rem;
   border-top: 1px solid $clr-solid-white;
   padding-top: 1rem;  
@@ -39,7 +39,7 @@
 
 // IPAD
 @media (min-width: 768px) {
-  .navigation-container {
+  .footer-navigation-container {
     width: 20%;
     margin: 0;
     border: none;
@@ -69,7 +69,7 @@
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .navigation-container {
+  .footer-navigation-container {
     width: fit-content;
     margin: 0;
     height: 100%;
