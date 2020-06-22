@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f6438681a258a081b6e76b2f27fe83f9",
+    "revision": "77633a97b729fe75a98971195004e92d",
     "url": "/getyourguide-clone/index.html"
   },
   {
-    "revision": "bd8d0d02a58d894ea39e",
-    "url": "/getyourguide-clone/static/css/main.d4073b12.chunk.css"
+    "revision": "8622efcb3d43439d9212",
+    "url": "/getyourguide-clone/static/css/main.3f6bccfc.chunk.css"
   },
   {
     "revision": "8b1914d7d581ac19dcdc",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/js/2.2728d02b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bd8d0d02a58d894ea39e",
-    "url": "/getyourguide-clone/static/js/main.10883cf3.chunk.js"
+    "revision": "8622efcb3d43439d9212",
+    "url": "/getyourguide-clone/static/js/main.9d7b626a.chunk.js"
   },
   {
     "revision": "24d60b8886cc617fc4da",
@@ -36,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/media/duration.2b1c1468.svg"
   },
   {
+    "revision": "f7d758919c5459475c10d3394a93b54a",
+    "url": "/getyourguide-clone/static/media/facebook.f7d75891.svg"
+  },
+  {
     "revision": "829a43f9f06bf5ddd210efbc40364268",
     "url": "/getyourguide-clone/static/media/gyg-logo.829a43f9.svg"
   },
@@ -44,12 +48,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/media/help.41700498.svg"
   },
   {
+    "revision": "5c3db498eb3885412a7ff3554c9e403b",
+    "url": "/getyourguide-clone/static/media/instagram.5c3db498.svg"
+  },
+  {
     "revision": "dbc613f0f82ac5daa80930907e26c10a",
     "url": "/getyourguide-clone/static/media/like-home.dbc613f0.svg"
   },
   {
     "revision": "5c74f2943a48fa3284dbd67742192653",
     "url": "/getyourguide-clone/static/media/like.5c74f294.svg"
+  },
+  {
+    "revision": "33635694e11d0556c1c2339aad104c1b",
+    "url": "/getyourguide-clone/static/media/linkedin.33635694.svg"
+  },
+  {
+    "revision": "d1243115b9617ef579627c13899206c6",
+    "url": "/getyourguide-clone/static/media/pinterest.d1243115.svg"
   },
   {
     "revision": "460fe36b9d98157bb35e23467b75285c",
@@ -70,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "446f3ac34ea557d71381a62f080505f8",
     "url": "/getyourguide-clone/static/media/time.446f3ac3.svg"
+  },
+  {
+    "revision": "ac37636905b144294279e960886493d0",
+    "url": "/getyourguide-clone/static/media/twitter.ac376369.svg"
   },
   {
     "revision": "2e11e50af36243871f8e431688da91b4",

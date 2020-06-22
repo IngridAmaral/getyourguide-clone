@@ -1,36 +1,41 @@
 {
   "files": {
-    "main.css": "/getyourguide-clone/static/css/main.d4073b12.chunk.css",
-    "main.js": "/getyourguide-clone/static/js/main.10883cf3.chunk.js",
-    "main.js.map": "/getyourguide-clone/static/js/main.10883cf3.chunk.js.map",
+    "main.css": "/getyourguide-clone/static/css/main.3f6bccfc.chunk.css",
+    "main.js": "/getyourguide-clone/static/js/main.9d7b626a.chunk.js",
+    "main.js.map": "/getyourguide-clone/static/js/main.9d7b626a.chunk.js.map",
     "runtime-main.js": "/getyourguide-clone/static/js/runtime-main.c737d019.js",
     "runtime-main.js.map": "/getyourguide-clone/static/js/runtime-main.c737d019.js.map",
     "static/js/2.2728d02b.chunk.js": "/getyourguide-clone/static/js/2.2728d02b.chunk.js",
     "static/js/2.2728d02b.chunk.js.map": "/getyourguide-clone/static/js/2.2728d02b.chunk.js.map",
     "index.html": "/getyourguide-clone/index.html",
-    "precache-manifest.f060736664d3204ee280900491dcd1e3.js": "/getyourguide-clone/precache-manifest.f060736664d3204ee280900491dcd1e3.js",
+    "precache-manifest.faec720931de34edf8ef6ee13e097788.js": "/getyourguide-clone/precache-manifest.faec720931de34edf8ef6ee13e097788.js",
     "service-worker.js": "/getyourguide-clone/service-worker.js",
-    "static/css/main.d4073b12.chunk.css.map": "/getyourguide-clone/static/css/main.d4073b12.chunk.css.map",
+    "static/css/main.3f6bccfc.chunk.css.map": "/getyourguide-clone/static/css/main.3f6bccfc.chunk.css.map",
     "static/js/2.2728d02b.chunk.js.LICENSE.txt": "/getyourguide-clone/static/js/2.2728d02b.chunk.js.LICENSE.txt",
     "static/media/basket.a8a096a5.svg": "/getyourguide-clone/static/media/basket.a8a096a5.svg",
     "static/media/caret.d88c71b7.svg": "/getyourguide-clone/static/media/caret.d88c71b7.svg",
     "static/media/duration.2b1c1468.svg": "/getyourguide-clone/static/media/duration.2b1c1468.svg",
+    "static/media/facebook.f7d75891.svg": "/getyourguide-clone/static/media/facebook.f7d75891.svg",
     "static/media/gyg-logo.829a43f9.svg": "/getyourguide-clone/static/media/gyg-logo.829a43f9.svg",
     "static/media/help.41700498.svg": "/getyourguide-clone/static/media/help.41700498.svg",
+    "static/media/instagram.5c3db498.svg": "/getyourguide-clone/static/media/instagram.5c3db498.svg",
     "static/media/like-home.dbc613f0.svg": "/getyourguide-clone/static/media/like-home.dbc613f0.svg",
     "static/media/like.5c74f294.svg": "/getyourguide-clone/static/media/like.5c74f294.svg",
+    "static/media/linkedin.33635694.svg": "/getyourguide-clone/static/media/linkedin.33635694.svg",
+    "static/media/pinterest.d1243115.svg": "/getyourguide-clone/static/media/pinterest.d1243115.svg",
     "static/media/search.460fe36b.svg": "/getyourguide-clone/static/media/search.460fe36b.svg",
     "static/media/star-empty.b6db919c.svg": "/getyourguide-clone/static/media/star-empty.b6db919c.svg",
     "static/media/star-half.c3fd44cc.svg": "/getyourguide-clone/static/media/star-half.c3fd44cc.svg",
     "static/media/star.ee1e796e.svg": "/getyourguide-clone/static/media/star.ee1e796e.svg",
     "static/media/time.446f3ac3.svg": "/getyourguide-clone/static/media/time.446f3ac3.svg",
+    "static/media/twitter.ac376369.svg": "/getyourguide-clone/static/media/twitter.ac376369.svg",
     "static/media/user.2e11e50a.svg": "/getyourguide-clone/static/media/user.2e11e50a.svg",
     "static/media/zigzag.d01fb1d2.svg": "/getyourguide-clone/static/media/zigzag.d01fb1d2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c737d019.js",
     "static/js/2.2728d02b.chunk.js",
-    "static/css/main.d4073b12.chunk.css",
-    "static/js/main.10883cf3.chunk.js"
+    "static/css/main.3f6bccfc.chunk.css",
+    "static/js/main.9d7b626a.chunk.js"
   ]
 }
