@@ -20,6 +20,8 @@ const callouts = [
   },
 ];
 
+export const calloutsLength = callouts.length;
+
 const TextCallouts = () => (
   <div className="text-callouts-container">
     {callouts.map(({ title, img, text }) => (
