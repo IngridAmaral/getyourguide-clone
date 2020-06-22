@@ -29,7 +29,6 @@
 
 @mixin flex-center-x-line {
     @include display-flex;
-    align-items: unset;
     justify-content: center;
 }
 
