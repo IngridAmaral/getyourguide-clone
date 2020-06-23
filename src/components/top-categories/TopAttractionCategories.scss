@@ -1,0 +1,150 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.top-attraction-categories-container {
+  width: 100%;
+  .items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+    overflow: scroll;
+    margin: 1rem 0;
+    width: 100%;
+    box-shadow: inset 0px -7px 10px -10px #111;
+  }
+
+  .show-more {
+    display: none;
+  }
+
+  .item {
+    width: 100%;
+    margin-top: 1rem;
+    height: fit-content;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    .number {
+      font-size: $font-size-base;
+      background-color: $clr-secondary;
+      color: $clr-solid-white;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .attraction {
+      width: 100%;
+      border: 0.1rem solid $clr-secondary;
+      box-sizing: border-box;
+      font-size: $font-size-mili;
+      padding: 0.5rem;
+      text-align: left;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .top-attraction-categories-container {
+    @include flex-column-center-x;
+
+    .items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      height: fit-content;
+      margin: 0;
+      transition: max-height 0.5s ease-in;
+      box-shadow: none;
+      overflow: hidden;
+
+      &.close {
+        max-height: 21rem;
+      }
+
+      &.open {
+        max-height: 1000px;
+      }
+    }
+
+    .show-more {
+      @include flex-center-xy;
+      width: 98%;
+      margin: 0.5rem 1rem;
+      box-sizing: border-box;
+      color: $clr-primary;
+      font-weight: 600;
+      font-size: $font-size-mili;
+      padding: 0.5rem;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        path {
+          fill: $clr-primary;
+        }
+      }
+
+      &.open {
+        box-shadow: none;
+        svg {
+          transform: rotate(180deg);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+
+      &.close {
+        box-shadow: 0px -7px 10px -10px #111;
+        svg {
+          transform: rotate(0deg);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+    }
+
+    .item {
+      width: fit-content;
+      flex-grow: 1;
+      margin: 1rem 1rem 0rem 0;
+      height: fit-content;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-around;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .top-attraction-categories-container {
+    .items {
+      justify-content: center;
+      
+      &.close {
+        max-height: fit-content;
+      }
+
+      .item {
+        flex-grow: unset;
+        .number {
+          padding: 0.2rem .5rem;
+        }
+
+        .attraction {
+          padding: 0.4rem;
+        }
+      }
+    }
+
+    .show-more {
+      display: none;
+    }
+  }
+}
