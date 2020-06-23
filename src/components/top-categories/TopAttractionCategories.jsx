@@ -1,13 +1,13 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { getPopular } from '../../redux/reducers/popular';
 import { fetchPopularAC } from '../../redux/actions/getPopular';
 import './TopAttractionCategories.scss';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 
-class TopAttractionCategories extends React.Component {
+export class TopAttractionCategories extends React.Component {
   state = {
     expand: false,
   }
@@ -31,12 +31,12 @@ class TopAttractionCategories extends React.Component {
         <div className={`items ${isOpen}`}>
           {popular.map((item, idx) => (
             <div key={item} className="item">
-              <span className="number">{idx}</span>
+              <span className="number">{idx + 1}</span>
               <span className="attraction">{item}</span>
             </div>
           ))}
         </div>
-        <div className={`show-more ${isOpen}`} onClick={() => this.handleClick()}>
+        <div className={`show-more ${isOpen}`} onClick={this.handleClick} onKeyDown={this.handleClick}>
           <span>{show}</span>
           <Caret />
         </div>
@@ -60,3 +60,8 @@ export default connect(
   mapStateToProps,
   mapDispatchTopProps,
 )(TopAttractionCategories);
+
+TopAttractionCategories.propTypes = {
+  fetchPopular: PropTypes.func.isRequired,
+  popular: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
