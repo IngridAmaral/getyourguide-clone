@@ -5,6 +5,7 @@ import TopWrapper from './components/top-wrapper/TopWrapper';
 import TextCallouts from './components/text-callouts/TextCallouts';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import Newsletter from './components/newsletter/Newsletter';
 import './App.scss';
 
 const IS_RESULT = false;
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Header />
         <TextCallouts />
         <TopContent isResult={IS_RESULT} />
+        <Newsletter />
         <TopWrapper />
         <Footer />
       </div>
