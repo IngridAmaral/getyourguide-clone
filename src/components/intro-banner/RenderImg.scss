@@ -1,0 +1,58 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.intro-banner-images {
+  width: 100%;
+  position: relative;
+  display: flex;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    img {
+      position: absolute;
+      width: auto;
+      height: 520px;
+    }
+  
+    .show {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+  
+    .hide {
+      transition: opacity 1s;
+      opacity: 0;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .intro-banner-images {
+    .image {
+      img {
+        top: 0;
+        right: -40%;
+        width: auto;
+        height: 480px;
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+   .intro-banner-images {
+    .image {
+      img {
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 480px;
+      }
+    }
+  }
+}
