@@ -1,0 +1,79 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.search-input-container {
+  width: 100%;
+  position: relative;
+  
+  .float-search {
+    position: absolute;
+    color: $clr-raven;
+    font-weight: 600;
+    font-size: $font-size-base;
+    top: 25%;
+    left: .8rem;
+    transition: all .2s;
+  }
+  
+  input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
+    top:0;
+    font-size: $font-size-micro;
+  }
+  
+  input[type="text"] {
+    font-size: $font-size-mili;
+    width: 100%;
+    padding: 1.2rem .8rem .8rem .8rem;
+    box-sizing: border-box;
+    border-radius: .2rem;
+    outline: none;
+    font-weight: 600;
+    border: none;
+  }
+
+  
+  .no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+  }
+  
+  .suggestions {
+    width: 100%;
+    position: absolute;
+    font-size: $font-size-mili;
+    color: $clr-secondary;
+    background-color: $clr-solid-white;
+    list-style: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: .1rem;
+    font-weight: 600;
+  }
+  
+  .suggestions li {
+    padding: 0.8rem;
+    border-top: 1px solid #999;
+  }
+  
+  .suggestion-active,
+  .suggestions li:hover {
+    background-color: $clr-terciary;
+    color: $clr-solid-white;
+    cursor: pointer;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .search-input-container {
+    margin-right: 1rem;    
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
