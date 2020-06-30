@@ -25,7 +25,7 @@ describe('fetch data from API', () => {
 
     expect(destinationsTours(path)).resolves.toEqual(mockDestinationsToursResp.data);
 
-    expect(axios.get).toHaveBeenCalledWith(`destinations/${path}`);
+    expect(axios.get).toHaveBeenCalledWith(`destinations/tours-${path}`);
   });
 
   test('fetches erroneously data from an API', async () => {
