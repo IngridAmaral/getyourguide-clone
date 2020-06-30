@@ -7,7 +7,7 @@ const mockFunc = () => {
 };
 
 const Button = ({ btnClass, text, click }) => (
-  <button type="submit" className={`btn ${btnClass}`} onClick={() => click()}>
+  <button type="submit" className={`btn ${btnClass}`} onClick={click}>
     {text}
   </button>
 );
