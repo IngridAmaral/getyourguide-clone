@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './AutoComplete.scss';
+import SuggestionsList from './SuggestionsList';
 
 const AutoComplete = ({
-  suggestionsListComponent,
+  filteredSuggestions,
+  activeSuggestion,
+  showSuggestions,
   onChange,
+  onClick,
   onKeyDown,
   userInput,
 }) => (
@@ -20,16 +24,26 @@ const AutoComplete = ({
       />
       <span className="float-search">Barcelona, Paris...</span>
     </label>
-    {suggestionsListComponent}
+    {showSuggestions
+      && userInput
+      && (
+      <SuggestionsList
+        filteredSuggestions={filteredSuggestions}
+        activeSuggestion={activeSuggestion}
+        onClick={onClick}
+      />
+      )}
   </div>
 );
-
 
 AutoComplete.propTypes = {
   userInput: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onKeyDown: PropTypes.func.isRequired,
-  suggestionsListComponent: PropTypes.element.isRequired,
+  filteredSuggestions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activeSuggestion: PropTypes.number.isRequired,
+  showSuggestions: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AutoComplete;
