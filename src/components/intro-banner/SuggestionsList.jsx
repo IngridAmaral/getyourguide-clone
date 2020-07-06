@@ -1,29 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SuggestionsList = (
-  {
-    filteredSuggestions,
-    activeSuggestion,
-    onClick,
-  },
-) => (
+const SuggestionsList = ({
+  filteredSuggestions,
+  activeSuggestion,
+  onClick,
+}) => (
   <ul className="suggestions">
-    {filteredSuggestions.map((suggestion, idx) => {
-      let classSuggestion;
-      if (idx === activeSuggestion) {
-        classSuggestion = 'suggestion-active';
-      }
-      return (
-        <li
-          className={classSuggestion}
-          key={suggestion}
-          onClick={onClick}
-        >
-          {suggestion}
-        </li>
-      );
-    })}
+    {filteredSuggestions.map((suggestion, idx) => (
+      <li
+        className={idx === activeSuggestion ? 'suggestion-active' : ''}
+        key={suggestion}
+        onClick={onClick}
+      >
+        {suggestion}
+      </li>
+    ))}
   </ul>
 );
 
