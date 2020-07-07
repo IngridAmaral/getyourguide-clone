@@ -1,30 +1,20 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import TopContent from './components/top-content/TopContent';
-import TopWrapper from './components/top-wrapper/TopWrapper';
-import TextCallouts from './components/text-callouts/TextCallouts';
-import Header from './components/header/Header';
-import IntroBanner from './components/intro-banner/IntroBanner';
-import Footer from './components/footer/Footer';
-import Newsletter from './components/newsletter/Newsletter';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import Home from './components/home/Home';
+import Results from './components/results/Results';
+
 import './App.scss';
 
-const IS_RESULT = false;
-
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <IntroBanner />
-        <TextCallouts />
-        <TopContent isResult={IS_RESULT} />
-        <Newsletter />
-        <TopWrapper />
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <HashRouter>
+    <div className="app_container">
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/results" render={(props) => <Results {...props} noResults />} />
+        <Route path="*" />
+      </Switch>
+    </div>
+  </HashRouter>
+);
 
 export default App;
