@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TopWrapper } from './TopWrapper';
+import { TopWrapperClass } from './TopWrapper';
 import Slider from '../slider/Slider';
 
 const topActivity = {
@@ -24,30 +24,30 @@ const defaultProps = {
 
 describe('<TopWrapper />', () => {
   it('renders component', () => {
-    shallow(<TopWrapper {...defaultProps} />);
+    shallow(<TopWrapperClass {...defaultProps} />);
   });
 
   it('should call the fetch attractions function', () => {
     const func = jest.fn();
-    shallow(<TopWrapper {...defaultProps} fetchTopAttractions={func} />);
+    shallow(<TopWrapperClass {...defaultProps} fetchTopAttractions={func} />);
 
     expect(func).toHaveBeenCalled();
   });
 
   it('should call the fetch countries function', () => {
     const func = jest.fn();
-    shallow(<TopWrapper {...defaultProps} fetchTopCountries={func} />);
+    shallow(<TopWrapperClass {...defaultProps} fetchTopCountries={func} />);
 
     expect(func).toHaveBeenCalled();
   });
 
   it('renders component wrapper', () => {
-    const wrapper = shallow(<TopWrapper {...defaultProps} />);
+    const wrapper = shallow(<TopWrapperClass {...defaultProps} />);
     expect(wrapper.find('.top-wrapper-container').exists()).toBe(true);
   });
 
   it('renders Slider components with corrects props', () => {
-    const wrapper = shallow(<TopWrapper {...defaultProps} />);
+    const wrapper = shallow(<TopWrapperClass {...defaultProps} />);
     expect(wrapper.find(Slider).at(0).props().data).toBe(defaultProps.topAttractions);
     expect(wrapper.find(Slider).at(0).props().type).not.toBe('destinations');
     expect(wrapper.find(Slider).at(1).props().data).toBe(defaultProps.topAttractions);

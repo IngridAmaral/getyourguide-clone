@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TopContent, MAX_CARDS } from './TopContent';
+import { TopContentClass, MAX_CARDS } from './TopContent';
 import { fetchTopCityAC as fetchTopCity } from '../../redux/actions/getTopCity';
 import LocationCard from '../location-card/LocationCard';
 import TopCities from '../top-cities-nav/TopCities';
@@ -49,38 +49,38 @@ const stateUpdate = (wrapper) => {
   wrapper.update();
 };
 
-describe('<TopContent />', () => {
+describe('<TopContentClass />', () => {
   it('renders component', () => {
-    shallow(<TopContent {...defaultProps} />);
+    shallow(<TopContentClass {...defaultProps} />);
   });
 
   it('renders', () => {
-    const wrapper = shallow(<TopContent {...defaultProps} />);
+    const wrapper = shallow(<TopContentClass {...defaultProps} />);
     wrapper.setProps({ topCity: { ...defaultProps.topCity, destination: 'barcelona' } });
     wrapper.update();
     expect(wrapper.state('activeCity')).toEqual('barcelona');
   });
 
   it('renders TopCities component', () => {
-    const wrapper = shallow(<TopContent {...defaultProps} />);
+    const wrapper = shallow(<TopContentClass {...defaultProps} />);
     stateUpdate(wrapper);
     expect(wrapper.find(TopCities).exists()).toBe(true);
   });
 
   it('renders LocationCard component', () => {
-    const wrapper = shallow(<TopContent {...defaultProps} />);
+    const wrapper = shallow(<TopContentClass {...defaultProps} />);
     stateUpdate(wrapper);
     expect(wrapper.find(LocationCard).exists()).toBe(true);
   });
 
   it('renders TourCard component', () => {
-    const wrapper = shallow(<TopContent {...defaultProps} />);
+    const wrapper = shallow(<TopContentClass {...defaultProps} />);
     stateUpdate(wrapper);
     expect(wrapper.find(TourCard).exists()).toBe(true);
   });
 
   it('renders the correct number of cards', () => {
-    const wrapper = shallow(<TopContent {...defaultProps} />);
+    const wrapper = shallow(<TopContentClass {...defaultProps} />);
     stateUpdate(wrapper);
     expect(wrapper.find(TourCard)).toHaveLength(2 * MAX_CARDS);
   });

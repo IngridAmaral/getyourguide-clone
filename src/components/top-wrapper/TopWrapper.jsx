@@ -11,9 +11,9 @@ import { fetchTopCountriesAC } from '../../redux/actions/getTopCountries';
 import Slider from '../slider/Slider';
 import { ReactComponent as Zigzag } from '../../assets/svgs/separators/zigzag.svg';
 import './TopWrapper.scss';
-import TopAttractionCategories from '../top-categories/TopAttractionCategories';
+import TopAttractionCategoriesClass from '../top-categories/TopAttractionCategories';
 
-export class TopWrapper extends React.Component {
+export class TopWrapperClass extends React.Component {
   componentDidMount() {
     const { fetchTopAttractions, fetchTopCountries } = this.props;
     fetchTopAttractions();
@@ -46,7 +46,7 @@ export class TopWrapper extends React.Component {
         </div>
         <div className="top-slider">
           <span className="title">Top Attractions  Categories</span>
-          <TopAttractionCategories />
+          <TopAttractionCategoriesClass />
         </div>
       </div>
     );
@@ -66,9 +66,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
   dispatch,
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopWrapper);
+export default connect(mapStateToProps, mapDispatchToProps)(TopWrapperClass);
 
-TopWrapper.propTypes = {
+TopWrapperClass.propTypes = {
   topAttractions: topAttractionsPropType.isRequired,
   fetchTopAttractions: PropTypes.func.isRequired,
   topCountries: topCountriesPropType.isRequired,
