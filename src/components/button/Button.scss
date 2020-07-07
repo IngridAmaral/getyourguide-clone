@@ -17,7 +17,7 @@
     background-color: $clr-terciary;
     color: $clr-solid-white;
     padding: .6rem 2rem;
-
+    border: none;
     &:hover {
       background-color: $clr-science-blue;
     }
@@ -26,7 +26,6 @@
   &.bg-none {
     border-color: $clr-terciary;
     padding: .6rem 1.25rem;
-
     color: $clr-terciary;
     background-color: transparent;
   }

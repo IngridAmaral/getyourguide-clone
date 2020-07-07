@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TopAttractionCategories } from './TopAttractionCategories';
+import { TopAttractionCategoriesClass } from './TopAttractionCategories';
 
 const defaultProps = {
   popular: ['Dubai Sky Diving', 'Rome City Cards', 'Paris Cruises & Boat Tours', 'New York City City Cards'],
@@ -9,18 +9,18 @@ const defaultProps = {
 
 describe('<TopAttractionCategories />', () => {
   it('renders component', () => {
-    shallow(<TopAttractionCategories {...defaultProps} />);
+    shallow(<TopAttractionCategoriesClass {...defaultProps} />);
   });
 
   it('should call the fetch popular function', () => {
     const func = jest.fn();
-    shallow(<TopAttractionCategories {...defaultProps} fetchPopular={func} />);
+    shallow(<TopAttractionCategoriesClass {...defaultProps} fetchPopular={func} />);
 
     expect(func).toHaveBeenCalled();
   });
 
   it('should render the correct number of items with correct content', () => {
-    const wrapper = shallow(<TopAttractionCategories {...defaultProps} />);
+    const wrapper = shallow(<TopAttractionCategoriesClass {...defaultProps} />);
     const items = wrapper.find('.item');
 
     expect(items).toHaveLength(defaultProps.popular.length);
@@ -31,7 +31,7 @@ describe('<TopAttractionCategories />', () => {
   });
 
   it('expands the list on show more click', () => {
-    const wrapper = shallow(<TopAttractionCategories {...defaultProps} />);
+    const wrapper = shallow(<TopAttractionCategoriesClass {...defaultProps} />);
     const showMore = wrapper.find('.show-more');
     showMore.simulate('click');
     wrapper.update();
@@ -40,7 +40,7 @@ describe('<TopAttractionCategories />', () => {
   });
 
   it('closes the list on show less click', () => {
-    const wrapper = shallow(<TopAttractionCategories {...defaultProps} />);
+    const wrapper = shallow(<TopAttractionCategoriesClass {...defaultProps} />);
     const showMore = wrapper.find('.show-more');
     showMore.simulate('click');
     wrapper.update();

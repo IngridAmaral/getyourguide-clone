@@ -7,7 +7,7 @@ import { fetchPopularAC } from '../../redux/actions/getPopular';
 import './TopAttractionCategories.scss';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 
-export class TopAttractionCategories extends React.Component {
+export class TopAttractionCategoriesClass extends React.Component {
   state = {
     expand: false,
   }
@@ -59,9 +59,9 @@ const mapDispatchTopProps = (dispatch) => bindActionCreators(
 export default connect(
   mapStateToProps,
   mapDispatchTopProps,
-)(TopAttractionCategories);
+)(TopAttractionCategoriesClass);
 
-TopAttractionCategories.propTypes = {
+TopAttractionCategoriesClass.propTypes = {
   fetchPopular: PropTypes.func.isRequired,
   popular: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

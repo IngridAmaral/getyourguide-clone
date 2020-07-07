@@ -16,7 +16,7 @@ import TopLocationCard from '../top-location-card/TopLocationCard';
 
 export const MAX_CARDS = 4;
 
-export class TopContent extends React.Component {
+export class TopContentClass extends React.Component {
   state = {
     activeCity: 'paris',
     cities: {},
@@ -133,14 +133,14 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
   dispatch,
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopContent);
+export default connect(mapStateToProps, mapDispatchToProps)(TopContentClass);
 
-TopContent.propTypes = {
+TopContentClass.propTypes = {
   topCity: topCityPropType.isRequired,
   fetchTopCity: PropTypes.func.isRequired,
   isResult: PropTypes.bool,
 };
 
-TopContent.defaultProps = {
+TopContentClass.defaultProps = {
   isResult: false,
 };
