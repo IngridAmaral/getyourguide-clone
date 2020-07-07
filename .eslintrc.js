@@ -31,6 +31,8 @@ module.exports = {
     "react/no-did-update-set-state": 'off',
     "jsx-a11y/no-static-element-interactions": "off",
     "no-alert": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off"
   },
   overrides: [
     {
