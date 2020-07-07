@@ -1,15 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { getDestinationsTours } from '../../redux/reducers/destinationsTours';
+import { destinationsToursReducer } from '../../redux/reducers/destinationsTours';
 import { fetchDestinationsToursAC } from '../../redux/actions/getDestinationsTours';
 import './Search.scss';
 import AutoComplete from './AutoComplete';
 import Button from '../button/Button';
 
 const SUGGESTIONS = ['Paris', 'Paris, France', 'New York', 'New York City', 'Barcelona', 'Barcelona, Spain'];
+const CITIES_SUGGESTIONS = [
+  {
+    city: 'paris',
+    suggestions: ['Paris', 'Paris, France'],
+  },
+  {
+    city: 'barcelona',
+    suggestions: ['Barcelona', 'Barcelona, Spain'],
+  },
+  {
+    city: 'new-york',
+    suggestions: ['New York', 'New York City'],
+  },
+];
 
-class Search extends React.Component {
+export class SearchClass extends React.Component {
   state = {
     activeSuggestion: 0,
     filteredSuggestions: [],
@@ -70,89 +86,61 @@ class Search extends React.Component {
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e, history) => {
     e.preventDefault();
     const { userInput } = this.state;
     const { fetchDestinationsTours } = this.props;
-    const CITIES_SUGGESTIONS = [
-      {
-        city: 'paris',
-        suggestions: ['Paris', 'Paris, France'],
-      },
-      {
-        city: 'barcelona',
-        suggestions: ['Barcelona', 'Barcelona, Spain'],
-      },
-      {
-        city: 'new-york',
-        suggestions: ['New York', 'New York City'],
-      },
-    ];
+    let noResults = true;
 
-    let city;
     CITIES_SUGGESTIONS.forEach((location) => {
-      if (location.suggestions.includes(userInput)) {
-        city = location.city;
+      if (location.suggestions.includes(userInput) || location.city.includes(userInput)) {
+        fetchDestinationsTours(location.city);
+        noResults = false;
       }
     });
 
-    fetchDestinationsTours(city);
+    history.push('/results', noResults);
   }
 
   render() {
     const {
-      filteredSuggestions, activeSuggestion, showSuggestions, userInput,
+      filteredSuggestions,
+      activeSuggestion,
+      showSuggestions,
+      userInput,
     } = this.state;
-    let suggestionsListComponent;
-
-    if (showSuggestions && userInput) {
-      if (filteredSuggestions.length) {
-        suggestionsListComponent = (
-          <ul className="suggestions">
-            {filteredSuggestions.map((suggestion, idx) => {
-              let classSuggestion;
-              if (idx === activeSuggestion) {
-                classSuggestion = 'suggestion-active';
-              }
-              return (
-                <li
-                  className={classSuggestion}
-                  key={suggestion}
-                  onClick={this.handleInputClick}
-                >
-                  {suggestion}
-                </li>
-              );
-            })}
-          </ul>
-        );
-      }
-    }
-
-    console.log(this.props);
     return (
-      <div className="search-container">
-        <p className="banner-title">
-          Book tours, activities, and attractions anywhere
-        </p>
-        <form className="search-form">
-          <AutoComplete
-            suggestionsListComponent={suggestionsListComponent}
-            suggestions={SUGGESTIONS}
-            onClick={this.handleInputClick}
-            onChange={this.handleOnChange}
-            onKeyDown={this.handleKeyDown}
-            userInput={userInput}
-          />
-          <Button text="Search" btnClass="bg-blue" click={this.handleSubmit} />
-        </form>
-      </div>
+      <Route
+        render={({ history }) => (
+          <div className="search-container">
+            <p className="banner-title">
+              Book tours, activities, and attractions anywhere
+            </p>
+            <form className="search-form">
+              <AutoComplete
+                onClick={this.handleInputClick}
+                onChange={this.handleOnChange}
+                onKeyDown={this.handleKeyDown}
+                userInput={userInput}
+                showSuggestions={showSuggestions}
+                activeSuggestion={activeSuggestion}
+                filteredSuggestions={filteredSuggestions}
+              />
+              <Button text="Search" btnClass="bg-blue" click={(e) => this.handleSubmit(e, history)} />
+            </form>
+          </div>
+        )}
+      />
     );
   }
 }
 
+SearchClass.propTypes = {
+  fetchDestinationsTours: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
-  tours: getDestinationsTours(state),
+  tours: destinationsToursReducer(state),
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(
@@ -162,4 +150,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(
   dispatch,
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchClass);
