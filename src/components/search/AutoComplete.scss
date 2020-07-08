@@ -1,0 +1,122 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.search-input-container {
+  width: 100%;
+  position: relative;
+  
+  input[type="text"] {
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+  }
+  
+  .suggestions {
+    width: 100%;
+    position: absolute;
+    font-size: $font-size-mili;
+    color: $clr-secondary;
+    background-color: $clr-solid-white;
+    list-style: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: .1rem;
+    font-weight: 600;
+  }
+  
+  .suggestions li {
+    padding: 0.8rem;
+    border: 1px solid #999;
+    border-top: none;
+  }
+  
+  .suggestion-active,
+  .suggestions li:hover {
+    background-color: $clr-terciary;
+    color: $clr-solid-white;
+    cursor: pointer;
+  }
+}
+
+.input-home {
+  position: relative;
+  
+  input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
+    top:0;
+    font-size: $font-size-micro;
+  }
+  
+  input[type="text"] {
+    font-size: $font-size-mili;
+    padding: 1.2rem .8rem .8rem .8rem;
+    border-radius: .2rem;
+    border: none;
+  }
+  
+  .float-search {
+    font-weight: 600;
+    position: absolute;
+    color: $clr-raven;
+    font-size: $font-size-base;
+    top: 25%;
+    left: .8rem;
+    transition: all .2s;
+  }
+}
+
+.input-results {
+  width: fit-content;
+  margin-left: 2rem;
+
+  .float-search {
+    display: none;
+  }
+
+  input[type="text"]:focus-within {
+    border: .15rem solid $clr-terciary;
+    border-right: none;
+  }
+  
+  input[type="text"] {
+    font-size: $font-size-base;
+    padding: .4rem 1rem;
+    border: .15rem solid $clr-ghost;
+    border-right: none;
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .search-input-container {
+    margin: 0;
+  }
+
+  .input-home {
+    width: 100%;
+    padding: .5rem;
+
+    input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
+      top: .5rem;
+      font-size: $font-size-micro;
+    }
+
+    .float-search {
+      top: 1.2rem;
+      left: .8rem;
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
