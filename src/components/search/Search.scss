@@ -1,0 +1,97 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.search-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.search-home {
+  border-radius: 0.5rem;
+  background-color: $clr-secondary;
+  padding: 1rem;
+
+  .search-form {
+    @include flex-column-center-x;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+
+  button {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+}
+
+.search-results {
+  margin-left: 0rem;
+  display: flex;
+  width: fit-content;
+
+  button {
+    background-color: $clr-terciary;
+    border: none;
+    height: fit-content;
+    cursor: pointer;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+// IPAD
+@media (min-width: 768px) {
+  .search-container {
+    .search-form {
+      width: 100%;
+      @include flex-center-xy;
+      flex-direction: row;
+    }
+  }
+  .search-home {
+    button {
+      width: fit-content;
+      margin: 0;
+    }
+  }
+  .search-results {
+    margin-left: 1rem;
+    display: flex;
+    width: fit-content;
+
+    button {
+      background-color: $clr-terciary;
+      border: none;
+      height: fit-content;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $clr-science-blue;
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0.2rem;
+
+        path {
+          fill: $clr-solid-white;
+        }
+      }
+    }
+  }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
