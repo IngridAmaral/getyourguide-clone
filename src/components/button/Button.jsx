@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.scss';
+import { ReactComponent as SearchIcon } from '../../assets/svgs/search.svg';
 
 const mockFunc = () => {
   window.alert('sorry, click not allowed');
@@ -8,6 +9,11 @@ const mockFunc = () => {
 
 const Button = ({ btnClass, text, click }) => (
   <button type="submit" className={`btn ${btnClass}`} onClick={click}>
+    {text === 'Search' && (
+    <div className="search-icon">
+      <SearchIcon />
+    </div>
+    )}
     {text}
   </button>
 );

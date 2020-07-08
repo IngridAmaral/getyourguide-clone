@@ -12,6 +12,16 @@
   border: .1rem solid;
   font-weight: 600;
   outline: none;
+  @include flex-center-xy;
+
+  .search-icon {
+    height: fit-content;
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: .5rem;
+    }
+  }
 
   &.bg-blue {
     background-color: $clr-terciary;
