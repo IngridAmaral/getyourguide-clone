@@ -1,0 +1,42 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.banner-content-container {
+  width: 100%;
+  @include flex-center-xy;
+  flex-direction: column;
+  height: 480px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+
+  .banner-title {
+    color: $clr-solid-white;
+    font-size: 2.75rem;
+    line-height: 3rem;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    text-shadow: 1px 1px 7px rgba(150, 150, 150, .8);
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .banner-content-container {
+    width: 55%;
+    align-items: flex-start;
+    
+    .banner-title {
+      text-align: start;
+    }
+  }
+}
+
