@@ -13,12 +13,13 @@
 
   .signup-btn {
     display: none;
+    margin-left: .5rem;
   }
 
   .nav-item:hover .dropdown-content {
     visibility: visible;
     opacity: 1;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   .nav-item {
@@ -26,7 +27,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    margin-right: 1rem;
+    margin-left: 1rem;
 
     .menu-item {
       display: flex;
@@ -37,32 +38,11 @@
       overflow: hidden;
       cursor: pointer;
 
-      .item {
-        display: flex;
-        align-items: center;
+      .item-info {
+        .caret {
+          @include flex-center-xy;
+        }
       }
-    }
-
-    .menu-item:hover::before,
-    .menu-item:focus:before,
-    .menu-item:active:before {
-      left: 0;
-      right: 0;
-    }
-
-    .menu-item:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: 51%;
-      right: 51%;
-      bottom: 0;
-      background: $clr-secondary;
-      height: 4px;
-      -webkit-transition-property: left, right;
-      transition-property: left, right;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-out;
     }
 
     .dropdown-content {
@@ -71,18 +51,18 @@
       z-index: 10;
       opacity: 0;
       visibility: hidden;
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
       box-shadow: 0 0 4px 0 #e8e9ec;
       border: 0.01rem solid $clr-ghost;
       background-color: $clr-solid-white;
       box-sizing: border-box;
       font-size: 0.8rem;
-      
+
       padding: 2rem 3rem;
       right: 0rem;
 
       span {
-        border-bottom: .01rem solid $clr-ghost;
+        border-bottom: 0.01rem solid $clr-ghost;
         margin-bottom: 1rem;
       }
 
@@ -93,13 +73,6 @@
         border: none;
         color: $clr-secondary;
       }
-    }
-
-    &.language,
-    &.currency,
-    .caret,
-    span {
-      display: none;
     }
 
     & span {
@@ -116,17 +89,48 @@
       }
     }
   }
-}
 
-// IPAD
-@media (min-width: 768px) {
-  .navigation-list-container {
-    .nav-item {
-      &.search {
+  .other-icons {
+    .menu-item {
+      .item-info {
         display: none;
       }
     }
   }
+
+  .curr-lang-icons {
+    .menu-item {
+      .item-info {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+          padding: 0;
+          margin: 0;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
+// DEFAULT CELLPHONE SCREEN
+@media (min-width: 325px) {
+  .navigation-list-container {
+    .curr-lang-icons {
+      .menu-item {
+        .item-info {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
 }
 
 // NOTEBOOK
@@ -137,14 +141,35 @@
     }
 
     .nav-item {
-      &.language,
-      &.currency,
-      .caret,
-      span {
-        display: flex;
+      .menu-item:hover::before,
+      .menu-item:focus:before,
+      .menu-item:active:before {
+        left: 0;
+        right: 0;
+      }
+
+      .menu-item:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: $clr-secondary;
+        height: 4px;
+        -webkit-transition-property: left, right;
+        transition-property: left, right;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+      }
+    }
+
+    .other-icons {
+      .menu-item {
+        .item-info {
+          display: flex;
+        }
       }
     }
   }
 }
-
-
