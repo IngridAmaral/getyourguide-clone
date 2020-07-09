@@ -7,46 +7,46 @@
   width: 100%;
   position: relative;
   z-index: 2;
-}
-
-.search-home {
-  border-radius: 0.5rem;
-  background-color: $clr-secondary;
-  padding: 1rem;
 
   .search-form {
+    background-color: $clr-secondary;
+    padding: 1rem;
     @include flex-column-center-x;
     width: 100%;
+    border-radius: 0.2rem;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+
+    button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
   }
 
-  button {
-    margin-top: 0.5rem;
-    width: 100%;
+  .simplified {
+    @include flex-center-xy;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+
+    button {
+      background-color: $clr-terciary;
+      border: none;
+      margin: 0;
+      cursor: pointer;
+      width: fit-content;
+
+      svg {
+        width: 1.5rem;
+        padding: 0.2rem;
+
+        path {
+          fill: $clr-solid-white;
+        }
+      }
+    }
   }
-}
-
-.search-results {
-  margin-left: 0rem;
-  display: flex;
-  width: fit-content;
-
-  button {
-    background-color: $clr-terciary;
-    border: none;
-    height: fit-content;
-    cursor: pointer;
-  }
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
 }
 
 // IPAD
@@ -56,36 +56,26 @@
       width: 100%;
       @include flex-center-xy;
       flex-direction: row;
-    }
-  }
-  .search-home {
-    button {
-      width: fit-content;
-      margin: 0;
-    }
-  }
-  .search-results {
-    margin-left: 1rem;
-    display: flex;
-    width: fit-content;
 
-    button {
-      background-color: $clr-terciary;
-      border: none;
-      height: fit-content;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $clr-science-blue;
+      button {
+        width: fit-content;
+        margin: 0;
       }
+    }
 
-      svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        padding: 0.2rem;
+    .simplified {
+      margin-left: 1rem;
+      display: flex;
+      width: fit-content;
 
-        path {
-          fill: $clr-solid-white;
+      button {
+        &:hover {
+          background-color: $clr-science-blue;
+        }
+
+        svg {
+          width: 1.4rem;
+          height: 1.4rem;
         }
       }
     }

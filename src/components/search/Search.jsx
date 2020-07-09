@@ -90,7 +90,7 @@ export class SearchClass extends React.Component {
   handleSubmit = (e, history) => {
     e.preventDefault();
     const { userInput } = this.state;
-    const { fetchDestinationsTours, page } = this.props;
+    const { fetchDestinationsTours, simplified } = this.props;
     let noResults = true;
 
     CITIES_SUGGESTIONS.forEach((location) => {
@@ -100,16 +100,15 @@ export class SearchClass extends React.Component {
       }
     });
 
-    if (page === 'home') {
+    if (!simplified) {
       history.push('/results', noResults);
     }
-    console.log('search');
   }
 
   buttonRender = (history) => {
-    const { page } = this.props;
+    const { simplified } = this.props;
 
-    if (page === 'home') {
+    if (!simplified) {
       return (<Button text="Search" btnClass="bg-blue" click={(e) => this.handleSubmit(e, history)} />);
     }
     return (
@@ -127,13 +126,12 @@ export class SearchClass extends React.Component {
       userInput,
     } = this.state;
 
-    const { page, showSearchBar } = this.props;
-    // const showSearch = showSearchBar && page === 'results' ? 'show' : 'hide';
+    const { simplified } = this.props;
     return (
       <Route
         render={({ history }) => (
           <div className="search-container">
-            <form className={`search-form search-${page}`}>
+            <form className={`search-form ${simplified ? 'simplified' : ''}`}>
               <AutoComplete
                 onClick={this.handleInputClick}
                 onChange={this.handleOnChange}
@@ -142,8 +140,8 @@ export class SearchClass extends React.Component {
                 showSuggestions={showSuggestions}
                 activeSuggestion={activeSuggestion}
                 filteredSuggestions={filteredSuggestions}
-                placeHolder={page === 'home' ? '' : 'Where are you going?'}
-                page={page}
+                placeHolder={!simplified ? '' : 'Where are you going?'}
+                simplified={simplified}
               />
               {this.buttonRender(history)}
             </form>
@@ -156,6 +154,11 @@ export class SearchClass extends React.Component {
 
 SearchClass.propTypes = {
   fetchDestinationsTours: PropTypes.func.isRequired,
+  simplified: PropTypes.bool,
+};
+
+SearchClass.defaultProps = {
+  simplified: false,
 };
 
 const mapStateToProps = (state) => ({
