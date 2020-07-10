@@ -7,7 +7,7 @@ const BannerContent = () => (
     <p className="banner-title">
       Book tours, activities, and attractions anywhere
     </p>
-    <Search page="home" />
+    <Search />
   </div>
 );
 

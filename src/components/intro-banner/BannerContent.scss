@@ -33,9 +33,10 @@
   .banner-content-container {
     width: 55%;
     align-items: flex-start;
-    
+
     .banner-title {
       text-align: start;
+      font-size: $font-size-h1;
     }
   }
 }
