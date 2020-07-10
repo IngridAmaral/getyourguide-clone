@@ -15,7 +15,7 @@ describe('<IntroBanner />', () => {
     expect(wrapper.find(RenderImg).exists()).toBe(true);
   });
 
-  it('renders the image compononent', () => {
+  it('renders the banner content component', () => {
     const wrapper = shallow(<IntroBanner />);
 
     expect(wrapper.find(BannerContent).exists()).toBe(true);

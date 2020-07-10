@@ -12,7 +12,7 @@ const defaultProps = {
 
 describe('<Search />', () => {
   it('renders component', () => {
-    mount(
+    shallow(
       <BrowserRouter>
         <SearchClass {...defaultProps} />
       </BrowserRouter>,

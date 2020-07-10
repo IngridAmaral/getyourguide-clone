@@ -8,7 +8,7 @@ import { ReactComponent as User } from '../../assets/svgs/user.svg';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 import Button from '../button/Button';
 
-const ICONS = [
+export const ICONS = [
   { id: 'language', text: 'English' },
   { id: 'currency', text: 'EUR' },
   { id: 'wishlist', icon: <Like />, text: 'Wishlist' },
