@@ -11,8 +11,10 @@ const AutoComplete = ({
   onClick,
   onKeyDown,
   userInput,
+  placeHolder,
+  simplified,
 }) => (
-  <div className="search-input-container">
+  <div className={`search-input-container${simplified ? ' input-simplified' : ''}`}>
     <label htmlFor="search-input">
       <input
         id="search-input"
@@ -21,18 +23,17 @@ const AutoComplete = ({
         onKeyDown={onKeyDown}
         value={userInput}
         autoComplete="off"
+        placeholder={placeHolder}
       />
-      <span className="float-search">Barcelona, Paris...</span>
+      <span className="float-search">Paris, Barcelona...</span>
     </label>
-    {showSuggestions
-      && userInput
-      && (
+    {showSuggestions && userInput && (
       <SuggestionsList
         filteredSuggestions={filteredSuggestions}
         activeSuggestion={activeSuggestion}
         onClick={onClick}
       />
-      )}
+    )}
   </div>
 );
 
@@ -44,6 +45,13 @@ AutoComplete.propTypes = {
   activeSuggestion: PropTypes.number.isRequired,
   showSuggestions: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  placeHolder: PropTypes.string,
+  simplified: PropTypes.bool,
+};
+
+AutoComplete.defaultProps = {
+  simplified: false,
+  placeHolder: null,
 };
 
 export default AutoComplete;

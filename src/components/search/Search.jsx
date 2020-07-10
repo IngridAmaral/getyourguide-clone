@@ -8,6 +8,7 @@ import { fetchDestinationsToursAC } from '../../redux/actions/getDestinationsTou
 import './Search.scss';
 import AutoComplete from './AutoComplete';
 import Button from '../button/Button';
+import { ReactComponent as SearchIcon } from '../../assets/svgs/search.svg';
 
 const SUGGESTIONS = ['Paris', 'Paris, France', 'New York', 'New York City', 'Barcelona', 'Barcelona, Spain'];
 const CITIES_SUGGESTIONS = [
@@ -89,7 +90,7 @@ export class SearchClass extends React.Component {
   handleSubmit = (e, history) => {
     e.preventDefault();
     const { userInput } = this.state;
-    const { fetchDestinationsTours } = this.props;
+    const { fetchDestinationsTours, simplified } = this.props;
     let noResults = true;
 
     CITIES_SUGGESTIONS.forEach((location) => {
@@ -99,7 +100,22 @@ export class SearchClass extends React.Component {
       }
     });
 
-    history.push('/results', noResults);
+    if (!simplified) {
+      history.push('/results', noResults);
+    }
+  }
+
+  buttonRender = (history) => {
+    const { simplified } = this.props;
+
+    if (!simplified) {
+      return (<Button text="Search" btnClass="bg-blue" click={(e) => this.handleSubmit(e, history)} />);
+    }
+    return (
+      <button type="submit" onClick={(e) => this.handleSubmit(e, history)}>
+        <SearchIcon />
+      </button>
+    );
   }
 
   render() {
@@ -109,14 +125,13 @@ export class SearchClass extends React.Component {
       showSuggestions,
       userInput,
     } = this.state;
+
+    const { simplified } = this.props;
     return (
       <Route
         render={({ history }) => (
           <div className="search-container">
-            <p className="banner-title">
-              Book tours, activities, and attractions anywhere
-            </p>
-            <form className="search-form">
+            <form className={`search-form ${simplified ? 'simplified' : ''}`}>
               <AutoComplete
                 onClick={this.handleInputClick}
                 onChange={this.handleOnChange}
@@ -125,8 +140,10 @@ export class SearchClass extends React.Component {
                 showSuggestions={showSuggestions}
                 activeSuggestion={activeSuggestion}
                 filteredSuggestions={filteredSuggestions}
+                placeHolder={!simplified ? '' : 'Where are you going?'}
+                simplified={simplified}
               />
-              <Button text="Search" btnClass="bg-blue" click={(e) => this.handleSubmit(e, history)} />
+              {this.buttonRender(history)}
             </form>
           </div>
         )}
@@ -137,6 +154,11 @@ export class SearchClass extends React.Component {
 
 SearchClass.propTypes = {
   fetchDestinationsTours: PropTypes.func.isRequired,
+  simplified: PropTypes.bool,
+};
+
+SearchClass.defaultProps = {
+  simplified: false,
 };
 
 const mapStateToProps = (state) => ({

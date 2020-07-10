@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.scss';
-import { ReactComponent as Search } from '../../assets/svgs/search.svg';
+import PropTypes from 'prop-types';
 import { ReactComponent as Like } from '../../assets/svgs/like.svg';
 import { ReactComponent as Basket } from '../../assets/svgs/basket.svg';
 import { ReactComponent as Help } from '../../assets/svgs/help.svg';
@@ -11,7 +11,6 @@ import Button from '../button/Button';
 const ICONS = [
   { id: 'language', text: 'English' },
   { id: 'currency', text: 'EUR' },
-  { id: 'search', icon: <Search />, text: '' },
   { id: 'wishlist', icon: <Like />, text: 'Wishlist' },
   { id: 'basket', icon: <Basket />, text: 'Basket' },
   { id: 'help', icon: <Help />, text: 'Help' },
@@ -40,14 +39,22 @@ const renderDropdown = (id) => (hasDropdown.includes(id)) && (
 
 const renderCaret = (id) => (hasDropdown.includes(id)) && <Caret />;
 
-const NavigationList = () => (
+const NavigationList = ({ enforceCurrencyAndLang }) => (
   <div className="navigation-list-container">
     {ICONS.map((icon) => (
-      <div className={`nav-item ${icon.id}`} key={`item${icon.id}`}>
+      <div
+        className={`nav-item
+          ${enforceCurrencyAndLang && (icon.id === 'currency' || icon.id === 'language')
+          ? 'curr-lang-icons'
+          : 'other-icons'}`}
+        key={`item${icon.id}`}
+      >
         <div className="menu-item">
           {icon.icon}
-          <span>{icon.text}</span>
-          <div className="caret">{renderCaret(icon.id)}</div>
+          <div className="item-info">
+            <span>{icon.text}</span>
+            <div className="caret">{renderCaret(icon.id)}</div>
+          </div>
         </div>
         {renderDropdown(icon.id)}
       </div>
@@ -57,5 +64,13 @@ const NavigationList = () => (
     </div>
   </div>
 );
+
+NavigationList.propTypes = {
+  enforceCurrencyAndLang: PropTypes.bool,
+};
+
+NavigationList.defaultProps = {
+  enforceCurrencyAndLang: false,
+};
 
 export default NavigationList;

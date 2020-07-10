@@ -6,33 +6,32 @@
 .search-input-container {
   width: 100%;
   position: relative;
-  
+
+  input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
+    top:0;
+    font-size: $font-size-micro;
+  }
+
+  input[type="text"] {
+    font-size: $font-size-mili;
+    padding: 1.2rem .8rem .8rem .8rem;
+    border-radius: .1rem;
+    border: none;
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+  }
+
   .float-search {
+    font-weight: 600;
     position: absolute;
     color: $clr-raven;
-    font-weight: 600;
     font-size: $font-size-base;
     top: 25%;
     left: .8rem;
     transition: all .2s;
   }
-  
-  input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
-    top:0;
-    font-size: $font-size-micro;
-  }
-  
-  input[type="text"] {
-    font-size: $font-size-mili;
-    width: 100%;
-    padding: 1.2rem .8rem .8rem .8rem;
-    box-sizing: border-box;
-    border-radius: .2rem;
-    outline: none;
-    font-weight: 600;
-    border: none;
-  }
-
   
   .no-suggestions {
     color: #999;
@@ -56,7 +55,8 @@
   
   .suggestions li {
     padding: 0.8rem;
-    border-top: 1px solid #999;
+    border: 1px solid #999;
+    border-top: none;
   }
   
   .suggestion-active,
@@ -67,10 +67,53 @@
   }
 }
 
+.input-simplified {
+  width: 100%;
+
+  .float-search {
+    display: none;
+  }
+
+  input[type="text"]:focus-within {
+    border: .1rem solid $clr-terciary;
+    border-right: none;
+  }
+  
+  input[type="text"] {
+    font-size: $font-size-base;
+    padding: .5rem .5rem;
+    border: .1rem solid $clr-ghost;
+    border-right: none;
+  }
+}
+
 // IPAD
 @media (min-width: 768px) {
   .search-input-container {
-    margin-right: 1rem;    
+    margin: 0;
+    width: 100%;
+    padding: .5rem;
+
+    input[type="text"]:focus-within ~ .float-search, input:not([value='']) + .float-search{
+      top: .5rem;
+      font-size: $font-size-micro;
+    }
+
+    .float-search {
+      top: 1.2rem;
+      left: .8rem;
+    }
+  }
+
+  .input-simplified {
+    width: fit-content;
+    margin-left: 2rem;
+    padding: 0;
+    
+    input[type="text"] {
+      font-size: $font-size-base;
+      padding: .4rem 1rem;
+    }
   }
 }
 

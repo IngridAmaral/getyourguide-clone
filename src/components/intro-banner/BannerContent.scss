@@ -3,7 +3,7 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
-.search-container {
+.banner-content-container {
   width: 100%;
   @include flex-center-xy;
   flex-direction: column;
@@ -22,48 +22,21 @@
     margin: 1rem 0;
     text-shadow: 1px 1px 7px rgba(150, 150, 150, .8);
   }
-
-  .search-form {
-    @include flex-column-center-x;
-    border-radius: 0.5rem;
-    width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    margin: 0 1rem;
-    position: relative;
-    background-color: $clr-secondary;
-    z-index: 2;
-
-    button {
-      margin-top: 0.5rem;
-      width: 100%;
-    }
-  }
 }
 
 // IPAD
 @media (min-width: 768px) {
-  .search-container {
-    .search-form {
-      width: 90%;
-      @include flex-center-xy;
-      flex-direction: row;
-
-      button {
-        width: fit-content;
-        margin: 0;
-      }
-    }
-  }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
-  .search-container {
+  .banner-content-container {
     width: 55%;
     align-items: flex-start;
+
     .banner-title {
       text-align: start;
+      font-size: $font-size-h1;
     }
   }
 }
