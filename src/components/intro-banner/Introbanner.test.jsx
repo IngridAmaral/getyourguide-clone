@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import IntroBanner from './IntroBanner';
 import RenderImg from './RenderImg';
-import Search from './Search';
+import BannerContent from './BannerContent';
 
 describe('<IntroBanner />', () => {
   it('renders component', () => {
@@ -18,6 +18,6 @@ describe('<IntroBanner />', () => {
   it('renders the image compononent', () => {
     const wrapper = shallow(<IntroBanner />);
 
-    expect(wrapper.find(Search).exists()).toBe(true);
+    expect(wrapper.find(BannerContent).exists()).toBe(true);
   });
 });
