@@ -1,6 +1,6 @@
 import React from 'react';
 import TopContent from '../top-content/TopContent';
-import TopWrapperClass from '../top-wrapper/TopWrapper';
+import TopWrapper from '../top-wrapper/TopWrapper';
 import TextCallouts from '../text-callouts/TextCallouts';
 import Header from '../header/Header';
 import IntroBanner from '../intro-banner/IntroBanner';
@@ -17,7 +17,7 @@ const Home = () => (
     <TextCallouts />
     <TopContent isResult={IS_RESULT} />
     <Newsletter />
-    <TopWrapperClass />
+    <TopWrapper />
     <Footer />
   </div>
 );
