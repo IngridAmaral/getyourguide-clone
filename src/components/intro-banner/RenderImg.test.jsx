@@ -7,7 +7,7 @@ describe('<RenderImg />', () => {
     shallow(<RenderImg />);
   });
 
-  it('renders TopLocationCard component with props', () => {
+  it('renders the correct class each time', () => {
     jest.useFakeTimers();
     const wrapper = shallow(<RenderImg />);
 

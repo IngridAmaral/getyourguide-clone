@@ -10,7 +10,6 @@ const Results = () => (
   </div>
 );
 
-
 const mapStateToProps = (state) => ({
   tour: state.destinationsTours.tours,
 });

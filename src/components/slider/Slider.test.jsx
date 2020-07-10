@@ -23,7 +23,7 @@ describe('<Slider />', () => {
     shallow(<Slider {...defaultProps} />);
   });
 
-  it('renders component wrapper', () => {
+  it('renders the component container', () => {
     const wrapper = shallow(<Slider {...defaultProps} />);
     expect(wrapper.find('.slider-container').exists()).toBe(true);
   });

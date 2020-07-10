@@ -19,7 +19,7 @@ describe('<TopAttractionCategories />', () => {
     expect(func).toHaveBeenCalled();
   });
 
-  it('should render the correct number of items with correct content', () => {
+  it('should render the correct number of items with the correct content', () => {
     const wrapper = shallow(<TopAttractionCategoriesClass {...defaultProps} />);
     const items = wrapper.find('.item');
 

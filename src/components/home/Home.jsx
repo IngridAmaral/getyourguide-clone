@@ -8,14 +8,13 @@ import Footer from '../footer/Footer';
 import Newsletter from '../newsletter/Newsletter';
 import './Home.scss';
 
-const IS_RESULT = false;
 
 const Home = () => (
   <div className="home-container">
     <Header />
     <IntroBanner />
     <TextCallouts />
-    <TopContent isResult={IS_RESULT} />
+    <TopContent />
     <Newsletter />
     <TopWrapper />
     <Footer />
