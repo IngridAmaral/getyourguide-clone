@@ -54,7 +54,7 @@ describe('<TopContentClass />', () => {
     shallow(<TopContentClass {...defaultProps} />);
   });
 
-  it('renders', () => {
+  it('renders the new active city', () => {
     const wrapper = shallow(<TopContentClass {...defaultProps} />);
     wrapper.setProps({ topCity: { ...defaultProps.topCity, destination: 'barcelona' } });
     wrapper.update();
