@@ -59,7 +59,7 @@ const NavigationList = ({ enforceCurrencyAndLang }) => (
         {renderDropdown(icon.id)}
       </div>
     ))}
-    <div className="signup-btn">
+    <div className={`signup-btn ${enforceCurrencyAndLang ? 'show-ipad' : ''}`}>
       <Button btnClass="bg-blue" text="Sign up" />
     </div>
   </div>

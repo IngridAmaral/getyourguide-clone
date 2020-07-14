@@ -131,6 +131,17 @@
 
 // IPAD
 @media (min-width: 768px) {
+  .navigation-list-container {
+    padding: 0;
+    .show-ipad {
+      display: flex;
+      margin-left: .5rem;
+      button {
+        padding: .2rem .5rem;
+        font-size: $font-size-mili;
+      }
+    }
+  }
 }
 
 // NOTEBOOK
