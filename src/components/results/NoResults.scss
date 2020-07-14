@@ -1,0 +1,45 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.no-results-container {
+  width: 60%;
+  text-align: center;
+  padding: 2rem 1rem;
+  border: 1px solid #f3f4f6;
+  color: $clr-raven;
+  @include flex-column-center-x;
+  
+  span {
+    width: 70%;
+  }
+  
+  .title {
+    color: $clr-secondary;
+    font-size: $font-size-h2;
+    margin-bottom: .8rem;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    font-size: $font-size-base;
+    margin-bottom: 2rem;
+  }
+
+  .small-contact {
+    font-size: $font-size-mili;
+    width: 80%;
+    .get-in-touch {
+      color: $clr-terciary;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
