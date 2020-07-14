@@ -1,0 +1,16 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+
+// IPAD
+@media (min-width: 768px) {
+    .results-items-container {
+        width: 65%;
+    }
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+}
