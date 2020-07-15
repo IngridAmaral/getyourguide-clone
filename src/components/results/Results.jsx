@@ -9,7 +9,7 @@ import Newsletter from '../newsletter/Newsletter';
 import Footer from '../footer/Footer';
 import './Results.scss';
 
-const SERVICES = [
+export const SERVICES = [
   'Private Tour',
   'Wheelchair accessible',
   'Skip the line',
@@ -18,7 +18,7 @@ const SERVICES = [
   'Additional health',
 ];
 
-const DURATION = [
+export const DURATION = [
   '0-3 hours',
   '3-5 hours',
   '5-7 hours',
@@ -26,7 +26,7 @@ const DURATION = [
   'Multi Day',
 ];
 
-const PRICE = ['0 - 25', '25 - 50', '50 - 75', '75 - 100', '100 +'];
+export const PRICE = ['0 - 25', '25 - 50', '50 - 75', '75 - 100', '100 +'];
 
 const Results = ({ tours, match }) => (
   <div className="results-container">
