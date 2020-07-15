@@ -91,13 +91,15 @@ export class SearchClass extends React.Component {
     e.preventDefault();
     const { userInput } = this.state;
     const { fetchDestinationsTours } = this.props;
+    let city = 'none';
 
     CITIES_SUGGESTIONS.forEach((location) => {
       if (location.suggestions.includes(userInput) || location.city.includes(userInput)) {
-        fetchDestinationsTours(location.city);
+        city = location.city;
       }
     });
 
+    fetchDestinationsTours(city);
     history.push(`/results/${kebabCase(userInput)}`);
   }
 
