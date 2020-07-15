@@ -44,8 +44,10 @@
       display: none;
     }
   }
+
   .show-search-bar-header {
     border-bottom: 1px solid $clr-ghost;
+    padding: 1rem 0;
     .navigation-bar { 
       .left {
         .top-search-bar {
