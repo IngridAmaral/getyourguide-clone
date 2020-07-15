@@ -11,6 +11,7 @@ const activity = {
   imageAlt: 'an image',
   averageRating: '4',
   totalRating: 4.7,
+  tourId: 'kjhgfd',
   title: 'Tour to some place',
   totalRatingTitle: '900 Reviews',
   duration: '1 hour',
@@ -33,8 +34,8 @@ const iconic = {
 
 const defaultProps = {
   topCity: {
-    activities: [activity, activity, activity, activity],
-    todo: [activity, activity, activity, activity],
+    activities: [{ ...activity }, { ...activity, tourId: 'poiueytr1' }, { ...activity, tourId: 'poiujytr2' }, { ...activity, tourId: 'pyoiuytr3' }],
+    todo: [{ ...activity, tourId: 'poisuytr4' }, { ...activity, tourId: 'poiuyatr5' }, { ...activity, tourId: 'poiutytr6' }, { ...activity, tourId: 'proiuytr7' }],
     description: 'The City of Love, the City of Lights, whatever you call it, falling in love with Paris is easy. Whether you explore the catacombs or lose yourself in the Louvre, make your visit to the French capital unforgettable.',
     destination: 'Paris',
     iconic: [iconic, iconic, iconic],
