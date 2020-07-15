@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { destinationsToursReducer } from '../../redux/reducers/destinationsTours';
 import { fetchDestinationsToursAC } from '../../redux/actions/getDestinationsTours';
 import './Search.scss';
+import { kebabCase } from '../../utils/kebab-case';
 import AutoComplete from './AutoComplete';
 import Button from '../button/Button';
 import { ReactComponent as SearchIcon } from '../../assets/svgs/search.svg';
@@ -68,7 +69,6 @@ export class SearchClass extends React.Component {
         showSuggestions: false,
         userInput: filteredSuggestions[activeSuggestion],
       });
-
     // up arrow
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
@@ -90,19 +90,17 @@ export class SearchClass extends React.Component {
   handleSubmit = (e, history) => {
     e.preventDefault();
     const { userInput } = this.state;
-    const { fetchDestinationsTours, simplified } = this.props;
-    let noResults = true;
+    const { fetchDestinationsTours } = this.props;
+    let city = 'none';
 
     CITIES_SUGGESTIONS.forEach((location) => {
       if (location.suggestions.includes(userInput) || location.city.includes(userInput)) {
-        fetchDestinationsTours(location.city);
-        noResults = false;
+        city = location.city;
       }
     });
 
-    if (!simplified) {
-      history.push('/results', noResults);
-    }
+    fetchDestinationsTours(city);
+    history.push(`/results/${kebabCase(userInput)}`);
   }
 
   buttonRender = (history) => {

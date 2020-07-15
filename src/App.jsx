@@ -10,7 +10,7 @@ const App = () => (
     <div className="app_container">
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/results" render={(props) => <Results {...props} noResults />} />
+        <Route path="/results/:city" render={(props) => <Results {...props} noResults />} />
         <Route path="*" />
       </Switch>
     </div>

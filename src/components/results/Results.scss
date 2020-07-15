@@ -1,0 +1,83 @@
+@import "./../../styles/colors";
+@import "./../../styles/fonts-props";
+@import "./../../styles/variables";
+@import "./../../styles/flex-styles";
+
+.results-container {
+  width: 100%;
+  .results-header,
+  .sort,
+  .main-content {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .sort {
+    font-size: $font-size-base;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: $clr-secondary;
+    align-items: flex-end;
+    .searched-input {
+      font-size: $font-size-h4;
+    }
+
+    .results-number {
+      font-size: 1rem;
+    }
+
+    .sort-by {
+      @include flex-center-xy;
+
+      select {
+        margin-left: 0.5rem;
+        padding: 0.5rem;
+        font-weight: 600;
+        border: 1px solid #d1d5db;
+        background-color: $clr-solid-white;
+        outline: none;
+
+        option {
+          color: $clr-secondary;
+          font-weight: 600;
+          border: 1px solid #d1d5db;
+
+          ::after {
+            background-color: coral;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .filter-content {
+      width: 30%;
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
+}
+
+// NOTEBOOK
+@media (min-width: 1024px) {
+  .results-container {
+    .results-header {
+      padding: 0;
+    }
+    .sort,
+    .main-content {
+      padding: 0 4.5rem;
+      box-sizing: border-box;
+    }
+  }
+  
+}

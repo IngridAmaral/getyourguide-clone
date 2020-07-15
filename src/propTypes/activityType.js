@@ -5,7 +5,7 @@ export const activityPropTypes = PropTypes.shape({
   imageAlt: PropTypes.string,
   duration: PropTypes.string.isRequired,
   averageRating: PropTypes.string,
-  totalRating: PropTypes.number.isRequired,
+  totalRating: PropTypes.number,
   title: PropTypes.string.isRequired,
   totalRatingTitle: PropTypes.string.isRequired,
   isGygOriginal: PropTypes.bool.isRequired,
