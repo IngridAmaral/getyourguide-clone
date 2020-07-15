@@ -14,9 +14,15 @@ describe('<ResultsItems />', () => {
     shallow(<ResultsItems {...defaultProps} />);
   });
 
-  it('should render the TourCard component one time', () => {
+  it('should render TourCard component', () => {
     const wrapper = shallow(<ResultsItems {...defaultProps} />);
+    const tourCards = wrapper.find(TourCard);
 
-    expect(wrapper.find(TourCard)).toHaveLength(1);
+    expect(tourCards).toHaveLength(defaultProps.tours.length);
+
+    tourCards.forEach((card, idx) => {
+      expect(card.props().isResult).toBe(true);
+      expect(card.props().activity).toEqual(defaultProps.tours[idx]);
+    });
   });
 });
