@@ -18,7 +18,7 @@ export function destinationsToursReducer(state = initialState, action = {}) {
       };
     case `${GET_DESTINATIONS_TOURS}_REJECTED`:
       return {
-        ...state,
+        tours: [],
         isPending: false,
         error: action.payload,
       };
