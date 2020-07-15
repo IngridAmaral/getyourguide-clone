@@ -18,8 +18,8 @@ class FilterSection extends React.Component {
     return (
       <div className="filter-section-container">
         <div
-          className={`title ${isOpen ? 'rotate-caret' : ''}`}
-          onClick={() => this.handleClick()}
+          className={`title${isOpen ? ' rotate-caret' : ''}`}
+          onClick={this.handleClick}
         >
           <span>{title}</span>
           <Caret />

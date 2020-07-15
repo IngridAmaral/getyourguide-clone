@@ -37,11 +37,7 @@ const Results = ({ tours, match }) => (
       <div className="results-found">
         <span className="searched-input">{match.params.city}</span>
         <span className="results-number">
-          ,
-          {' '}
-          {tours.length}
-          {' '}
-          tours found.
+          {`, ${tours.length} tours found.`}
         </span>
       </div>
       <div className="sort-by">
