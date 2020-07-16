@@ -4,8 +4,9 @@
 @import "./../../styles/flex-styles";
 
 .no-results-container {
-  width: 60%;
+  width: 10 0%;
   text-align: center;
+  box-sizing: border-box;
   padding: 2rem 1rem;
   border: 1px solid #f3f4f6;
   color: $clr-raven;
@@ -38,6 +39,9 @@
 
 // IPAD
 @media (min-width: 768px) {
+  .no-results-container {
+    width: 60%;
+  }
 }
 
 // NOTEBOOK
