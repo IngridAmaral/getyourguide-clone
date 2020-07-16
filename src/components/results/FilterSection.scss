@@ -3,68 +3,69 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
-// IPAD
-@media (min-width: 768px) {
-  .filter-section-container {
-    width: 100%;
-    color: $clr-secondary;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.filter-section-container {
+  width: 100%;
+  color: $clr-secondary;
+  font-weight: 600;
+  margin-bottom: 1rem;
 
-    .title,
-    .option {
-      border: 0.1rem solid $clr-ghost;
-      border-top: none;
-      padding: 0.6rem 1rem;
+  .title,
+  .option {
+    border: 0.1rem solid $clr-ghost;
+    border-top: none;
+    padding: 0.6rem 1rem;
+  }
+
+  .rotate-caret {
+    svg {
+      transform: rotateX(180deg);
     }
+  }
 
-    .rotate-caret {
-      svg {
-        transform: rotateX(180deg);
-      }
-    }
-
-    .title {
-      border-top: 0.4rem solid $clr-terciary;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      svg {
-        width: 1rem;
-        path {
-          fill: $clr-secondary;
-        }
-      }
-    }
-    .open {
-      display: flex;
-      flex-direction: column;
-      max-height: 500px;
-      transition: max-height 0.3s ease-in-out;
-    }
-
-    form {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-    }
-
-    .option {
-      color: $clr-raven;
-      display: flex;
-      align-items: center;
-      font-size: $font-size-mili;
-      label {
-        margin-left: 0.5rem;
-      }
-
-      input {
-        :checked {
-          background-color: $clr-terciary;
-        }
+  .title {
+    border-top: 0.4rem solid $clr-terciary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    svg {
+      width: 1rem;
+      path {
+        fill: $clr-secondary;
       }
     }
   }
+  .open {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  form {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  }
+
+  .option {
+    color: $clr-raven;
+    display: flex;
+    align-items: center;
+    font-size: $font-size-mili;
+    label {
+      margin-left: 0.5rem;
+    }
+
+    input {
+      :checked {
+        background-color: $clr-terciary;
+      }
+    }
+  }
+}
+
+// IPAD
+@media (min-width: 768px) {
 }
 
 // NOTEBOOK
