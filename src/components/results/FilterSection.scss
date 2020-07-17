@@ -45,20 +45,20 @@
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-  }
 
-  .option {
-    color: $clr-raven;
-    display: flex;
-    align-items: center;
-    font-size: $font-size-mili;
-    label {
-      margin-left: 0.5rem;
-    }
+    .option {
+      color: $clr-raven;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-mili;
+      label {
+        margin-left: 0.5rem;
+      }
 
-    input {
-      :checked {
-        background-color: $clr-terciary;
+      input {
+        :checked {
+          background-color: $clr-terciary;
+        }
       }
     }
   }
