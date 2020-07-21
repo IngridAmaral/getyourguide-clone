@@ -111,11 +111,6 @@ export class TopContentClass extends React.Component {
               ))}
             </div>
           </div>
-
-          <div className="on-instagram">
-            <span className="card-title">{`${capitalCase(activeCity)} on instagram`}</span>
-            <div className="top-location-card-wrapper" />
-          </div>
         </div>
       </div>
     );
