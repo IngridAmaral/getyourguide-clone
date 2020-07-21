@@ -16,12 +16,16 @@ const SLIDER_OPTIONS = {
       perPage: 1,
       cover: true,
     },
-    768: {
+    800: {
       perPage: 3,
       cover: false,
     },
-    1280: {
+    1400: {
       perPage: 4,
+      cover: false,
+    },
+    2000: {
+      perPage: 5,
       cover: false,
     },
   },
