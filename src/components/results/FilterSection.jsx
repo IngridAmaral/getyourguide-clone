@@ -16,37 +16,34 @@ class FilterSection extends React.Component {
 
   render() {
     const {
-      title, options, filterOptions, optionsSelected,
+      title, options, filterOptions, optionSelected,
     } = this.props;
     const { isOpen } = this.state;
+
     return (
       <Route
         render={({ history }) => (
           <div className="filter-section-container">
             <div
-              className={`title${isOpen ? ' rotate-caret' : ''}`}
+              className={`title ${isOpen ? 'rotate-caret' : ''}`}
               onClick={this.handleOpenOptions}
             >
               <span>{title}</span>
               <Caret />
             </div>
             <form className={isOpen ? 'open' : ''}>
-              {options.map((option) => {
-                if (optionsSelected === option.id) {
-                  return (
-                    <div className="option" key={option.id} onClick={(e) => filterOptions(e, history, title, option.id)}>
-                      <input id={option.id} checked type="checkbox" value={option.id} />
-                      <label htmlFor={option.id}>{option.name}</label>
-                    </div>
-                  );
-                }
-                return (
-                  <div className="option" key={option.id} onClick={(e) => filterOptions(e, history, title, option.id)}>
-                    <input id={option.id} type="checkbox" value={option.id} />
-                    <label htmlFor={option.id}>{option.name}</label>
-                  </div>
-                );
-              })}
+              {options.map((option) => (
+                <label className="option" key={option.id} htmlFor={option.id}>
+                  <input
+                    id={option.id}
+                    onChange={(e) => filterOptions(e, history, title, option.id)}
+                    checked={optionSelected === option.id}
+                    type="checkbox"
+                    value={option.id}
+                  />
+                  {option.name}
+                </label>
+              ))}
             </form>
           </div>
         )}
@@ -57,9 +54,13 @@ class FilterSection extends React.Component {
 
 FilterSection.propTypes = {
   title: PropTypes.string.isRequired,
-  options: PropTypes.objectOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
   filterOptions: PropTypes.func.isRequired,
-  optionsSelected: PropTypes.string.isRequired,
+  optionSelected: PropTypes.string,
+};
+
+FilterSection.defaultProps = {
+  optionSelected: '',
 };
 
 export default FilterSection;

@@ -1,19 +1,36 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
 import FilterSection from './FilterSection';
 
 const defaultProps = {
   title: 'filter',
-  options: ['option1', 'option2', 'option3'],
+  options: [
+    { name: '0-3 hours', id: '0-3' },
+    { name: '3-5 hours', id: '3-5' },
+    { name: '5-7 hours', id: '5-7' },
+    { name: 'Full day (7 + hours)', id: '7' },
+    { name: 'Multi Day', id: 'n' },
+  ],
+  filterOptions() {},
+  optionsSelected: '',
 };
 
 describe('<FilterSection />', () => {
   it('renders component', () => {
-    shallow(<FilterSection {...defaultProps} />);
+    shallow(
+      <BrowserRouter>
+        <FilterSection {...defaultProps} />
+      </BrowserRouter>,
+    );
   });
 
   it('should open and close the filter options on click', () => {
-    const wrapper = shallow(<FilterSection {...defaultProps} />);
+    const wrapper = mount(
+      <BrowserRouter>
+        <FilterSection {...defaultProps} />
+      </BrowserRouter>,
+    );
 
     // OPEN
     wrapper.find('.title').simulate('click');
@@ -31,13 +48,18 @@ describe('<FilterSection />', () => {
   });
 
   it('should render options list', () => {
-    const wrapper = shallow(<FilterSection {...defaultProps} />);
+    const wrapper = mount(
+      <BrowserRouter>
+        <FilterSection {...defaultProps} />
+      </BrowserRouter>,
+    );
+
     const options = wrapper.find('.option');
 
     expect(options).toHaveLength(defaultProps.options.length);
     options.forEach((option, idx) => {
-      expect(option.find('input').props().value).toEqual(defaultProps.options[idx]);
-      expect(option.find('label').text()).toEqual(defaultProps.options[idx]);
+      expect(option.find('input').props().value).toEqual(defaultProps.options[idx].id);
+      expect(option.find('label').text()).toEqual(defaultProps.options[idx].name);
     });
   });
 });
