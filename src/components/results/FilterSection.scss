@@ -50,12 +50,10 @@
       color: $clr-raven;
       display: flex;
       align-items: center;
-      font-size: $font-size-mili;
-      label {
-        margin-left: 0.5rem;
-      }
-
+      font-size: $font-size-mili;      
+      
       input {
+        margin-right: 0.5rem;
         :checked {
           background-color: $clr-terciary;
         }

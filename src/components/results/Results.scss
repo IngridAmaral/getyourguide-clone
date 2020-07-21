@@ -62,7 +62,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       margin-bottom: 1rem;
       svg {
         width: 1rem;
@@ -119,7 +119,22 @@
     .main-content {
       padding: 0 4.5rem;
       box-sizing: border-box;
+
+      .filter-content {
+        display: block;
+        width: 25%;
+      }
     }
   }
-  
+}
+
+// NOTEBOOK BIG
+@media (min-width: 1300px) {
+  .results-container {
+    .sort,
+    .main-content {
+      padding: 0 6rem;
+
+    }
+  }
 }
