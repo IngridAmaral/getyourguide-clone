@@ -1,5 +1,7 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import './FilterSection.scss';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 
@@ -8,38 +10,57 @@ class FilterSection extends React.Component {
     isOpen: false,
   };
 
-  handleClick = () => {
+  handleOpenOptions = () => {
     this.setState((state) => ({ isOpen: !state.isOpen }));
   };
 
   render() {
-    const { title, options } = this.props;
+    const {
+      title, options, filterOptions, optionSelected,
+    } = this.props;
     const { isOpen } = this.state;
+
     return (
-      <div className="filter-section-container">
-        <div
-          className={`title${isOpen ? ' rotate-caret' : ''}`}
-          onClick={this.handleClick}
-        >
-          <span>{title}</span>
-          <Caret />
-        </div>
-        <form className={isOpen ? 'open' : ''}>
-          {options.map((option) => (
-            <div className="option" key={option}>
-              <input id={option} type="checkbox" value={option} />
-              <label htmlFor={option}>{option}</label>
+      <Route
+        render={({ history }) => (
+          <div className="filter-section-container">
+            <div
+              className={`title ${isOpen ? 'rotate-caret' : ''}`}
+              onClick={this.handleOpenOptions}
+            >
+              <span>{title}</span>
+              <Caret />
             </div>
-          ))}
-        </form>
-      </div>
+            <form className={isOpen ? 'open' : ''}>
+              {options.map((option) => (
+                <label className="option" key={option.id} htmlFor={option.id}>
+                  <input
+                    id={option.id}
+                    onChange={(e) => filterOptions(e, history, title, option.id)}
+                    checked={optionSelected === option.id}
+                    type="checkbox"
+                    value={option.id}
+                  />
+                  {option.name}
+                </label>
+              ))}
+            </form>
+          </div>
+        )}
+      />
     );
   }
 }
 
 FilterSection.propTypes = {
   title: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filterOptions: PropTypes.func.isRequired,
+  optionSelected: PropTypes.string,
+};
+
+FilterSection.defaultProps = {
+  optionSelected: '',
 };
 
 export default FilterSection;

@@ -26,5 +26,9 @@ const RatingStars = ({ averageRating }) => (
 export default RatingStars;
 
 RatingStars.propTypes = {
-  averageRating: PropTypes.string.isRequired,
+  averageRating: PropTypes.string,
+};
+
+RatingStars.defaultProps = {
+  averageRating: '5',
 };

@@ -7,7 +7,7 @@ export const activityPropTypes = PropTypes.shape({
   averageRating: PropTypes.string,
   totalRating: PropTypes.number,
   title: PropTypes.string.isRequired,
-  totalRatingTitle: PropTypes.string.isRequired,
+  totalRatingTitle: PropTypes.string,
   isGygOriginal: PropTypes.bool.isRequired,
   price: PropTypes.shape({
     min: PropTypes.string.isRequired,
