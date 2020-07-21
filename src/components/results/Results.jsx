@@ -12,6 +12,13 @@ import Footer from '../footer/Footer';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 import './Results.scss';
 
+const SELECT_SORT = [
+  'Recommended',
+  'Price (Low to High)',
+  'Price (High to Low)',
+  'Rating (High to Low)',
+];
+
 export const SERVICES = [
   { name: 'Private Tour', id: 'private-tour' },
   { name: 'Wheelchair accessible', id: 'wheelchair-accessible' },
@@ -31,10 +38,16 @@ export const DURATION = [
 
 export const PRICE = [
   { name: '0 - 25', id: '0-25' },
-  { name: '25 - 50', id: '25-30' },
+  { name: '25 - 50', id: '25-50' },
   { name: '50 - 75', id: '50-75' },
   { name: '75 - 100', id: '75-100' },
   { name: '100 +', id: '100' },
+];
+
+export const SECTIONS = [
+  { title: 'Price', options: PRICE },
+  { title: 'Duration', options: DURATION },
+  { title: 'Services', options: SERVICES },
 ];
 
 class Results extends React.Component {
@@ -43,21 +56,39 @@ class Results extends React.Component {
     optionsSelected: {},
   };
 
-  filterOptions = (e, history, title, optionId) => {
+  componentDidMount() {
     const { match } = this.props;
-    e.preventDefault();
+
+    this.fetchResults(match.params.city);
+  }
+
+  fetchResults = async (path) => {
     const { fetchDestinationsTours } = this.props;
 
+    fetchDestinationsTours(path);
+  }
+
+  filterOptions = (e, history, title, optionId) => {
+    const { match } = this.props;
+    const { optionsSelected } = this.state;
     const currentUrlParams = new URLSearchParams(history.location.search);
-    currentUrlParams.set(title, e.target.value);
-    fetchDestinationsTours(`${match.params.city}?${currentUrlParams}`);
 
+    if (optionId === optionsSelected[title]) {
+      this.setState((state) => ({
+        optionsSelected: { ...state.optionsSelected, [title]: '' },
+      }));
+
+      currentUrlParams.delete(title);
+    } else {
+      this.setState((state) => ({
+        optionsSelected: { ...state.optionsSelected, [title]: optionId },
+      }));
+
+      currentUrlParams.set(title, optionId);
+    }
+
+    this.fetchResults(`${match.params.city}?${currentUrlParams}`);
     history.push(`${history.location.pathname}?${currentUrlParams}`);
-
-
-    this.setState((state) => ({
-      optionsSelected: { ...state.optionsSelected, [title]: optionId },
-    }));
   };
 
   openFilters = () => {
@@ -67,6 +98,7 @@ class Results extends React.Component {
   render() {
     const { tours, match } = this.props;
     const { openFilters, optionsSelected } = this.state;
+
     return (
       <div className="results-container">
         <div className="results-header">
@@ -82,21 +114,11 @@ class Results extends React.Component {
           <div className="sort-by">
             <span>Sort by:</span>
             <select id="sort-by">
-              <option key="Recommended" value="Recommended">
-                Recommended
-              </option>
-              <option key="Price(Low to High)" value="Price (Low to High)">
-                Price (Low to High)
-              </option>
-              <option key="Price(High to Low)" value="Price (High to Low)">
-                Price (High to Low)
-              </option>
-              <option
-                key="Rating (High to Low)"
-                value="Rating (High to Low)"
-              >
-                Rating (High to Low)
-              </option>
+              {SELECT_SORT.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -108,30 +130,15 @@ class Results extends React.Component {
           <div
             className={`filter-content ${openFilters ? ' show' : ' hide'}`}
           >
-            <FilterSection
-              key="price"
-              title="Price"
-              options={PRICE}
-              city={match.params.city}
-              optionsSelected={optionsSelected.Price ? optionsSelected.Price : ''}
-              filterOptions={this.filterOptions}
-            />
-            <FilterSection
-              key="duration"
-              title="Duration"
-              options={DURATION}
-              city={match.params.city}
-              optionsSelected={optionsSelected.Duration ? optionsSelected.Duration : ''}
-              filterOptions={this.filterOptions}
-            />
-            <FilterSection
-              key="services"
-              title="Services"
-              options={SERVICES}
-              city={match.params.city}
-              optionsSelected={optionsSelected.Services ? optionsSelected.Services : ''}
-              filterOptions={this.filterOptions}
-            />
+            {SECTIONS.map((section) => (
+              <FilterSection
+                key={section.title}
+                title={section.title}
+                options={section.options}
+                optionSelected={optionsSelected[section.title]}
+                filterOptions={this.filterOptions}
+              />
+            ))}
           </div>
           {tours.length ? <ResultsItems tours={tours} /> : <NoResults />}
         </div>

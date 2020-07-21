@@ -4,25 +4,28 @@
 @import "./../../styles/flex-styles";
 
 .results-items-container {
-    width: 100%;
-    @include flex-column-center-x;
+  width: 100%;
+  @include flex-column-center-x;
 
-    button {
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
 }
 
 // IPAD
 @media (min-width: 768px) {
-    .results-items-container {
-        width: 65%;
+  .results-items-container {
+    width: 65%;
 
-        button {
-            width: fit-content;
-        }
+    button {
+      width: fit-content;
     }
+  }
 }
 
 // NOTEBOOK
 @media (min-width: 1024px) {
+  .results-items-container {
+    width: 70%;
+  }
 }
