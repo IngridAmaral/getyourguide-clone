@@ -1,4 +1,4 @@
-const popular = [
+export const popular = [
   'Dubai Sky Diving',
   'Rome City Cards',
   'Paris Cruises & Boat Tours',
@@ -36,5 +36,3 @@ const popular = [
   'Amsterdam Museum Tickets',
   'Amsterdam City Cards',
 ];
-
-module.exports = { popular };

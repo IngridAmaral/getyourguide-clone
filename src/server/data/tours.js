@@ -1,4 +1,4 @@
-const toursNewYork = [
+export const toursNewYork = [
   {
     tourId: 37483,
     title: 'NYC: Top of the Rock Observation Deck Flexible Date Ticket',
@@ -5022,7 +5022,7 @@ const toursNewYork = [
   },
 ];
 
-const toursParis = [
+export const toursParis = [
   {
     tourId: 175122,
     title: 'Ultimate Louvre: Fast-Track Guided Tour With Ticket',
@@ -9989,7 +9989,7 @@ const toursParis = [
   },
 ];
 
-const toursBarcelona = [
+export const toursBarcelona = [
   {
     tourId: 53791,
     title: 'Barcelona: Park Güell Admission Ticket',
@@ -15041,5 +15041,3 @@ const toursBarcelona = [
     highlightedOrientation: 'horizontal',
   },
 ];
-
-module.exports = { toursNewYork, toursParis, toursBarcelona };
