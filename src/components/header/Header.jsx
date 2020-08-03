@@ -3,7 +3,7 @@ import './Header.scss';
 import PropTypes from 'prop-types';
 import { ReactComponent as Logo } from '../../assets/svgs/gyg-logo.svg';
 import Navigation from './Navigation';
-import Search from '../search/Search';
+import Search from '../../containers/search/Search';
 
 
 const Header = ({ showSearchBar, enforceCurrencyAndLang }) => (

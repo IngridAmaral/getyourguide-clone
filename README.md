@@ -1,4 +1,4 @@
-## Netflix Clone
+## Get Your Guide Clone
 This project is a clone from Get Yout Guide, build using React, Redux and Jest. The data used was fetched from `GetYourGuide` and mocked in a local server. Not all the features were implemented here.
 
 

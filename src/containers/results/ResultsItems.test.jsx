@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import ResultsItems from './ResultsItems';
-import TourCard from '../tour-card/TourCard';
+import TourCard from '../../components/tour-card/TourCard';
 
 const tour = {
   imageUrl: 'www.img.com',
