@@ -1,4 +1,4 @@
-const topAttractions = [
+export const topAttractions = [
   {
     destination: 'Niagara Falls',
     img: 'https://cdn.getyourguide.com/img/location_img-283-3154886959-87.jpg',
@@ -48,5 +48,3 @@ const topAttractions = [
     url: '/dicovery/pompeii',
   },
 ];
-
-module.exports = { topAttractions };

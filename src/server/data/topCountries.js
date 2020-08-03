@@ -1,5 +1,5 @@
 
-const topCountries = [
+export const topCountries = [
   {
     destination: 'United States',
     img: 'https://cdn.getyourguide.com/img/country/546b6bd65a7c7.jpeg/87.jpg',
@@ -33,5 +33,3 @@ const topCountries = [
     img: 'https://cdn.getyourguide.com/img/country/576129bfd94c7.jpeg/87.jpg',
   },
 ];
-
-module.exports = { topCountries };
