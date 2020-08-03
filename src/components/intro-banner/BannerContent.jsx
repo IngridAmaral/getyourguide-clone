@@ -1,6 +1,6 @@
 import React from 'react';
 import './BannerContent.scss';
-import Search from '../search/Search';
+import Search from '../../containers/search/Search';
 
 const BannerContent = () => (
   <div className="banner-content-container">

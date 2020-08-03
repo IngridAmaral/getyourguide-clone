@@ -1,6 +1,6 @@
 import React from 'react';
 import './IntroBanner.scss';
-import RenderImg from './RenderImg';
+import RenderImg from '../../containers/intro-banner/RenderImg';
 import BannerContent from './BannerContent';
 
 

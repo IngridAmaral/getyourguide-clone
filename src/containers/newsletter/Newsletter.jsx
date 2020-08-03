@@ -1,6 +1,6 @@
 import React from 'react';
 import './Newsletter.scss';
-import Button from '../button/Button';
+import Button from '../../components/button/Button';
 import { ReactComponent as Form } from '../../assets/svgs/details.svg';
 import { ReactComponent as Separator } from '../../assets/svgs/separators/stroke.svg';
 

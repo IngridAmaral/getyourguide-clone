@@ -11,7 +11,7 @@ import { fetchTopCountriesAC } from '../../redux/actions/getTopCountries';
 import Slider from '../slider/Slider';
 import { ReactComponent as Zigzag } from '../../assets/svgs/separators/zigzag.svg';
 import './TopWrapper.scss';
-import TopAttractionCategories from '../top-categories/TopAttractionCategories';
+import TopAttractionCategories from '../../containers/top-categories/TopAttractionCategories';
 
 export class TopWrapperClass extends React.Component {
   componentDidMount() {

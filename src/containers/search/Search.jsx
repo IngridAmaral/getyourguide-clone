@@ -7,8 +7,8 @@ import { destinationsToursReducer } from '../../redux/reducers/destinationsTours
 import { fetchDestinationsToursAC } from '../../redux/actions/getDestinationsTours';
 import './Search.scss';
 import { kebabCase } from '../../utils/kebab-case';
-import AutoComplete from './AutoComplete';
-import Button from '../button/Button';
+import AutoComplete from '../../components/search/AutoComplete';
+import Button from '../../components/button/Button';
 import { ReactComponent as SearchIcon } from '../../assets/svgs/search.svg';
 
 const SUGGESTIONS = ['Paris', 'Paris, France', 'New York', 'New York City', 'Barcelona', 'Barcelona, Spain'];
@@ -91,7 +91,7 @@ export class SearchClass extends React.Component {
     e.preventDefault();
     const { userInput } = this.state;
     const { fetchDestinationsTours } = this.props;
-    let city = 'none';
+    let city = userInput;
 
     CITIES_SUGGESTIONS.forEach((location) => {
       if (location.suggestions.includes(userInput) || location.city.includes(userInput)) {
@@ -100,7 +100,7 @@ export class SearchClass extends React.Component {
     });
 
     fetchDestinationsTours(city);
-    history.push(`/results/${kebabCase(userInput)}`);
+    history.push(`/results/${kebabCase(city)}`);
   }
 
   buttonRender = (history) => {

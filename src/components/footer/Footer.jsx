@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import Selector from './Selector';
 import Mobile from './Mobile';
-import FooterNavigation from './FooterNavigation';
+import FooterNavigation from '../../containers/footer/FooterNavigation';
 import PayMethods from './PayMethods';
 import { ReactComponent as Facebook } from '../../assets/svgs/socialMedia/facebook.svg';
 import { ReactComponent as Instagram } from '../../assets/svgs/socialMedia/instagram.svg';

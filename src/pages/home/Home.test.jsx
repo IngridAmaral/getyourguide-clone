@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Home from './Home';
-import TopContent from '../top-content/TopContent';
-import TopWrapper from '../top-wrapper/TopWrapper';
-import TextCallouts from '../text-callouts/TextCallouts';
-import Header from '../header/Header';
-import IntroBanner from '../intro-banner/IntroBanner';
-import Footer from '../footer/Footer';
-import Newsletter from '../newsletter/Newsletter';
+import TopContent from '../../components/top-content/TopContent';
+import TopWrapper from '../../components/top-wrapper/TopWrapper';
+import TextCallouts from '../../components/text-callouts/TextCallouts';
+import Header from '../../components/header/Header';
+import IntroBanner from '../../components/intro-banner/IntroBanner';
+import Footer from '../../components/footer/Footer';
+import Newsletter from '../../containers/newsletter/Newsletter';
 
 
 describe('<Home />', () => {

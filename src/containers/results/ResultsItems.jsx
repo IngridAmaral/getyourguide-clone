@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ResultsItems.scss';
-import TourCard from '../tour-card/TourCard';
-import Button from '../button/Button';
+import TourCard from '../../components/tour-card/TourCard';
+import Button from '../../components/button/Button';
 
 
 class ResultsItems extends React.Component {

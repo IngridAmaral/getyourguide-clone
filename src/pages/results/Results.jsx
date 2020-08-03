@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { fetchDestinationsToursAC } from '../../redux/actions/getDestinationsTours';
-import Header from '../header/Header';
-import ResultsItems from './ResultsItems';
-import FilterSection from './FilterSection';
-import NoResults from './NoResults';
-import Newsletter from '../newsletter/Newsletter';
-import Footer from '../footer/Footer';
+import Header from '../../components/header/Header';
+import ResultsItems from '../../containers/results/ResultsItems';
+import FilterSection from '../../containers/results/FilterSection';
+import NoResults from '../../components/results/NoResults';
+import Newsletter from '../../containers/newsletter/Newsletter';
+import Footer from '../../components/footer/Footer';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
 import './Results.scss';
 
@@ -60,6 +60,7 @@ class Results extends React.Component {
     const { match } = this.props;
 
     this.fetchResults(match.params.city);
+    this.setState({ optionsSelected: {} });
   }
 
   fetchResults = async (path) => {
