@@ -13,7 +13,7 @@ import {
   paypal,
   sofort,
   visa,
-} from '../../assets/imgs/paymet/payment';
+} from '../../constants/imgs/payment';
 
 const PayMethods = () => (
   <div className="pay-methods">
