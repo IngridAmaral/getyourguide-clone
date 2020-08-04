@@ -33,7 +33,7 @@ export class TopWrapperClass extends React.Component {
           <Zigzag />
         </div>
         <div className="top-slider">
-          <span className="title">Top tourists attractions worldwide</span>
+          <span className="title">Top Tourists Attractions Worldwide</span>
           <Slider data={topAttractions} />
         </div>
         <div className="top-slider">
@@ -41,11 +41,11 @@ export class TopWrapperClass extends React.Component {
           <Slider data={topAttractions} type="destinations" />
         </div>
         <div className="top-slider">
-          <span className="title">Top countries to visit</span>
+          <span className="title">Top Countries To Visit</span>
           <Slider data={topCountries} type="countries" />
         </div>
         <div className="top-slider">
-          <span className="title">Top Attractions  Categories</span>
+          <span className="title">Top Attractions Categories</span>
           <TopAttractionCategories />
         </div>
       </div>

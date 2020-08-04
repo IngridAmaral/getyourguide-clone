@@ -9,8 +9,8 @@ const TopCity = ({ city, activeCity, fetchCity }) => (
   <button
     type="button"
     disabled={!AVAILABLE_CITIES.includes(city)}
-    onClick={() => fetchCity(city)}
-    className={`top-city-container ${activeCity === city ? 'active' : ''}`}
+    onClick={() => fetchCity(city === 'new-york-city' ? 'new-york' : city)}
+    className={`top-city-container ${activeCity === city ? 'active' : ''} ${city}`}
   >
     <span>{capitalCase(city)}</span>
   </button>

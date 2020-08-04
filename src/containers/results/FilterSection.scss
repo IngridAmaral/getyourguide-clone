@@ -14,6 +14,7 @@
     border: 0.1rem solid $clr-ghost;
     border-top: none;
     padding: 0.6rem 1rem;
+    cursor: not-allowed;
   }
 
   .rotate-caret {
@@ -27,7 +28,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     svg {
+
       width: 1rem;
       path {
         fill: $clr-secondary;
@@ -50,13 +53,29 @@
       color: $clr-raven;
       display: flex;
       align-items: center;
-      font-size: $font-size-mili;      
+      font-size: $font-size-mili;    
       
       input {
+        cursor: not-allowed;  
         margin-right: 0.5rem;
         :checked {
           background-color: $clr-terciary;
         }
+      }
+    }
+  }
+}
+
+.Price {
+  .title,
+  .option {
+    cursor: pointer;
+  }
+
+  form {
+    .option {
+      input {
+        cursor: pointer;  
       }
     }
   }

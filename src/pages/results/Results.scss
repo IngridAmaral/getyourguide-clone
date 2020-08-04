@@ -20,15 +20,16 @@
     align-items: flex-end;
     .searched-input {
       font-size: $font-size-h4;
+      font-weight: 600;
     }
-
+    
     .results-number {
       font-size: 1rem;
     }
-
+    
     .sort-by {
       @include flex-center-xy;
-
+      
       select {
         margin-left: 0.5rem;
         padding: 0.5rem;
@@ -36,7 +37,8 @@
         border: 1px solid #d1d5db;
         background-color: $clr-solid-white;
         outline: none;
-
+        cursor: not-allowed;
+        
         option {
           color: $clr-secondary;
           font-weight: 600;

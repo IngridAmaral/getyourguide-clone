@@ -11,8 +11,7 @@
   margin-top: 1rem;
   overflow: hidden;
   border: 0.2rem solid transparent;
-  cursor: pointer;
-
+  
   & img {
     position: absolute;
     left: 50%;
@@ -22,8 +21,9 @@
     width: 100%;
     height: auto;
   }
-
+  
   .top-location-details {
+    cursor: not-allowed;
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.06) 0,
@@ -46,7 +46,7 @@
   &:hover,
   &:active {
     border-color: $clr-terciary;
-    cursor: pointer;
+    cursor: not-allowed;
   }
 
   &span {
@@ -56,9 +56,11 @@
   &.top-city,
   &.countries {
     width: 100%;
+    cursor: not-allowed;
 
     .top-location-details {
       .count {
+        cursor: not-allowed;
         margin-top: 0.2rem;
         font-size: $font-size-base;
         font-weight: 600;
