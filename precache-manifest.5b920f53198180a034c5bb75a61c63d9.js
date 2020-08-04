@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77633a97b729fe75a98971195004e92d",
+    "revision": "d8e7c6f98a97db8fc400a81a9e74834f",
     "url": "/getyourguide-clone/index.html"
   },
   {
-    "revision": "8622efcb3d43439d9212",
-    "url": "/getyourguide-clone/static/css/main.3f6bccfc.chunk.css"
+    "revision": "e59baeb642c866f23b93",
+    "url": "/getyourguide-clone/static/css/main.9d89b0a5.chunk.css"
   },
   {
-    "revision": "8b1914d7d581ac19dcdc",
-    "url": "/getyourguide-clone/static/js/2.2728d02b.chunk.js"
+    "revision": "835e52bc8da1d59ccbd4",
+    "url": "/getyourguide-clone/static/js/2.439e49a3.chunk.js"
   },
   {
-    "revision": "2ef8adaa6cc38af660c5134c9f805ef3",
-    "url": "/getyourguide-clone/static/js/2.2728d02b.chunk.js.LICENSE.txt"
+    "revision": "675cd1e81d0cf9891830fe219281f472",
+    "url": "/getyourguide-clone/static/js/2.439e49a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8622efcb3d43439d9212",
-    "url": "/getyourguide-clone/static/js/main.9d7b626a.chunk.js"
+    "revision": "e59baeb642c866f23b93",
+    "url": "/getyourguide-clone/static/js/main.dc991866.chunk.js"
   },
   {
     "revision": "24d60b8886cc617fc4da",
@@ -32,6 +32,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/media/caret.d88c71b7.svg"
   },
   {
+    "revision": "0c5689475684bda8e53d7a01a3062b46",
+    "url": "/getyourguide-clone/static/media/details.0c568947.svg"
+  },
+  {
     "revision": "2b1c1468f8a7db5bd48f83d49cc661f8",
     "url": "/getyourguide-clone/static/media/duration.2b1c1468.svg"
   },
@@ -40,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/media/facebook.f7d75891.svg"
   },
   {
-    "revision": "829a43f9f06bf5ddd210efbc40364268",
-    "url": "/getyourguide-clone/static/media/gyg-logo.829a43f9.svg"
+    "revision": "3a6186d8d9f7dfb58e72b2e5f2fd2d00",
+    "url": "/getyourguide-clone/static/media/gyg-logo.3a6186d8.svg"
   },
   {
     "revision": "41700498b97e9fb0b9250246fd2f6fe9",
@@ -82,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ee1e796ee27a49a4bce2c318e72c97fd",
     "url": "/getyourguide-clone/static/media/star.ee1e796e.svg"
+  },
+  {
+    "revision": "1e041296df1a99029c86a90820783220",
+    "url": "/getyourguide-clone/static/media/stroke.1e041296.svg"
   },
   {
     "revision": "446f3ac34ea557d71381a62f080505f8",
