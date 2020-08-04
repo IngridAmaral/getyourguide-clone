@@ -1,6 +1,6 @@
 import React from 'react';
 import './TextCallouts.scss';
-import { calendar, duration, heart } from '../../assets/imgs/text-callouts/text-callouts';
+import { calendar, duration, heart } from '../../constants/imgs/text-callouts';
 
 const callouts = [
   {

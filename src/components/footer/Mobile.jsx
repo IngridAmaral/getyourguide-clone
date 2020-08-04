@@ -1,7 +1,7 @@
 import React from 'react';
 import './Mobile.scss';
-import { appleStoreUrl } from '../../assets/imgs/apple-store';
-import { googlePlayUrl } from '../../assets/imgs/google-play';
+import { appleStoreUrl } from '../../constants/imgs/apple-store';
+import { googlePlayUrl } from '../../constants/imgs/google-play';
 
 const Mobile = () => (
   <div className="mobile">

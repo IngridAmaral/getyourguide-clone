@@ -12,7 +12,7 @@ import {
   sun,
   tickets,
   transport,
-} from '../../assets/imgs/cityIntro/cityIntro';
+} from '../../constants/imgs/cityIntro';
 import { capitalCase } from '../../utils/capital-case';
 import IntroCategorie from './IntroCategorie';
 

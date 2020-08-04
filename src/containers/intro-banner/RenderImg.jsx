@@ -1,6 +1,6 @@
 import React from 'react';
 import './RenderImg.scss';
-import { banner1, banner2, banner3 } from '../../assets/imgs/introBanner/imgs';
+import { banner1, banner2, banner3 } from '../../constants/imgs/intro-banner';
 
 const images = [banner1, banner2, banner3];
 export const INTERVAL = 4000;
