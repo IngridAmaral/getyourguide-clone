@@ -3,10 +3,13 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
+
+
+
 .btn {
   font-size: $font-size-base;
   line-height: 1.5rem;
-  cursor: pointer;
+  cursor: not-allowed;
   text-decoration: none;
   border-radius: 5rem;
   border: .1rem solid;
@@ -39,6 +42,10 @@
     color: $clr-terciary;
     background-color: transparent;
   }
+}
+
+.allow { 
+  cursor: pointer;
 }
 
 // IPAD

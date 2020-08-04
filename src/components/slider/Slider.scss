@@ -22,9 +22,10 @@
       left: -2%;
       align-items: center;
       background: none;
-
+      
       & button {
         border-radius: 100%;
+        cursor: pointer;
         padding: 0.2rem;
         display: flex;
         align-items: center;

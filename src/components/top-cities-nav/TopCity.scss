@@ -14,7 +14,7 @@
   color: $clr-secondary;
   font-family: inherit;
   font-weight: 600;
-  cursor: pointer;
+  cursor: not-allowed;
   transition: all .2s ease;
 
   &:hover {
@@ -27,4 +27,8 @@
     border: 1px solid $clr-jade;
     color: $clr-solid-white;
   }
+}
+
+.barcelona, .new-york-city, .paris {
+  cursor: pointer; 
 }

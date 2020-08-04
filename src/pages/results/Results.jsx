@@ -10,6 +10,7 @@ import NoResults from '../../components/results/NoResults';
 import Newsletter from '../../containers/newsletter/Newsletter';
 import Footer from '../../components/footer/Footer';
 import { ReactComponent as Caret } from '../../assets/svgs/caret.svg';
+import { capitalCase } from '../../utils/capital-case';
 import './Results.scss';
 
 const SELECT_SORT = [
@@ -107,9 +108,9 @@ class Results extends React.Component {
         </div>
         <div className="sort">
           <div className="results-found">
-            <span className="searched-input">{match.params.city}</span>
+            <span className="searched-input">{capitalCase(match.params.city)}</span>
             <span className="results-number">
-              {`, ${tours.length} tours found.`}
+              {`  ${tours.length} tours found.`}
             </span>
           </div>
           <div className="sort-by">

@@ -76,7 +76,7 @@
     width: 100%;
     &:hover {
       box-shadow: $shadow-activity-card-hover;
-      cursor: pointer;
+      cursor: not-allowed;
 
       .tour-details-title {
         text-decoration: underline;

@@ -23,7 +23,7 @@ class FilterSection extends React.Component {
     return (
       <Route
         render={({ history }) => (
-          <div className="filter-section-container">
+          <div className={`filter-section-container ${title}`}>
             <div
               className={`title ${isOpen ? 'rotate-caret' : ''}`}
               onClick={this.handleOpenOptions}

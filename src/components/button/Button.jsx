@@ -8,7 +8,7 @@ const mockFunc = () => {
 };
 
 const Button = ({ btnClass, text, click }) => (
-  <button type="submit" className={`btn ${btnClass}`} onClick={click}>
+  <button type="submit" className={`btn ${btnClass} ${text === 'Search' || text === 'Show more' ? 'allow' : ''}`} onClick={click}>
     {text === 'Search' && (
     <div className="search-icon">
       <SearchIcon />
