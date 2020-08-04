@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/getyourguide-clone/static/css/main.f0d61d29.chunk.css",
-    "main.js": "/getyourguide-clone/static/js/main.05c7bced.chunk.js",
-    "main.js.map": "/getyourguide-clone/static/js/main.05c7bced.chunk.js.map",
-    "runtime-main.js": "/getyourguide-clone/static/js/runtime-main.c737d019.js",
-    "runtime-main.js.map": "/getyourguide-clone/static/js/runtime-main.c737d019.js.map",
-    "static/js/2.439e49a3.chunk.js": "/getyourguide-clone/static/js/2.439e49a3.chunk.js",
-    "static/js/2.439e49a3.chunk.js.map": "/getyourguide-clone/static/js/2.439e49a3.chunk.js.map",
+    "main.js": "/getyourguide-clone/static/js/main.6b2c4be7.chunk.js",
+    "main.js.map": "/getyourguide-clone/static/js/main.6b2c4be7.chunk.js.map",
+    "runtime-main.js": "/getyourguide-clone/static/js/runtime-main.c3df1a35.js",
+    "runtime-main.js.map": "/getyourguide-clone/static/js/runtime-main.c3df1a35.js.map",
+    "static/js/2.f0708278.chunk.js": "/getyourguide-clone/static/js/2.f0708278.chunk.js",
+    "static/js/2.f0708278.chunk.js.map": "/getyourguide-clone/static/js/2.f0708278.chunk.js.map",
     "index.html": "/getyourguide-clone/index.html",
-    "precache-manifest.fa4d7841b186a1dfa882090cd1702c4f.js": "/getyourguide-clone/precache-manifest.fa4d7841b186a1dfa882090cd1702c4f.js",
+    "precache-manifest.576afd5ed00e51d615dc0bc650a8c7da.js": "/getyourguide-clone/precache-manifest.576afd5ed00e51d615dc0bc650a8c7da.js",
     "service-worker.js": "/getyourguide-clone/service-worker.js",
     "static/css/main.f0d61d29.chunk.css.map": "/getyourguide-clone/static/css/main.f0d61d29.chunk.css.map",
-    "static/js/2.439e49a3.chunk.js.LICENSE.txt": "/getyourguide-clone/static/js/2.439e49a3.chunk.js.LICENSE.txt",
+    "static/js/2.f0708278.chunk.js.LICENSE.txt": "/getyourguide-clone/static/js/2.f0708278.chunk.js.LICENSE.txt",
     "static/media/basket.a8a096a5.svg": "/getyourguide-clone/static/media/basket.a8a096a5.svg",
     "static/media/caret.d88c71b7.svg": "/getyourguide-clone/static/media/caret.d88c71b7.svg",
     "static/media/details.0c568947.svg": "/getyourguide-clone/static/media/details.0c568947.svg",
@@ -35,9 +35,9 @@
     "static/media/zigzag.d01fb1d2.svg": "/getyourguide-clone/static/media/zigzag.d01fb1d2.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c737d019.js",
-    "static/js/2.439e49a3.chunk.js",
+    "static/js/runtime-main.c3df1a35.js",
+    "static/js/2.f0708278.chunk.js",
     "static/css/main.f0d61d29.chunk.css",
-    "static/js/main.05c7bced.chunk.js"
+    "static/js/main.6b2c4be7.chunk.js"
   ]
 }
