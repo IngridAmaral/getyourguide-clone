@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import IntroBanner from './IntroBanner';
-import RenderImg from './RenderImg';
+import RenderImg from '../../containers/intro-banner/RenderImg';
 import BannerContent from './BannerContent';
 
 describe('<IntroBanner />', () => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import BannerContent from './BannerContent';
-import Search from '../search/Search';
-
+import Search from '../../containers/search/Search';
 
 describe('<BannerContent />', () => {
   it('renders component', () => {

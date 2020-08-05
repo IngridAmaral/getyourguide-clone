@@ -5,7 +5,7 @@ import Footer, {
 } from './Footer';
 import Selector from './Selector';
 import Mobile from './Mobile';
-import FooterNavigation from './FooterNavigation';
+import FooterNavigation from '../../containers/footer/FooterNavigation';
 import PayMethods from './PayMethods';
 
 describe('<Footer />', () => {
@@ -26,7 +26,6 @@ describe('<Footer />', () => {
     const wrapper = shallow(<Footer />);
     expect(wrapper.find(Mobile).exists()).toBe(true);
   });
-
 
   it('renders FooterNavigation component with correct props', () => {
     const wrapper = shallow(<Footer />);
