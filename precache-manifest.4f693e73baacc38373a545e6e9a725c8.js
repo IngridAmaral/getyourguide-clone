@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e04d1f04472bce1398e14a9c60c6a7ed",
+    "revision": "842f9277f31a6fd6be8f987e1ebbe284",
     "url": "/getyourguide-clone/index.html"
   },
   {
-    "revision": "4a6715417d2a7d56704b",
-    "url": "/getyourguide-clone/static/css/main.f0d61d29.chunk.css"
+    "revision": "3fada79d0581c1b3d80f",
+    "url": "/getyourguide-clone/static/css/main.15649597.chunk.css"
   },
   {
-    "revision": "afc7302fe615c4c2d1a6",
-    "url": "/getyourguide-clone/static/js/2.f0708278.chunk.js"
+    "revision": "f039f6e827d098f4f5ec",
+    "url": "/getyourguide-clone/static/js/2.1af13f97.chunk.js"
   },
   {
-    "revision": "9503e5c17a09687a39ccf81df663087c",
-    "url": "/getyourguide-clone/static/js/2.f0708278.chunk.js.LICENSE.txt"
+    "revision": "675cd1e81d0cf9891830fe219281f472",
+    "url": "/getyourguide-clone/static/js/2.1af13f97.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4a6715417d2a7d56704b",
-    "url": "/getyourguide-clone/static/js/main.6b2c4be7.chunk.js"
+    "revision": "3fada79d0581c1b3d80f",
+    "url": "/getyourguide-clone/static/js/main.a7f7f2cb.chunk.js"
   },
   {
-    "revision": "774846dd2a411e7c0a17",
-    "url": "/getyourguide-clone/static/js/runtime-main.c3df1a35.js"
+    "revision": "24d60b8886cc617fc4da",
+    "url": "/getyourguide-clone/static/js/runtime-main.c737d019.js"
   },
   {
     "revision": "a8a096a5e04a2f59ef0fede217ca3315",
