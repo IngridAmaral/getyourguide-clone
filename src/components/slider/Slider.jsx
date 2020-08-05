@@ -31,7 +31,6 @@ const SLIDER_OPTIONS = {
   },
 };
 
-
 const Slider = ({ data, type }) => {
   if (!data) {
     return null;
