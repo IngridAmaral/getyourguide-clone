@@ -8,25 +8,29 @@ import Button from '../../components/button/Button';
 class ResultsItems extends React.Component {
   state = {
     numberToShow: 20,
+    hideBtn: false,
   }
 
   handleClick = () => {
     const { numberToShow } = this.state;
     const { tours } = this.props;
     let num;
+    let hide = false;
 
     if (numberToShow < tours.length - 20) {
       num = numberToShow + 20;
+      hide = false;
     } else {
       num = tours.length;
+      hide = true;
     }
 
-    this.setState({ numberToShow: num });
+    this.setState({ numberToShow: num, hideBtn: hide });
   }
 
   render() {
     const { tours } = this.props;
-    const { numberToShow } = this.state;
+    const { numberToShow, hideBtn } = this.state;
     return (
       <div className="results-items-container">
         {tours.slice(0, numberToShow).map((tour) => (
@@ -36,7 +40,7 @@ class ResultsItems extends React.Component {
             activity={tour}
           />
         ))}
-        <Button text="Show more" btnClass="bg-blue" click={this.handleClick} />
+        {hideBtn ? null : <Button text="Show more" btnClass="bg-blue" click={this.handleClick} />}
       </div>
     );
   }
