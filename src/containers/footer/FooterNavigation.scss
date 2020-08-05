@@ -22,11 +22,15 @@
     font-size: $font-size-mili;
     padding: .5rem 0 0 1rem;
     line-height: 1.5rem;
-    cursor: not-allowed;
-
-
+    
+    
     * {
+      cursor: not-allowed;
       margin-bottom: 0.2rem;
+    }
+
+    .item:hover {
+      text-decoration: underline;
     }
 
     &.open {

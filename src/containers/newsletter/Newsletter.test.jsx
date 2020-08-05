@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Newsletter from './Newsletter';
-import Button from '../button/Button';
+import Button from '../../components/button/Button';
 
 describe('<Newsletter />', () => {
   it('should render the component', () => {

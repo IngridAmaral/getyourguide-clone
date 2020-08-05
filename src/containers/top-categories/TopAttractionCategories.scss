@@ -13,7 +13,6 @@
     overflow: scroll;
     margin: 1rem 0;
     width: 100%;
-    cursor: not-allowed;
     box-shadow: inset 0px -7px 10px -10px #111;
   }
 
@@ -46,6 +45,15 @@
       font-size: $font-size-mili;
       padding: 0.5rem;
       text-align: left;
+    }
+  }
+
+  .item:hover {
+    background-color: $clr-secondary;
+    cursor: not-allowed;
+
+    .attraction {
+      color: $clr-solid-white;
     }
   }
 }
@@ -84,6 +92,7 @@
       font-weight: 600;
       font-size: $font-size-mili;
       padding: 0.5rem;
+      cursor: pointer;
 
       svg {
         width: 1.5rem;
@@ -127,7 +136,7 @@
   .top-attraction-categories-container {
     .items {
       justify-content: center;
-      
+
       &.close {
         max-height: fit-content;
       }
@@ -135,7 +144,7 @@
       .item {
         flex-grow: unset;
         .number {
-          padding: 0.2rem .5rem;
+          padding: 0.2rem 0.5rem;
         }
 
         .attraction {

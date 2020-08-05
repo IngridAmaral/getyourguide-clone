@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import { SearchClass } from './Search';
-import AutoComplete from './AutoComplete';
+import AutoComplete from '../../components/search/AutoComplete';
 
 const defaultProps = {
   tours: [{ tour: 1 }],

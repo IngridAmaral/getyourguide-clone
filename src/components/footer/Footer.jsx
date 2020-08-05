@@ -52,7 +52,7 @@ export const company = [
 
 export const workWithUs = [
   'Supplier Administration',
-  'Affiliate Partnet Administration',
+  'Affiliate Partner Administration',
 ];
 
 const Footer = () => (
