@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/getyourguide-clone/static/css/main.431a98cc.chunk.css",
+    "main.css": "/getyourguide-clone/static/css/main.5d5ed691.chunk.css",
     "main.js": "/getyourguide-clone/static/js/main.93a08a92.chunk.js",
     "main.js.map": "/getyourguide-clone/static/js/main.93a08a92.chunk.js.map",
     "runtime-main.js": "/getyourguide-clone/static/js/runtime-main.c737d019.js",
@@ -8,9 +8,9 @@
     "static/js/2.1af13f97.chunk.js": "/getyourguide-clone/static/js/2.1af13f97.chunk.js",
     "static/js/2.1af13f97.chunk.js.map": "/getyourguide-clone/static/js/2.1af13f97.chunk.js.map",
     "index.html": "/getyourguide-clone/index.html",
-    "precache-manifest.10e25c433fda6a0bc79fd29e027dc083.js": "/getyourguide-clone/precache-manifest.10e25c433fda6a0bc79fd29e027dc083.js",
+    "precache-manifest.7dc2c2ed84a46cdda026114eaa6d7087.js": "/getyourguide-clone/precache-manifest.7dc2c2ed84a46cdda026114eaa6d7087.js",
     "service-worker.js": "/getyourguide-clone/service-worker.js",
-    "static/css/main.431a98cc.chunk.css.map": "/getyourguide-clone/static/css/main.431a98cc.chunk.css.map",
+    "static/css/main.5d5ed691.chunk.css.map": "/getyourguide-clone/static/css/main.5d5ed691.chunk.css.map",
     "static/js/2.1af13f97.chunk.js.LICENSE.txt": "/getyourguide-clone/static/js/2.1af13f97.chunk.js.LICENSE.txt",
     "static/media/basket.a8a096a5.svg": "/getyourguide-clone/static/media/basket.a8a096a5.svg",
     "static/media/caret.d88c71b7.svg": "/getyourguide-clone/static/media/caret.d88c71b7.svg",
@@ -37,7 +37,7 @@
   "entrypoints": [
     "static/js/runtime-main.c737d019.js",
     "static/js/2.1af13f97.chunk.js",
-    "static/css/main.431a98cc.chunk.css",
+    "static/css/main.5d5ed691.chunk.css",
     "static/js/main.93a08a92.chunk.js"
   ]
 }
