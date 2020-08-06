@@ -13,18 +13,12 @@
   .splide {
     position: relative;
     .splide__arrows {
-      display: flex;
-      justify-content: space-between;
-      width: 105%;
-      position: absolute;
-      z-index: 20;
-      top: 50%;
-      left: -2%;
-      align-items: center;
-      background: none;
       
       & button {
         border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
         cursor: pointer;
         padding: 0.2rem;
         display: flex;
@@ -34,9 +28,14 @@
         border: none;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         background-color: $clr-solid-white;
-
+        
         &.splide__arrow--prev {
           transform: rotate(180deg);
+          left: -0.6rem;
+        }
+        
+        &.splide__arrow--next {
+          right: -0.6rem;
         }
 
         & svg {
