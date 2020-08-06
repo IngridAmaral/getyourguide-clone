@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de6a782189517eeecb6809be38b7c2c0",
+    "revision": "f3b9be1a01fd2a1e1f9797f385e3ac10",
     "url": "/getyourguide-clone/index.html"
   },
   {
-    "revision": "2e86414de243ed02e6d3",
-    "url": "/getyourguide-clone/static/css/main.15649597.chunk.css"
+    "revision": "6d34e66aec04413ff511",
+    "url": "/getyourguide-clone/static/css/main.431a98cc.chunk.css"
   },
   {
     "revision": "f039f6e827d098f4f5ec",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/getyourguide-clone/static/js/2.1af13f97.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2e86414de243ed02e6d3",
+    "revision": "6d34e66aec04413ff511",
     "url": "/getyourguide-clone/static/js/main.93a08a92.chunk.js"
   },
   {
