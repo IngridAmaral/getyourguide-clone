@@ -3,9 +3,6 @@
 @import "./../../styles/variables";
 @import "./../../styles/flex-styles";
 
-
-
-
 .btn {
   font-size: $font-size-base;
   line-height: 1.5rem;
@@ -18,11 +15,12 @@
   @include flex-center-xy;
 
   .search-icon {
-    height: fit-content;
+    @include flex-center-xy;
     svg {
       width: 1.5rem;
-      height: 1.5rem;
-      margin-right: .5rem;
+      height: 1.4rem;
+      margin-right: .2rem;
+      margin-bottom: .1rem;
     }
   }
 
